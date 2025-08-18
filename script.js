@@ -39,9 +39,14 @@ function renderLibraries() {
     const card = document.createElement('div');
     card.className = 'library-card';
     card.innerHTML = `
-      <h3>${lib.name}</h3>
-      <p>📍 ${lib.address}</p>
-      <p>📞 ${lib.phone}</p>
+      <div class="library-image">
+        <img src="${lib.image}" alt="${lib.name}" onerror="this.src='images/default-library.jpg'">
+      </div>
+      <div class="library-info">
+        <h3>${lib.name}</h3>
+        <p>📍 ${lib.address}</p>
+        <p>📞 ${lib.phone}</p>
+      </div>
     `;
     card.onclick = () => showLibraryDetails(lib);
     libraryListDiv.appendChild(card);
@@ -50,11 +55,16 @@ function renderLibraries() {
 
 function showLibraryDetails(lib) {
   modalContent.innerHTML = `
-    <h2>${lib.name}</h2>
-    <p><strong>📍 地址：</strong>${lib.address}</p>
-    <p><strong>📞 电话：</strong>${lib.phone}</p>
-    <p><strong>🌐 官网：</strong><a href="${lib.website}" target="_blank">${lib.website}</a></p>
-    <p><strong>📖 简介：</strong>${lib.description}</p>
+    <div class="modal-header">
+      <img src="${lib.image}" alt="${lib.name}" onerror="this.src='images/default-library.jpg'">
+      <h2>${lib.name}</h2>
+    </div>
+    <div class="modal-body">
+      <p><strong>📍 地址：</strong>${lib.address}</p>
+      <p><strong>📞 电话：</strong>${lib.phone}</p>
+      <p><strong>🌐 官网：</strong><a href="${lib.website}" target="_blank">${lib.website}</a></p>
+      <p><strong>📖 简介：</strong>${lib.description}</p>
+    </div>
   `;
   
   // 添加动画效果
