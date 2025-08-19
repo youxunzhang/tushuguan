@@ -21,14 +21,58 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h1>中国城市图书馆信息</h1>
-        <p>探索中国各地的图书馆</p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="nav-icon">📚</span>
+                <span class="nav-title">中国图书馆</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#libraries" class="nav-link">图书馆</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">联系我们</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="hero-content">
+            <h1>中国城市图书馆信息</h1>
+            <p>探索中国各地的图书馆，发现知识的殿堂</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">图书馆</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">城市</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">在线服务</span>
+                </div>
+            </div>
+        </div>
         <div id="city-list">
             <h2>选择城市</h2>
         </div>
     </header>
-    <main>
+    <main id="libraries">
         <div id="library-list"></div>
     </main>
     
