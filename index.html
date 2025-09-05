@@ -76,6 +76,79 @@
         <div id="library-list"></div>
     </main>
     
+    <section id="games" class="games-section">
+        <div class="container">
+            <h2>📚 图书馆知识小游戏</h2>
+            <p class="section-desc">在探索图书馆的同时，来挑战一下你的知识吧！</p>
+            
+            <div class="game-container">
+                <div class="game-header">
+                    <h3>📖 图书分类挑战</h3>
+                    <p>将图书正确分类到对应的图书馆类别中</p>
+                </div>
+                
+                <div class="game-stats">
+                    <div class="stat">
+                        <span class="stat-label">得分</span>
+                        <span id="score" class="stat-value">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">时间</span>
+                        <span id="timer" class="stat-value">60</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">等级</span>
+                        <span id="level" class="stat-value">1</span>
+                    </div>
+                </div>
+                
+                <div class="game-area">
+                    <div class="game-instructions">
+                        <p>将右侧的图书拖拽到左侧正确的图书馆类别中</p>
+                    </div>
+                    
+                    <div class="game-layout">
+                        <div class="library-categories">
+                            <div class="category" data-category="public">
+                                <h4>🏛️ 公共图书馆</h4>
+                                <div class="drop-zone" data-category="public"></div>
+                            </div>
+                            <div class="category" data-category="university">
+                                <h4>🎓 大学图书馆</h4>
+                                <div class="drop-zone" data-category="university"></div>
+                            </div>
+                            <div class="category" data-category="special">
+                                <h4>🔬 专业图书馆</h4>
+                                <div class="drop-zone" data-category="special"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="books-container">
+                            <div class="books-title">📚 待分类图书</div>
+                            <div id="books-list" class="books-list"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-controls">
+                    <button id="start-game" class="game-btn primary">开始游戏</button>
+                    <button id="reset-game" class="game-btn secondary">重新开始</button>
+                    <button id="pause-game" class="game-btn secondary" style="display: none;">暂停</button>
+                </div>
+                
+                <div class="game-result" id="game-result" style="display: none;">
+                    <h3>🎉 游戏结束！</h3>
+                    <div class="result-stats">
+                        <p>最终得分: <span id="final-score">0</span></p>
+                        <p>正确分类: <span id="correct-count">0</span>/<span id="total-count">0</span></p>
+                        <p>用时: <span id="final-time">0</span>秒</p>
+                    </div>
+                    <button id="play-again" class="game-btn primary">再玩一次</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
