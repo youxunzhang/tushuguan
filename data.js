@@ -8,7 +8,7 @@ const libraryData = [
         phone: "010-88545426",
         website: "http://www.nlc.cn/",
         description: "中国最大的图书馆，拥有丰富的馆藏和现代化的服务设施。",
-        image: "images/national-library.svg"
+        image: "images/national-library-enhanced.svg"
       },
       {
         name: "首都图书馆",
@@ -16,7 +16,7 @@ const libraryData = [
         phone: "010-67358114",
         website: "http://www.clcn.net.cn/",
         description: "北京市重要的公共图书馆，服务广大市民。",
-        image: "images/capital-library.svg"
+        image: "images/default-library-enhanced.svg"
       },
       {
         name: "北京大学图书馆",
@@ -24,7 +24,7 @@ const libraryData = [
         phone: "010-62751051",
         website: "https://lib.pku.edu.cn/",
         description: "北京大学图书馆，历史悠久，馆藏丰富。",
-        image: "images/pku-library.svg"
+        image: "images/pku-library-enhanced.svg"
       },
       {
         name: "清华大学图书馆",
@@ -32,7 +32,7 @@ const libraryData = [
         phone: "010-62782137",
         website: "https://lib.tsinghua.edu.cn/",
         description: "清华大学图书馆，现代化设施完善。",
-        image: "images/tsinghua-library.svg"
+        image: "images/tsinghua-library-enhanced.svg"
       },
       {
         name: "中国人民大学图书馆",
@@ -40,7 +40,7 @@ const libraryData = [
         phone: "010-62511373",
         website: "https://lib.ruc.edu.cn/",
         description: "中国人民大学图书馆，人文社科类馆藏丰富。",
-        image: "images/ruc-library.svg"
+        image: "images/default-library-enhanced.svg"
       },
       {
         name: "北京师范大学图书馆",
@@ -48,7 +48,7 @@ const libraryData = [
         phone: "010-58806113",
         website: "https://lib.bnu.edu.cn/",
         description: "北京师范大学图书馆，教育类文献丰富。",
-        image: "images/bnu-library.svg"
+        image: "images/default-library-enhanced.svg"
       },
       {
         name: "北京理工大学图书馆",
@@ -213,7 +213,7 @@ const libraryData = [
         phone: "021-64455555",
         website: "https://www.library.sh.cn/",
         description: "中国著名的现代化大型图书馆。",
-        image: "images/shanghai-library.svg"
+        image: "images/shanghai-library-enhanced.svg"
       },
       {
         name: "复旦大学图书馆",
@@ -221,7 +221,7 @@ const libraryData = [
         phone: "021-65642222",
         website: "https://www.library.fudan.edu.cn/",
         description: "复旦大学图书馆，综合性大学图书馆。",
-        image: "images/fudan-library.svg"
+        image: "images/fudan-library-enhanced.svg"
       },
       {
         name: "上海交通大学图书馆",
@@ -394,7 +394,7 @@ const libraryData = [
         phone: "020-83836666",
         website: "https://www.gzlib.org.cn/",
         description: "位于珠江新城的现代化图书馆，建筑风格独特。",
-        image: "images/guangzhou-library.svg"
+        image: "images/guangzhou-library-enhanced.svg"
       },
       {
         name: "中山大学图书馆",
@@ -543,7 +543,7 @@ const libraryData = [
         phone: "0755-82841200",
         website: "https://www.szlib.org.cn/",
         description: "深圳市标志性文化设施之一。",
-        image: "images/shenzhen-library.svg"
+        image: "images/shenzhen-library-enhanced.svg"
       },
       {
         name: "深圳大学图书馆",
@@ -684,7 +684,7 @@ const libraryData = [
         phone: "0571-86535000",
         website: "https://www.hzlib.net/",
         description: "杭州市重要的公共图书馆，环境优美，服务完善。",
-        image: "images/hangzhou-library.svg"
+        image: "images/hangzhou-library-enhanced.svg"
       },
       {
         name: "浙江大学图书馆",
@@ -825,7 +825,7 @@ const libraryData = [
         phone: "025-84356000",
         website: "https://www.jslib.org.cn/",
         description: "江苏省最大的公共图书馆，历史悠久，馆藏丰富。",
-        image: "images/nanjing-library.svg"
+        image: "images/nanjing-library-enhanced.svg"
       },
       {
         name: "南京大学图书馆",

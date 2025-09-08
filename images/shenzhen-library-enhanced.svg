@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3730a3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:0.7" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="400" height="300" fill="url(#bgGrad)"/>
+  
+  <!-- 装饰性元素 -->
+  <circle cx="60" cy="40" r="15" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="340" cy="60" r="12" fill="rgba(255,255,255,0.08)"/>
+  
+  <!-- 现代图书馆建筑 -->
+  <rect x="100" y="80" width="200" height="140" fill="url(#buildingGrad)" stroke="#cbd5e0" stroke-width="2"/>
+  
+  <!-- 玻璃幕墙 -->
+  <rect x="110" y="90" width="180" height="120" fill="url(#glassGrad)" stroke="#0284c7" stroke-width="1"/>
+  
+  <!-- 玻璃分割线 -->
+  <line x1="200" y1="90" x2="200" y2="210" stroke="#0ea5e9" stroke-width="1"/>
+  <line x1="110" y1="150" x2="290" y2="150" stroke="#0ea5e9" stroke-width="1"/>
+  
+  <!-- 入口 -->
+  <rect x="180" y="180" width="40" height="40" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+  <circle cx="200" cy="200" r="3" fill="#fbbf24"/>
+  
+  <!-- 台阶 -->
+  <rect x="170" y="220" width="60" height="8" fill="#9ca3af"/>
+  <rect x="175" y="228" width="50" height="8" fill="#9ca3af"/>
+  <rect x="180" y="236" width="40" height="8" fill="#9ca3af"/>
+  
+  <!-- 顶部装饰 -->
+  <rect x="100" y="70" width="200" height="10" fill="#64748b"/>
+  
+  <!-- 书本装饰 -->
+  <rect x="50" y="120" width="12" height="16" fill="#dc2626" stroke="#b91c1c" stroke-width="1"/>
+  <rect x="52" y="122" width="8" height="1" fill="#7f1d1d"/>
+  <rect x="52" y="125" width="8" height="1" fill="#7f1d1d"/>
+  <rect x="52" y="128" width="8" height="1" fill="#7f1d1d"/>
+  
+  <rect x="338" y="100" width="12" height="16" fill="#059669" stroke="#047857" stroke-width="1"/>
+  <rect x="340" y="102" width="8" height="1" fill="#064e3b"/>
+  <rect x="340" y="105" width="8" height="1" fill="#064e3b"/>
+  <rect x="340" y="108" width="8" height="1" fill="#064e3b"/>
+  
+  <!-- 图书馆名称 -->
+  <text x="200" y="260" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">深圳图书馆</text>
+  
+  <!-- 城市名称 -->
+  <text x="200" y="280" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)" text-anchor="middle">深圳</text>
+</svg>

@@ -589,10 +589,44 @@ main {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
         gap: 1rem;
+        z-index: 999;
     }
     
     .nav-actions {
         display: none;
+    }
+    
+    /* 移动端收藏和分享按钮 */
+    .mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    
+    .mobile-actions .favorite-btn, 
+    .mobile-actions .share-btn {
+        background: rgba(102, 126, 234, 0.1);
+        border: 1px solid rgba(102, 126, 234, 0.2);
+        color: #667eea;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        min-width: 100px;
+    }
+    
+    .mobile-actions .favorite-btn:hover, 
+    .mobile-actions .share-btn:hover {
+        background: rgba(102, 126, 234, 0.2);
+        transform: none;
+    }
+    
+    .mobile-actions .favorite-btn.favorited {
+        background: rgba(245, 158, 11, 0.1);
+        border-color: rgba(245, 158, 11, 0.2);
+        color: #f59e0b;
     }
     
     .nav-menu.active {
@@ -1513,6 +1547,33 @@ main {
     font-size: 0.95rem;
 }
 
+/* 网站地图响应式 */
+@media (max-width: 768px) {
+    .sitemap-section {
+        padding: 2rem 0;
+        margin-top: 2rem;
+    }
+    
+    .sitemap-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .sitemap-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .sitemap-category {
+        padding: 1.5rem;
+    }
+    
+    .sitemap-category h3 {
+        font-size: 1.3rem;
+    }
+}
+
 /* Footer Responsive */
 @media (max-width: 768px) {
     .footer-content {
@@ -1541,6 +1602,28 @@ main {
     }
 }
 
+/* 分享模态框响应式 */
+@media (max-width: 768px) {
+    .share-modal-content {
+        max-width: 90vw;
+        margin: 1rem;
+    }
+    
+    .share-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .share-button {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .share-icon {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 480px) {
     .footer {
         margin-top: 2rem;
@@ -1557,5 +1640,17 @@ main {
     .footer-bottom-links {
         flex-direction: column;
         gap: 0.5rem;
+    }
+    
+    .share-buttons {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .share-button {
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0.75rem;
     }
 } 

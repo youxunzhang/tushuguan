@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="roofGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="400" height="300" fill="url(#bgGrad)"/>
+  
+  <!-- 装饰性元素 -->
+  <circle cx="70" cy="50" r="18" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="330" cy="70" r="15" fill="rgba(255,255,255,0.1)"/>
+  
+  <!-- 图书馆建筑主体 -->
+  <rect x="100" y="100" width="200" height="120" fill="url(#buildingGrad)" stroke="#cbd5e0" stroke-width="2"/>
+  
+  <!-- 屋顶 -->
+  <polygon points="100,100 150,60 200,100" fill="url(#roofGrad)"/>
+  <polygon points="200,100 250,60 300,100" fill="url(#roofGrad)"/>
+  
+  <!-- 屋檐装饰 -->
+  <rect x="100" y="95" width="200" height="5" fill="#b91c1c"/>
+  
+  <!-- 柱子 -->
+  <rect x="120" y="100" width="8" height="120" fill="#d1d5db"/>
+  <rect x="150" y="100" width="8" height="120" fill="#d1d5db"/>
+  <rect x="180" y="100" width="8" height="120" fill="#d1d5db"/>
+  <rect x="210" y="100" width="8" height="120" fill="#d1d5db"/>
+  <rect x="240" y="100" width="8" height="120" fill="#d1d5db"/>
+  <rect x="270" y="100" width="8" height="120" fill="#d1d5db"/>
+  
+  <!-- 大门 -->
+  <rect x="190" y="150" width="20" height="70" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+  <circle cx="200" cy="185" r="2" fill="#fbbf24"/>
+  
+  <!-- 窗户 -->
+  <rect x="130" y="120" width="15" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="255" y="120" width="15" height="20" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="130" y="180" width="15" height="15" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  <rect x="255" y="180" width="15" height="15" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+  
+  <!-- 台阶 -->
+  <rect x="180" y="220" width="40" height="8" fill="#9ca3af"/>
+  <rect x="185" y="228" width="30" height="8" fill="#9ca3af"/>
+  <rect x="190" y="236" width="20" height="8" fill="#9ca3af"/>
+  
+  <!-- 书本装饰 -->
+  <rect x="50" y="160" width="15" height="20" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+  <rect x="52" y="162" width="11" height="2" fill="#92400e"/>
+  <rect x="52" y="166" width="11" height="2" fill="#92400e"/>
+  <rect x="52" y="170" width="11" height="2" fill="#92400e"/>
+  
+  <rect x="335" y="140" width="15" height="20" fill="#10b981" stroke="#059669" stroke-width="1"/>
+  <rect x="337" y="142" width="11" height="2" fill="#064e3b"/>
+  <rect x="337" y="146" width="11" height="2" fill="#064e3b"/>
+  <rect x="337" y="150" width="11" height="2" fill="#064e3b"/>
+  
+  <!-- 图书馆名称 -->
+  <text x="200" y="250" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">图书馆</text>
+  
+  <!-- 城市名称 -->
+  <text x="200" y="270" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">中国</text>
+</svg>

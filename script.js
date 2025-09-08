@@ -567,24 +567,37 @@ document.head.appendChild(style);
 function initFavoriteAndShare() {
     const favoriteBtn = document.getElementById('favorite-btn');
     const shareBtn = document.getElementById('share-btn');
+    const mobileFavoriteBtn = document.getElementById('mobile-favorite-btn');
+    const mobileShareBtn = document.getElementById('mobile-share-btn');
     const shareModal = document.getElementById('share-modal');
     const copyLinkBtn = document.getElementById('copy-link-btn');
     
     // 收藏功能
-    if (favoriteBtn) {
-        favoriteBtn.addEventListener('click', function() {
-            const isFavorited = favoriteBtn.classList.contains('favorited');
-            
-            if (isFavorited) {
-                favoriteBtn.classList.remove('favorited');
-                showFeedback('已取消收藏', 'info');
-                localStorage.removeItem('library_favorited');
+    function handleFavoriteClick(btn) {
+        const isFavorited = btn.classList.contains('favorited');
+        
+        if (isFavorited) {
+            btn.classList.remove('favorited');
+            showFeedback('已取消收藏', 'info');
+            localStorage.removeItem('library_favorited');
+        } else {
+            btn.classList.add('favorited');
+            showFeedback('已添加到收藏夹', 'success');
+            localStorage.setItem('library_favorited', 'true');
+        }
+        
+        // 同步两个按钮的状态
+        if (favoriteBtn && mobileFavoriteBtn) {
+            if (btn === favoriteBtn) {
+                mobileFavoriteBtn.classList.toggle('favorited', !isFavorited);
             } else {
-                favoriteBtn.classList.add('favorited');
-                showFeedback('已添加到收藏夹', 'success');
-                localStorage.setItem('library_favorited', 'true');
+                favoriteBtn.classList.toggle('favorited', !isFavorited);
             }
-        });
+        }
+    }
+    
+    if (favoriteBtn) {
+        favoriteBtn.addEventListener('click', () => handleFavoriteClick(favoriteBtn));
         
         // 检查是否已收藏
         if (localStorage.getItem('library_favorited') === 'true') {
@@ -592,14 +605,29 @@ function initFavoriteAndShare() {
         }
     }
     
+    if (mobileFavoriteBtn) {
+        mobileFavoriteBtn.addEventListener('click', () => handleFavoriteClick(mobileFavoriteBtn));
+        
+        // 检查是否已收藏
+        if (localStorage.getItem('library_favorited') === 'true') {
+            mobileFavoriteBtn.classList.add('favorited');
+        }
+    }
+    
     // 分享功能
+    function handleShareClick() {
+        shareModal.classList.remove('hidden');
+        setTimeout(() => {
+            shareModal.classList.add('show');
+        }, 10);
+    }
+    
     if (shareBtn) {
-        shareBtn.addEventListener('click', function() {
-            shareModal.classList.remove('hidden');
-            setTimeout(() => {
-                shareModal.classList.add('show');
-            }, 10);
-        });
+        shareBtn.addEventListener('click', handleShareClick);
+    }
+    
+    if (mobileShareBtn) {
+        mobileShareBtn.addEventListener('click', handleShareClick);
     }
     
     // 分享按钮事件
