@@ -208,8 +208,11 @@ function initGame() {
     if (pauseBtn) pauseBtn.addEventListener('click', togglePause);
     if (playAgainBtn) playAgainBtn.addEventListener('click', startGame);
     
-    setupDragAndDrop();
-    updateGameStats();
+    // 确保DOM完全加载后再设置拖拽功能
+    setTimeout(() => {
+        setupDragAndDrop();
+        updateGameStats();
+    }, 100);
 }
 
 function startGame() {
@@ -420,7 +423,9 @@ function handleDrop(e) {
     const remainingBooks = document.querySelectorAll('#books-list .book-item');
     if (remainingBooks.length === 0) {
         // 所有图书已分类，进入下一关
-        nextLevel();
+        setTimeout(() => {
+            nextLevel();
+        }, 500);
     }
     
     updateGameStats();
@@ -433,9 +438,18 @@ function nextLevel() {
     // 显示升级信息
     showFeedback(`进入第 ${gameState.level} 关！`, 'level-up');
     
+    // 清理所有分类区域
+    const dropZones = document.querySelectorAll('.drop-zone');
+    dropZones.forEach(zone => {
+        zone.innerHTML = '';
+        zone.classList.remove('has-book');
+    });
+    
     // 生成新的图书
     setTimeout(() => {
         generateBooks();
+        // 重新设置拖拽功能
+        setupDragAndDrop();
     }, 1000);
 }
 
