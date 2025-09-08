@@ -65,6 +65,30 @@ const libraryData = [
         website: "https://lib.buaa.edu.cn/",
         description: "北京航空航天大学图书馆，航空航天类文献特色。",
         image: "images/buaa-library.svg"
+      },
+      {
+        name: "中国国家图书馆古籍馆",
+        address: "北京市西城区文津街7号",
+        phone: "010-88003092",
+        website: "http://www.nlc.cn/",
+        description: "国家图书馆古籍馆，收藏珍贵古籍文献。",
+        image: "images/nlc-ancient-library.svg"
+      },
+      {
+        name: "中国科学院图书馆",
+        address: "北京市海淀区中关村北四环西路33号",
+        phone: "010-62532095",
+        website: "https://www.las.ac.cn/",
+        description: "中国科学院图书馆，科技文献资源丰富。",
+        image: "images/cas-library.svg"
+      },
+      {
+        name: "中国医学科学院图书馆",
+        address: "北京市东城区东单三条9号",
+        phone: "010-65133073",
+        website: "https://www.imicams.ac.cn/",
+        description: "中国医学科学院图书馆，医学文献专业馆藏。",
+        image: "images/cams-library.svg"
       }
     ]
   },
@@ -110,6 +134,30 @@ const libraryData = [
         website: "https://lib.ecnu.edu.cn/",
         description: "华东师范大学图书馆，教育类文献丰富。",
         image: "images/ecnu-library.svg"
+      },
+      {
+        name: "上海财经大学图书馆",
+        address: "上海市杨浦区国定路777号",
+        phone: "021-65904320",
+        website: "https://lib.shufe.edu.cn/",
+        description: "上海财经大学图书馆，经济管理类文献特色。",
+        image: "images/shufe-library.svg"
+      },
+      {
+        name: "上海外国语大学图书馆",
+        address: "上海市虹口区大连西路550号",
+        phone: "021-35372300",
+        website: "https://lib.shisu.edu.cn/",
+        description: "上海外国语大学图书馆，外语文献资源丰富。",
+        image: "images/shisu-library.svg"
+      },
+      {
+        name: "上海音乐学院图书馆",
+        address: "上海市徐汇区汾阳路20号",
+        phone: "021-64370137",
+        website: "https://lib.shcmusic.edu.cn/",
+        description: "上海音乐学院图书馆，音乐艺术类文献专业。",
+        image: "images/shcmusic-library.svg"
       }
     ]
   },
@@ -411,6 +459,275 @@ const libraryData = [
         website: "https://lib.tju.edu.cn/",
         description: "天津大学图书馆，理工科馆藏丰富。",
         image: "images/tju-library.svg"
+      }
+    ]
+  },
+  {
+    city: "苏州",
+    libraries: [
+      {
+        name: "苏州图书馆",
+        address: "苏州市姑苏区人民路858号",
+        phone: "0512-65220089",
+        website: "https://www.szlib.com/",
+        description: "苏州市重要的公共图书馆，古典与现代相结合。",
+        image: "images/suzhou-library.svg"
+      },
+      {
+        name: "苏州大学图书馆",
+        address: "苏州市姑苏区十梓街1号",
+        phone: "0512-65112671",
+        website: "https://lib.suda.edu.cn/",
+        description: "苏州大学图书馆，综合性大学图书馆。",
+        image: "images/suda-library.svg"
+      },
+      {
+        name: "西交利物浦大学图书馆",
+        address: "苏州市工业园区独墅湖高教区仁爱路111号",
+        phone: "0512-88161000",
+        website: "https://lib.xjtlu.edu.cn/",
+        description: "西交利物浦大学图书馆，国际化教育特色。",
+        image: "images/xjtlu-library.svg"
+      }
+    ]
+  },
+  {
+    city: "青岛",
+    libraries: [
+      {
+        name: "青岛市图书馆",
+        address: "青岛市市南区延吉路109号",
+        phone: "0532-85012812",
+        website: "https://www.qdlib.net/",
+        description: "青岛市重要的公共图书馆，海滨城市文化地标。",
+        image: "images/qingdao-library.svg"
+      },
+      {
+        name: "中国海洋大学图书馆",
+        address: "青岛市崂山区松岭路238号",
+        phone: "0532-66782500",
+        website: "https://lib.ouc.edu.cn/",
+        description: "中国海洋大学图书馆，海洋科学文献特色。",
+        image: "images/ouc-library.svg"
+      },
+      {
+        name: "青岛大学图书馆",
+        address: "青岛市市南区宁夏路308号",
+        phone: "0532-85953000",
+        website: "https://lib.qdu.edu.cn/",
+        description: "青岛大学图书馆，综合性大学图书馆。",
+        image: "images/qdu-library.svg"
+      }
+    ]
+  },
+  {
+    city: "厦门",
+    libraries: [
+      {
+        name: "厦门市图书馆",
+        address: "厦门市思明区体育路95号",
+        phone: "0592-5371800",
+        website: "https://www.xmlib.net/",
+        description: "厦门市重要的公共图书馆，闽南文化特色。",
+        image: "images/xiamen-library.svg"
+      },
+      {
+        name: "厦门大学图书馆",
+        address: "厦门市思明区思明南路422号",
+        phone: "0592-2182360",
+        website: "https://library.xmu.edu.cn/",
+        description: "厦门大学图书馆，综合性大学图书馆，环境优美。",
+        image: "images/xmu-library.svg"
+      },
+      {
+        name: "集美大学图书馆",
+        address: "厦门市集美区银江路185号",
+        phone: "0592-6181000",
+        website: "https://lib.jmu.edu.cn/",
+        description: "集美大学图书馆，海洋特色文献丰富。",
+        image: "images/jmu-library.svg"
+      }
+    ]
+  },
+  {
+    city: "大连",
+    libraries: [
+      {
+        name: "大连市图书馆",
+        address: "大连市西岗区长白街7号",
+        phone: "0411-83600000",
+        website: "https://www.dl-library.com/",
+        description: "大连市重要的公共图书馆，东北地区文化中心。",
+        image: "images/dalian-library.svg"
+      },
+      {
+        name: "大连理工大学图书馆",
+        address: "大连市甘井子区凌工路2号",
+        phone: "0411-84708320",
+        website: "https://lib.dlut.edu.cn/",
+        description: "大连理工大学图书馆，理工科馆藏丰富。",
+        image: "images/dlut-library.svg"
+      },
+      {
+        name: "大连海事大学图书馆",
+        address: "大连市甘井子区凌海路1号",
+        phone: "0411-84723300",
+        website: "https://lib.dlmu.edu.cn/",
+        description: "大连海事大学图书馆，海事文献特色馆藏。",
+        image: "images/dlmu-library.svg"
+      }
+    ]
+  },
+  {
+    city: "长沙",
+    libraries: [
+      {
+        name: "湖南省图书馆",
+        address: "长沙市芙蓉区韶山北路169号",
+        phone: "0731-84174122",
+        website: "https://www.library.hn.cn/",
+        description: "湖南省最大的公共图书馆，湖湘文化特色。",
+        image: "images/hunan-library.svg"
+      },
+      {
+        name: "中南大学图书馆",
+        address: "长沙市岳麓区麓山南路932号",
+        phone: "0731-88876000",
+        website: "https://lib.csu.edu.cn/",
+        description: "中南大学图书馆，综合性大学图书馆。",
+        image: "images/csu-library.svg"
+      },
+      {
+        name: "湖南大学图书馆",
+        address: "长沙市岳麓区麓山南路2号",
+        phone: "0731-88823000",
+        website: "https://lib.hnu.edu.cn/",
+        description: "湖南大学图书馆，千年学府文化底蕴深厚。",
+        image: "images/hnu-library.svg"
+      },
+      {
+        name: "湖南师范大学图书馆",
+        address: "长沙市岳麓区麓山路36号",
+        phone: "0731-88872000",
+        website: "https://lib.hunnu.edu.cn/",
+        description: "湖南师范大学图书馆，教育类文献丰富。",
+        image: "images/hunnu-library.svg"
+      }
+    ]
+  },
+  {
+    city: "郑州",
+    libraries: [
+      {
+        name: "河南省图书馆",
+        address: "郑州市中原区嵩山南路150号",
+        phone: "0371-67181499",
+        website: "https://www.henanlib.gov.cn/",
+        description: "河南省最大的公共图书馆，中原文化特色。",
+        image: "images/henan-library.svg"
+      },
+      {
+        name: "郑州大学图书馆",
+        address: "郑州市高新区科学大道100号",
+        phone: "0371-67780000",
+        website: "https://lib.zzu.edu.cn/",
+        description: "郑州大学图书馆，综合性大学图书馆。",
+        image: "images/zzu-library.svg"
+      },
+      {
+        name: "河南大学图书馆",
+        address: "开封市龙亭区明伦街85号",
+        phone: "0371-22860000",
+        website: "https://lib.henu.edu.cn/",
+        description: "河南大学图书馆，百年名校文化底蕴深厚。",
+        image: "images/henu-library.svg"
+      }
+    ]
+  },
+  {
+    city: "济南",
+    libraries: [
+      {
+        name: "山东省图书馆",
+        address: "济南市历下区二环东路2912号",
+        phone: "0531-85590666",
+        website: "https://www.sdlib.com/",
+        description: "山东省最大的公共图书馆，齐鲁文化特色。",
+        image: "images/shandong-library.svg"
+      },
+      {
+        name: "山东大学图书馆",
+        address: "济南市历城区山大南路27号",
+        phone: "0531-88364000",
+        website: "https://lib.sdu.edu.cn/",
+        description: "山东大学图书馆，综合性大学图书馆。",
+        image: "images/sdu-library.svg"
+      },
+      {
+        name: "济南大学图书馆",
+        address: "济南市市中区南辛庄西路336号",
+        phone: "0531-82767000",
+        website: "https://lib.ujn.edu.cn/",
+        description: "济南大学图书馆，综合性大学图书馆。",
+        image: "images/ujn-library.svg"
+      }
+    ]
+  },
+  {
+    city: "福州",
+    libraries: [
+      {
+        name: "福建省图书馆",
+        address: "福州市鼓楼区湖东路227号",
+        phone: "0591-87597100",
+        website: "https://www.fjlib.net/",
+        description: "福建省最大的公共图书馆，闽文化特色。",
+        image: "images/fujian-library.svg"
+      },
+      {
+        name: "福州大学图书馆",
+        address: "福州市闽侯县上街镇学园路2号",
+        phone: "0591-22865000",
+        website: "https://lib.fzu.edu.cn/",
+        description: "福州大学图书馆，理工科馆藏丰富。",
+        image: "images/fzu-library.svg"
+      },
+      {
+        name: "福建师范大学图书馆",
+        address: "福州市仓山区上三路8号",
+        phone: "0591-83465000",
+        website: "https://lib.fjnu.edu.cn/",
+        description: "福建师范大学图书馆，教育类文献丰富。",
+        image: "images/fjnu-library.svg"
+      }
+    ]
+  },
+  {
+    city: "昆明",
+    libraries: [
+      {
+        name: "云南省图书馆",
+        address: "昆明市五华区翠湖南路141号",
+        phone: "0871-65320000",
+        website: "https://www.ynlib.cn/",
+        description: "云南省最大的公共图书馆，民族文化特色。",
+        image: "images/yunnan-library.svg"
+      },
+      {
+        name: "云南大学图书馆",
+        address: "昆明市五华区翠湖北路2号",
+        phone: "0871-65030000",
+        website: "https://lib.ynu.edu.cn/",
+        description: "云南大学图书馆，综合性大学图书馆。",
+        image: "images/ynu-library.svg"
+      },
+      {
+        name: "昆明理工大学图书馆",
+        address: "昆明市呈贡区景明南路727号",
+        phone: "0871-65916000",
+        website: "https://lib.kmust.edu.cn/",
+        description: "昆明理工大学图书馆，理工科馆藏丰富。",
+        image: "images/kmust-library.svg"
       }
     ]
   }
