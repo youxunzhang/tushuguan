@@ -122,6 +122,8 @@ body::before {
     margin: 0;
     padding: 0;
     gap: 2.5rem;
+    position: relative;
+    align-items: center;
 }
 
 .nav-item {
