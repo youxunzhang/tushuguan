@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国读书会地图与分类 | 中国图书馆信息网</title>
+    <meta name="description" content="汇集全国各地读书会、城市读书活动、高校社团与线上读书会，支持按地区、形式和关键词筛选，帮助读书人快速找到志同道合的伙伴。">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="subpage-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">📚</span>
+                <span class="brand-text">中国图书馆</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#libraries" class="nav-link">图书馆</a>
+                <a href="index.html#cities" class="nav-link">城市信息</a>
+                <a href="index.html#games" class="nav-link">小游戏</a>
+                <a href="index.html#contact" class="nav-link">联系我们</a>
+                <a href="index.html" class="nav-link nav-link-primary">返回首页</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="subpage-main">
+        <section class="subpage-hero reading-clubs-hero">
+            <div class="container">
+                <div class="hero-breadcrumb"><a href="index.html">首页</a> · 读书会</div>
+                <h1>全国读书会地图</h1>
+                <p class="hero-description">从城市文化到高校社团、亲子共读到线上共读，这里整理了全国精选的读书会资源，帮助你快速找到兴趣相同的阅读伙伴。</p>
+                <div class="hero-actions">
+                    <a class="action-btn primary" href="#club-directory">浏览分类</a>
+                    <a class="action-btn secondary" href="mailto:zhangyouxun2024@qq.com?subject=%E6%8F%90%E4%BA%A4%E8%AF%BB%E4%B9%A6%E4%BC%9A%E4%BF%A1%E6%81%AF">提交读书会</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="club-directory" class="reading-clubs-section">
+            <div class="container">
+                <div class="reading-clubs-intro">
+                    <h2>按类型浏览读书会</h2>
+                    <p>支持按关键词、地区与活动形式筛选，轻松找到你想参与的读书会。如果你所在的读书社群尚未收录，欢迎通过页面顶部的邮箱告诉我们。</p>
+                </div>
+
+                <div class="reading-clubs-filters">
+                    <div class="search-box">
+                        <input type="text" id="reading-club-search" placeholder="搜索读书会、城市或主题...">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div class="reading-clubs-selects">
+                        <select id="reading-club-region">
+                            <option value="">全部地区</option>
+                        </select>
+                        <select id="reading-club-mode">
+                            <option value="">全部形式</option>
+                            <option value="线下">线下聚会</option>
+                            <option value="线上">线上共读</option>
+                            <option value="混合">线上+线下</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="reading-clubs-summary">
+                    <strong id="reading-club-total">0</strong>
+                    <span>个读书会符合筛选条件</span>
+                </div>
+
+                <div id="reading-club-categories" class="reading-club-category-list">
+                    <!-- 读书会分类将由脚本动态渲染 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="subpage-footer">
+        <div class="container">
+            <p>📬 欢迎补充更多读书会信息：<a href="mailto:zhangyouxun2024@qq.com">zhangyouxun2024@qq.com</a></p>
+            <p>© 2024 中国图书馆信息网 · 让阅读连接更多城市与人</p>
+        </div>
+    </footer>
+
+    <script src="reading-clubs.js"></script>
+</body>
+</html>

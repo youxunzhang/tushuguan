@@ -89,18 +89,25 @@ function initNavigation() {
     // 导航链接点击事件
     allNavLinks.forEach(link => {
         link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href') || '';
+
+            // 仅处理站内锚点链接
+            if (!href.startsWith('#')) {
+                return;
+            }
+
             e.preventDefault();
-            
-            const targetId = link.getAttribute('href').substring(1);
+
+            const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 // 更新活动状态
                 updateActiveLink(targetId);
-                
+
                 // 关闭移动端菜单
                 closeMobileMenu();
-                
+
                 // 平滑滚动到目标区域
                 setTimeout(() => {
                     targetElement.scrollIntoView({
@@ -134,7 +141,7 @@ function initNavigation() {
         }
 
         // 更新活动链接状态
-        const sections = ['home', 'libraries', 'games', 'about', 'contact', 'sitemap'];
+        const sections = ['home', 'libraries', 'games', 'about', 'contact', 'cities', 'sitemap'];
         let currentSection = 'home';
 
         sections.forEach(sectionId => {
@@ -168,6 +175,19 @@ const modalContent = document.getElementById('library-details');
 const closeBtn = document.querySelector('.close-btn');
 
 let currentCityIndex = 0;
+
+const cityState = {
+    allCities: [],
+    filteredCities: [],
+    currentPage: 1,
+    pageSize: 9,
+    currentCategory: 'all',
+    searchTerm: '',
+    selectedProvince: '',
+    populationLevel: ''
+};
+
+const libraryCategoryState = {};
 
 function renderCities() {
     const cityList = document.getElementById('city-list');
@@ -954,24 +974,105 @@ function populateCitiesWithLibraries() {
 // 渲染城市页面
 function renderCitiesPage() {
     const citiesGrid = document.getElementById('cities-grid');
-    if (!citiesGrid) return;
-    
-    let allCities = [];
+    const pagination = document.getElementById('cities-pagination');
+
+    if (!citiesGrid || !pagination) return;
+
+    if (!cityState.allCities.length) {
+        initializeCityState();
+    }
+
+    updateCitiesView();
+}
+
+function initializeCityState() {
+    const allCities = [];
+
     Object.keys(citiesData).forEach(category => {
-        allCities = allCities.concat(citiesData[category]);
+        citiesData[category].forEach(city => {
+            allCities.push({
+                ...city,
+                categoryKey: category
+            });
+        });
     });
-    
-    citiesGrid.innerHTML = allCities.map(city => `
-        <div class="city-card" data-category="${city.province}" data-city="${city.name}">
+
+    cityState.allCities = allCities;
+    cityState.filteredCities = allCities;
+    cityState.currentPage = 1;
+}
+
+function updateCitiesView() {
+    applyCityFilters();
+    renderCityCards();
+    renderCityPaginationControls();
+}
+
+function applyCityFilters() {
+    const searchTerm = cityState.searchTerm;
+    const province = cityState.selectedProvince;
+    const populationLevel = cityState.populationLevel;
+    const category = cityState.currentCategory;
+
+    cityState.filteredCities = cityState.allCities.filter(city => {
+        const nameMatch = !searchTerm ||
+            city.name.toLowerCase().includes(searchTerm) ||
+            (city.fullName && city.fullName.toLowerCase().includes(searchTerm));
+        const provinceMatch = !province || city.province === province;
+        const categoryMatch = category === 'all' || city.categoryKey === category;
+        const populationValue = getPopulationValue(city.population);
+
+        let populationMatch = true;
+        if (populationLevel === 'large') {
+            populationMatch = populationValue >= 1000;
+        } else if (populationLevel === 'medium') {
+            populationMatch = populationValue >= 500 && populationValue < 1000;
+        } else if (populationLevel === 'small') {
+            populationMatch = populationValue > 0 && populationValue < 500;
+        }
+
+        return nameMatch && provinceMatch && categoryMatch && populationMatch;
+    });
+
+    const totalPages = Math.max(1, Math.ceil(cityState.filteredCities.length / cityState.pageSize));
+    if (cityState.currentPage > totalPages) {
+        cityState.currentPage = totalPages;
+    }
+}
+
+function getPopulationValue(populationText) {
+    if (!populationText) return 0;
+    const numeric = parseInt(populationText.replace(/[^\d]/g, ''), 10);
+    return isNaN(numeric) ? 0 : numeric;
+}
+
+function renderCityCards() {
+    const citiesGrid = document.getElementById('cities-grid');
+    if (!citiesGrid) return;
+
+    const { filteredCities, currentPage, pageSize } = cityState;
+    const startIndex = (currentPage - 1) * pageSize;
+    const paginatedCities = filteredCities.slice(startIndex, startIndex + pageSize);
+
+    if (!paginatedCities.length) {
+        citiesGrid.innerHTML = `<div class="empty-state">未找到符合条件的城市，请调整筛选条件。</div>`;
+        return;
+    }
+
+    citiesGrid.innerHTML = paginatedCities.map(city => `
+        <div class="city-card" data-category="${city.categoryKey}" data-city="${city.name}">
             <div class="city-image">
-                <img src="${generateCityImageUrl(city.name, '')}" alt="${city.name}" 
+                <img src="${generateCityImageUrl(city.name, '')}" alt="${city.name}"
                      onerror="this.src='images/default-library.svg'">
                 <div class="city-overlay">
                     <span>${city.province}</span>
                 </div>
             </div>
             <div class="city-info">
-                <h3 class="city-name">${city.name}</h3>
+                <div class="city-header">
+                    <h3 class="city-name">${city.name}</h3>
+                    <span class="city-category-tag">${city.categoryKey}</span>
+                </div>
                 <p class="city-province">${city.fullName}</p>
                 <div class="city-stats">
                     <div class="city-stat">
@@ -1001,6 +1102,57 @@ function renderCitiesPage() {
             </div>
         </div>
     `).join('');
+}
+
+function renderCityPaginationControls() {
+    const pagination = document.getElementById('cities-pagination');
+    if (!pagination) return;
+
+    const totalItems = cityState.filteredCities.length;
+    const totalPages = Math.ceil(totalItems / cityState.pageSize) || 1;
+
+    if (totalItems <= cityState.pageSize) {
+        pagination.innerHTML = '';
+        pagination.classList.add('hidden');
+        return;
+    }
+
+    pagination.classList.remove('hidden');
+
+    let paginationHtml = `
+        <button class="pagination-btn prev" data-page="prev" ${cityState.currentPage === 1 ? 'disabled' : ''}>上一页</button>
+    `;
+
+    for (let i = 1; i <= totalPages; i++) {
+        paginationHtml += `
+            <button class="pagination-btn number ${i === cityState.currentPage ? 'active' : ''}" data-page="${i}">${i}</button>
+        `;
+    }
+
+    paginationHtml += `
+        <button class="pagination-btn next" data-page="next" ${cityState.currentPage === totalPages ? 'disabled' : ''}>下一页</button>
+    `;
+
+    pagination.innerHTML = paginationHtml;
+
+    pagination.querySelectorAll('.pagination-btn').forEach(button => {
+        button.addEventListener('click', handleCitiesPaginationClick);
+    });
+}
+
+function handleCitiesPaginationClick(event) {
+    const action = event.currentTarget.dataset.page;
+    const totalPages = Math.ceil(cityState.filteredCities.length / cityState.pageSize) || 1;
+
+    if (action === 'prev' && cityState.currentPage > 1) {
+        cityState.currentPage--;
+    } else if (action === 'next' && cityState.currentPage < totalPages) {
+        cityState.currentPage++;
+    } else if (!isNaN(parseInt(action, 10))) {
+        cityState.currentPage = parseInt(action, 10);
+    }
+
+    updateCitiesView();
 }
 
 // 初始化城市搜索和筛选功能
@@ -1035,47 +1187,12 @@ function initCitiesSearchAndFilter() {
 
 // 筛选城市
 function filterCities() {
-    const searchTerm = document.getElementById('city-search')?.value.toLowerCase() || '';
-    const selectedProvince = document.getElementById('province-filter')?.value || '';
-    const selectedPopulation = document.getElementById('population-filter')?.value || '';
-    
-    const cityCards = document.querySelectorAll('.city-card');
-    
-    cityCards.forEach(card => {
-        const cityName = card.dataset.city.toLowerCase();
-        const cityCategory = card.dataset.category;
-        const population = card.querySelector('.city-stat-value').textContent;
-        
-        let show = true;
-        
-        // 搜索筛选
-        if (searchTerm && !cityName.includes(searchTerm)) {
-            show = false;
-        }
-        
-        // 省份筛选
-        if (selectedProvince && cityCategory !== selectedProvince) {
-            show = false;
-        }
-        
-        // 人口筛选
-        if (selectedPopulation) {
-            const populationNum = parseInt(population.replace(/[^\d]/g, ''));
-            switch (selectedPopulation) {
-                case 'large':
-                    if (populationNum < 1000) show = false;
-                    break;
-                case 'medium':
-                    if (populationNum < 500 || populationNum >= 1000) show = false;
-                    break;
-                case 'small':
-                    if (populationNum >= 500) show = false;
-                    break;
-            }
-        }
-        
-        card.style.display = show ? 'block' : 'none';
-    });
+    cityState.searchTerm = document.getElementById('city-search')?.value.trim().toLowerCase() || '';
+    cityState.selectedProvince = document.getElementById('province-filter')?.value || '';
+    cityState.populationLevel = document.getElementById('population-filter')?.value || '';
+    cityState.currentPage = 1;
+
+    updateCitiesView();
 }
 
 // 初始化城市分类导航
@@ -1099,47 +1216,147 @@ function initCityCategories() {
 
 // 按分类筛选城市
 function filterCitiesByCategory(category) {
-    const cityCards = document.querySelectorAll('.city-card');
-    
-    cityCards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
+    cityState.currentCategory = category;
+    cityState.currentPage = 1;
+    updateCitiesView();
 }
 
 // 渲染图书馆分类页面
 function renderLibraryCategories() {
     const content = document.getElementById('library-categories-content');
     if (!content) return;
-    
+
     // 分类所有图书馆
     categorizeAllLibraries();
-    
-    content.innerHTML = Object.keys(libraryCategories).map(categoryKey => {
+
+    content.innerHTML = '';
+
+    Object.keys(libraryCategories).forEach(categoryKey => {
         const category = libraryCategories[categoryKey];
-        return `
-            <div class="library-category" data-category="${categoryKey}">
-                <div class="library-category-header">
-                    <div class="library-category-icon">${category.icon}</div>
+
+        if (!libraryCategoryState[categoryKey]) {
+            libraryCategoryState[categoryKey] = {
+                currentPage: 1,
+                pageSize: categoryKey === '大学图书馆' ? 8 : 6
+            };
+        } else {
+            libraryCategoryState[categoryKey].pageSize = categoryKey === '大学图书馆' ? 8 : 6;
+        }
+
+        const section = document.createElement('div');
+        section.className = 'library-category';
+        section.dataset.category = categoryKey;
+
+        section.innerHTML = `
+            <div class="library-category-header">
+                <div class="library-category-icon">${category.icon}</div>
+                <div class="library-category-meta">
                     <h3 class="library-category-title">${categoryKey}</h3>
                     <p class="library-category-description">${category.description}</p>
                 </div>
-                <div class="libraries-grid">
-                    ${category.libraries.map(library => `
-                        <div class="library-item">
-                            <h4 class="library-name">${library.name}</h4>
-                            <p class="library-city">${library.city}</p>
-                            <p class="library-address">${library.address}</p>
-                            <span class="library-type">${categoryKey}</span>
-                        </div>
-                    `).join('')}
-                </div>
+                <span class="library-category-count">共 ${category.libraries.length} 家</span>
             </div>
+            <div class="libraries-grid"></div>
+            <div class="library-pagination"></div>
         `;
-    }).join('');
+
+        content.appendChild(section);
+
+        const gridElement = section.querySelector('.libraries-grid');
+        const paginationElement = section.querySelector('.library-pagination');
+        renderLibraryCategoryItems(categoryKey, gridElement, paginationElement);
+    });
+}
+
+function renderLibraryCategoryItems(categoryKey, gridElement, paginationElement) {
+    const category = libraryCategories[categoryKey];
+    if (!category) return;
+
+    const state = libraryCategoryState[categoryKey];
+    const totalItems = category.libraries.length;
+    const totalPages = Math.ceil(totalItems / state.pageSize) || 1;
+
+    if (state.currentPage > totalPages) {
+        state.currentPage = totalPages;
+    }
+
+    const startIndex = (state.currentPage - 1) * state.pageSize;
+    const items = category.libraries.slice(startIndex, startIndex + state.pageSize);
+
+    if (gridElement) {
+        if (!items.length) {
+            gridElement.innerHTML = '<div class="empty-state">暂无图书馆信息</div>';
+        } else {
+            gridElement.innerHTML = items.map(library => `
+                <div class="library-item">
+                    <div class="library-item-header">
+                        <h4 class="library-name">${library.name}</h4>
+                        <span class="library-type">${categoryKey}</span>
+                    </div>
+                    <p class="library-city">📍 ${library.city}</p>
+                    <p class="library-address">🏫 ${library.address}</p>
+                    ${library.phone ? `<p class="library-meta">☎️ ${library.phone}</p>` : ''}
+                    ${library.website ? `<a class="library-link" href="${library.website}" target="_blank" rel="noopener">访问官网</a>` : ''}
+                </div>
+            `).join('');
+        }
+    }
+
+    if (paginationElement) {
+        if (totalItems <= state.pageSize) {
+            paginationElement.innerHTML = '';
+            paginationElement.classList.add('hidden');
+        } else {
+            paginationElement.classList.remove('hidden');
+
+            let paginationHtml = `
+                <button class="pagination-btn prev" data-category="${categoryKey}" data-page="prev" ${state.currentPage === 1 ? 'disabled' : ''}>上一页</button>
+            `;
+
+            for (let i = 1; i <= totalPages; i++) {
+                paginationHtml += `
+                    <button class="pagination-btn number ${i === state.currentPage ? 'active' : ''}" data-category="${categoryKey}" data-page="${i}">${i}</button>
+                `;
+            }
+
+            paginationHtml += `
+                <button class="pagination-btn next" data-category="${categoryKey}" data-page="next" ${state.currentPage === totalPages ? 'disabled' : ''}>下一页</button>
+            `;
+
+            paginationElement.innerHTML = paginationHtml;
+
+            paginationElement.querySelectorAll('.pagination-btn').forEach(button => {
+                button.addEventListener('click', handleLibraryPaginationClick);
+            });
+        }
+    }
+}
+
+function handleLibraryPaginationClick(event) {
+    const button = event.currentTarget;
+    const categoryKey = button.dataset.category;
+    const action = button.dataset.page;
+
+    if (!categoryKey || !libraryCategoryState[categoryKey]) {
+        return;
+    }
+
+    const state = libraryCategoryState[categoryKey];
+    const totalPages = Math.ceil(libraryCategories[categoryKey].libraries.length / state.pageSize) || 1;
+
+    if (action === 'prev' && state.currentPage > 1) {
+        state.currentPage--;
+    } else if (action === 'next' && state.currentPage < totalPages) {
+        state.currentPage++;
+    } else if (!isNaN(parseInt(action, 10))) {
+        state.currentPage = parseInt(action, 10);
+    }
+
+    const section = button.closest('.library-category');
+    const gridElement = section?.querySelector('.libraries-grid');
+    const paginationElement = section?.querySelector('.library-pagination');
+
+    renderLibraryCategoryItems(categoryKey, gridElement, paginationElement);
 }
 
 // 分类所有图书馆
