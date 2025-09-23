@@ -28,6 +28,21 @@ body::before {
     pointer-events: none;
 }
 
+.hidden {
+    display: none !important;
+}
+
+.empty-state {
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px dashed rgba(102, 126, 234, 0.3);
+    background: rgba(255, 255, 255, 0.85);
+    color: #4a5568;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(102, 126, 234, 0.08);
+}
+
 /* ===== 导航栏样式 ===== */
 .navbar {
     position: fixed;
@@ -2067,6 +2082,52 @@ main {
     margin-top: 2rem;
 }
 
+.cities-pagination,
+.library-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    min-width: 44px;
+    padding: 0.65rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(102, 126, 234, 0.35);
+    background: rgba(255, 255, 255, 0.95);
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+}
+
+.pagination-btn:hover:not([disabled]) {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(102, 126, 234, 0.35);
+}
+
+.pagination-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 18px 40px rgba(102, 126, 234, 0.35);
+}
+
+.pagination-btn[disabled] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .city-card {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
@@ -2136,6 +2197,31 @@ main {
 
 .city-info {
     padding: 2rem;
+}
+
+.city-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.city-category-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(102, 126, 234, 0.12);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    color: #5a67d8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.city-category-tag::before {
+    content: '📌';
 }
 
 .city-name {
@@ -2213,6 +2299,12 @@ main {
     font-size: 0.8rem;
     font-weight: 500;
     border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.cities-grid .empty-state,
+.libraries-grid .empty-state {
+    grid-column: 1 / -1;
+    width: 100%;
 }
 
 /* ===== 图书馆分类页面样式 ===== */
@@ -2309,46 +2401,71 @@ main {
 }
 
 .library-category-header {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.75rem;
     margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 3px solid #e2e8f0;
+    padding: 1.75rem 2rem;
+    border-radius: 20px;
     position: relative;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-.library-category-header::after {
+.library-category-header::before {
     content: '';
     position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    border-radius: 2px;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+    pointer-events: none;
 }
 
 .library-category-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: inset 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.library-category-meta {
+    flex: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .library-category-title {
     font-size: 2rem;
-    color: #2d3748;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f7fafc;
 }
 
 .library-category-description {
-    color: #718096;
-    font-size: 1.1rem;
+    color: rgba(226, 232, 240, 0.85);
+    font-size: 1rem;
     margin: 0;
     font-weight: 500;
+}
+
+.library-category-count {
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    color: #f7fafc;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 .libraries-grid {
@@ -2398,6 +2515,18 @@ main {
     z-index: 1;
 }
 
+.library-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.library-item-header .library-name {
+    margin: 0;
+}
+
 .library-city {
     color: #667eea;
     font-size: 0.9rem;
@@ -2427,6 +2556,36 @@ main {
     border: 1px solid rgba(102, 126, 234, 0.2);
     position: relative;
     z-index: 1;
+}
+
+.library-meta {
+    color: #4a5568;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.library-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1rem;
+    background: rgba(102, 126, 234, 0.12);
+    border-radius: 999px;
+    color: #5a67d8;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.library-link:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.25);
 }
 
 /* 网站地图样式 */
@@ -2604,6 +2763,501 @@ main {
     margin: 0 auto;
     text-align: center;
     font-size: 0.95rem;
+}
+
+/* ===== 读书会页面样式 ===== */
+.subpage-nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.15);
+}
+
+.subpage-nav .nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.subpage-nav .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #4c51bf;
+    text-decoration: none;
+}
+
+.subpage-nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.subpage-nav .nav-link {
+    color: #4a5568;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 0.85rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.subpage-nav .nav-link:hover {
+    color: #5a67d8;
+    background: rgba(102, 126, 234, 0.12);
+}
+
+.subpage-nav .nav-link-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff !important;
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
+}
+
+.subpage-main {
+    padding-top: 70px;
+}
+
+.subpage-hero {
+    position: relative;
+    padding: 5rem 0 4rem;
+    color: #fff;
+}
+
+.reading-clubs-hero {
+    background: radial-gradient(circle at top left, rgba(102, 126, 234, 0.85), rgba(118, 75, 162, 0.95));
+}
+
+.subpage-hero .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-breadcrumb {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.hero-breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
+    padding-bottom: 2px;
+}
+
+.subpage-hero h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    font-weight: 800;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    max-width: 720px;
+    margin: 0 0 2rem 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-actions .action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.75rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.hero-actions .action-btn.primary {
+    background: linear-gradient(135deg, #ffaf7b, #d76d77);
+    color: #fff;
+    box-shadow: 0 16px 35px rgba(215, 109, 119, 0.35);
+}
+
+.hero-actions .action-btn.secondary {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+}
+
+.hero-actions .action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(102, 126, 234, 0.35);
+}
+
+.reading-clubs-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+    padding: 4rem 0 5rem;
+}
+
+.reading-clubs-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.reading-clubs-intro h2 {
+    font-size: 2.4rem;
+    margin: 0;
+    color: #2d3748;
+}
+
+.reading-clubs-intro p {
+    color: #4a5568;
+    max-width: 760px;
+    line-height: 1.8;
+    margin: 1rem 0 2rem 0;
+}
+
+.reading-clubs-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.reading-clubs-selects {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.reading-clubs-selects select {
+    padding: 0.85rem 1.25rem;
+    border-radius: 14px;
+    border: 2px solid #e2e8f0;
+    background: #fff;
+    color: #4a5568;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reading-clubs-selects select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.reading-clubs-summary {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    background: rgba(102, 126, 234, 0.12);
+    color: #4a5568;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.reading-clubs-summary strong {
+    font-size: 1.4rem;
+    color: #5a67d8;
+}
+
+.reading-club-category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.reading-club-category {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.reading-club-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.reading-club-category-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: rgba(102, 126, 234, 0.12);
+}
+
+.reading-club-category-meta h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    color: #2d3748;
+}
+
+.reading-club-category-meta p {
+    margin: 0;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.reading-club-category-count {
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    background: rgba(102, 126, 234, 0.12);
+    color: #5a67d8;
+    font-weight: 600;
+}
+
+.reading-club-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.reading-club-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7ff 100%);
+    border-radius: 20px;
+    padding: 1.75rem;
+    border: 1px solid rgba(102, 126, 234, 0.18);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reading-club-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 45px rgba(102, 126, 234, 0.25);
+}
+
+.reading-club-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.reading-club-card-header h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #2d3748;
+}
+
+.reading-club-mode {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(90, 103, 216, 0.12);
+    color: #5a67d8;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.reading-club-location,
+.reading-club-schedule,
+.reading-club-focus {
+    margin: 0;
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.reading-club-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.reading-club-tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    background: rgba(102, 126, 234, 0.12);
+    color: #5a67d8;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.reading-club-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.reading-club-contact {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.reading-club-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.reading-club-link:hover {
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+}
+
+.subpage-footer {
+    background: #1a202c;
+    color: #e2e8f0;
+    padding: 2.5rem 0;
+}
+
+.subpage-footer .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.subpage-footer a {
+    color: #c3dafe;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(195, 218, 254, 0.6);
+}
+
+.empty-state.small {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .subpage-nav .nav-container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .subpage-nav .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .subpage-main {
+        padding-top: 60px;
+    }
+
+    .subpage-hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .subpage-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .reading-clubs-section .container {
+        padding: 0 1.25rem;
+    }
+
+    .reading-clubs-filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .reading-clubs-selects {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .reading-clubs-selects select {
+        flex: 1;
+        min-width: 160px;
+    }
+
+    .reading-clubs-summary {
+        justify-content: center;
+    }
+
+    .reading-club-category {
+        padding: 2rem 1.5rem;
+    }
+
+    .reading-club-category-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .reading-club-category-count {
+        align-self: flex-start;
+    }
+
+    .reading-club-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .subpage-nav .nav-container {
+        padding: 0.75rem 1rem;
+    }
+
+    .subpage-nav .nav-link {
+        padding: 0.4rem 0.75rem;
+    }
+
+    .subpage-hero h1 {
+        font-size: 2rem;
+    }
+
+    .reading-clubs-summary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .reading-club-category {
+        padding: 1.5rem 1.25rem;
+    }
 }
 
 /* 网站地图响应式 */
