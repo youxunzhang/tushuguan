@@ -38,6 +38,9 @@ function updateLibraryDataWithCityImages() {
 function initNavigation() {
     // 获取导航栏元素
     const navbar = document.getElementById('navbar');
+    if (!navbar) {
+        return;
+    }
     const mobileToggle = document.getElementById('mobile-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
@@ -141,7 +144,7 @@ function initNavigation() {
         }
 
         // 更新活动链接状态
-        const sections = ['home', 'libraries', 'games', 'about', 'contact', 'cities', 'sitemap'];
+        const sections = ['home', 'libraries', 'games', 'about', 'contact', 'sitemap'];
         let currentSection = 'home';
 
         sections.forEach(sectionId => {
@@ -192,7 +195,6 @@ const libraryCategoryState = {};
 function renderCities() {
     const cityList = document.getElementById('city-list');
     if (!cityList) {
-        console.error('找不到city-list元素');
         return;
     }
     
@@ -219,45 +221,39 @@ function renderCities() {
 function renderLibraries() {
     const libraryList = document.getElementById('library-list');
     if (!libraryList) {
-        console.error('找不到library-list元素');
         return;
     }
-    
+
     try {
         const cities = Object.keys(libraryData);
         if (cities.length === 0) {
             console.error('没有找到城市数据');
             return;
         }
-        
+
         const currentCity = cities[currentCityIndex] || cities[0];
         const libraries = libraryData[currentCity] || [];
-        
+
         if (libraries.length === 0) {
             libraryList.innerHTML = '<p>该城市暂无图书馆信息</p>';
             return;
         }
-        
+
         libraryList.innerHTML = libraries.map(library => `
-            <div class="library-card" onclick="showLibraryDetails('${currentCity}', '${library.name}')">
-                <div class="library-image">
-                    <div class="image-loading">
-                        <div class="loading-spinner"></div>
-                    </div>
-                    <img src="${library.cityImage || library.image}" alt="${library.name}" 
-                         onload="this.parentElement.querySelector('.image-loading').style.display='none'"
-                         onerror="this.parentElement.querySelector('.image-loading').style.display='none'; this.src='images/default-library.svg'">
-                    <div class="city-overlay">
-                        <span class="city-name">${currentCity}</span>
-                    </div>
-                </div>
+            <article class="library-card" onclick="showLibraryDetails('${currentCity}', '${library.name}')">
                 <div class="library-info">
-                    <h3>${library.name}</h3>
-                    <p><span class="library-icon">📍</span> ${library.address}</p>
-                    <p><span class="library-icon">📞</span> ${library.phone}</p>
-                    <p><span class="library-icon">🌐</span> ${library.website}</p>
+                    <div class="library-header">
+                        <h3>${library.name}</h3>
+                        <span class="library-city-tag">${currentCity}</span>
+                    </div>
+                    <p class="library-description">${library.description}</p>
+                    <ul class="library-meta-list">
+                        <li><span class="library-icon">📍</span>${library.address}</li>
+                        <li><span class="library-icon">📞</span>${library.phone}</li>
+                        <li><span class="library-icon">🌐</span><a href="${library.website}" target="_blank" rel="noopener">${library.website}</a></li>
+                    </ul>
                 </div>
-            </div>
+            </article>
         `).join('');
     } catch (error) {
         console.error('渲染图书馆列表错误:', error);
@@ -338,6 +334,9 @@ function filterByCity(city) {
 function initModal() {
     const modal = document.getElementById('library-modal');
     const closeBtn = document.querySelector('.close-btn');
+    if (!modal || !closeBtn) {
+        return;
+    }
     
     if (closeBtn && modal) {
         closeBtn.onclick = function() {
@@ -843,20 +842,22 @@ function initFavoriteAndShare() {
     
     // 分享功能
     function handleShareClick() {
+        if (!shareModal) return;
+
         shareModal.classList.remove('hidden');
         setTimeout(() => {
             shareModal.classList.add('show');
         }, 10);
     }
-    
-    if (shareBtn) {
+
+    if (shareBtn && shareModal) {
         shareBtn.addEventListener('click', handleShareClick);
     }
-    
-    if (mobileShareBtn) {
+
+    if (mobileShareBtn && shareModal) {
         mobileShareBtn.addEventListener('click', handleShareClick);
     }
-    
+
     // 分享按钮事件
     const shareButtons = document.querySelectorAll('.share-button[data-platform]');
     shareButtons.forEach(button => {
@@ -915,46 +916,59 @@ function initFavoriteAndShare() {
     }
     
     // 关闭分享模态框
-    const shareCloseBtn = shareModal.querySelector('.close-btn');
-    if (shareCloseBtn) {
-        shareCloseBtn.addEventListener('click', function() {
-            shareModal.classList.remove('show');
-            setTimeout(() => {
-                shareModal.classList.add('hidden');
-            }, 300);
+    if (shareModal) {
+        const shareCloseBtn = shareModal.querySelector('.close-btn');
+        if (shareCloseBtn) {
+            shareCloseBtn.addEventListener('click', function() {
+                shareModal.classList.remove('show');
+                setTimeout(() => {
+                    shareModal.classList.add('hidden');
+                }, 300);
+            });
+        }
+
+        // 点击模态框外部关闭
+        shareModal.addEventListener('click', function(e) {
+            if (e.target === shareModal && shareCloseBtn) {
+                shareCloseBtn.click();
+            }
         });
     }
-    
-    // 点击模态框外部关闭
-    shareModal.addEventListener('click', function(e) {
-        if (e.target === shareModal) {
-            shareCloseBtn.click();
-        }
-    });
 }
 
 // ===== 城市页面功能 =====
 function initCitiesPage() {
+    const hasCitiesGrid = document.getElementById('cities-grid');
+    const hasLibraryCategories = document.getElementById('library-categories-content');
+
+    if (!hasCitiesGrid && !hasLibraryCategories) {
+        return;
+    }
+
     // 初始化城市数据
     populateCitiesWithLibraries();
-    
-    // 渲染城市页面
-    renderCitiesPage();
-    
-    // 初始化搜索和筛选功能
-    initCitiesSearchAndFilter();
-    
-    // 初始化城市分类导航
-    initCityCategories();
-    
-    // 初始化图书馆分类页面
-    renderLibraryCategories();
-    
-    // 初始化图书馆分类导航
-    initLibraryCategories();
-    
-    // 更新统计信息
-    updateCitiesStats();
+
+    if (hasCitiesGrid) {
+        // 渲染城市页面
+        renderCitiesPage();
+
+        // 初始化搜索和筛选功能
+        initCitiesSearchAndFilter();
+
+        // 初始化城市分类导航
+        initCityCategories();
+
+        // 更新统计信息
+        updateCitiesStats();
+    }
+
+    if (hasLibraryCategories) {
+        // 初始化图书馆分类页面
+        renderLibraryCategories();
+
+        // 初始化图书馆分类导航
+        initLibraryCategories();
+    }
 }
 
 // 将图书馆数据填充到城市数据中
@@ -1160,16 +1174,18 @@ function initCitiesSearchAndFilter() {
     const searchInput = document.getElementById('city-search');
     const provinceFilter = document.getElementById('province-filter');
     const populationFilter = document.getElementById('population-filter');
-    
+
     // 填充省份筛选器
-    const provinces = [...new Set(Object.values(citiesData).flat().map(city => city.province))];
-    provinces.forEach(province => {
-        const option = document.createElement('option');
-        option.value = province;
-        option.textContent = province;
-        provinceFilter.appendChild(option);
-    });
-    
+    if (provinceFilter) {
+        const provinces = [...new Set(Object.values(citiesData).flat().map(city => city.province))];
+        provinces.forEach(province => {
+            const option = document.createElement('option');
+            option.value = province;
+            option.textContent = province;
+            provinceFilter.appendChild(option);
+        });
+    }
+
     // 搜索功能
     if (searchInput) {
         searchInput.addEventListener('input', filterCities);
@@ -1179,7 +1195,7 @@ function initCitiesSearchAndFilter() {
     if (provinceFilter) {
         provinceFilter.addEventListener('change', filterCities);
     }
-    
+
     if (populationFilter) {
         populationFilter.addEventListener('change', filterCities);
     }

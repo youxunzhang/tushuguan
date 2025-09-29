@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国城市图书馆与文化概览 | 中国图书馆信息网</title>
+    <meta name="description" content="按城市探索全国图书馆资源，查看人口、面积、地标、高校等信息，快速了解各地的文化与阅读生态。">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="subpage-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">📚</span>
+                <span class="brand-text">中国图书馆</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#libraries" class="nav-link">图书馆</a>
+                <a href="reading-clubs.html" class="nav-link">读书会</a>
+                <a href="bookstores.html" class="nav-link">知名书店</a>
+                <a href="index.html#games" class="nav-link">小游戏</a>
+                <a href="index.html#contact" class="nav-link">联系我们</a>
+                <a href="index.html" class="nav-link nav-link-primary">返回首页</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="subpage-main">
+        <section class="subpage-hero city-hero">
+            <div class="container">
+                <div class="hero-breadcrumb"><a href="index.html">首页</a> · 城市信息</div>
+                <h1>中国重点城市图书馆与文化地图</h1>
+                <p class="hero-description">使用筛选、搜索和分类功能，快速了解全国主要城市的文化地标、人口规模、知名高校及图书馆资源。</p>
+                <div class="hero-actions">
+                    <a class="action-btn primary" href="#city-explorer">浏览城市</a>
+                    <a class="action-btn secondary" href="mailto:zhangyouxun2024@qq.com?subject=%E6%8F%90%E4%BA%A4%E5%9F%8E%E5%B8%82%E4%BF%A1%E6%81%AF">提交城市信息</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="city-explorer" class="cities-section city-page-section">
+            <div class="container">
+                <div class="cities-page-header">
+                    <div>
+                        <h2>🏙️ 城市图书馆索引</h2>
+                        <p class="section-desc">支持按直辖市、省会、地级市分类浏览，并可根据省份、人口规模和名称快速检索。</p>
+                    </div>
+                </div>
+
+                <div class="city-categories-nav">
+                    <button class="category-nav-btn active" data-category="all">全部城市</button>
+                    <button class="category-nav-btn" data-category="直辖市">直辖市</button>
+                    <button class="category-nav-btn" data-category="省会城市">省会城市</button>
+                    <button class="category-nav-btn" data-category="地级市">地级市</button>
+                </div>
+
+                <div class="cities-controls">
+                    <div class="search-box">
+                        <input type="text" id="city-search" placeholder="搜索城市名称或全称..." />
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div class="filter-options">
+                        <select id="province-filter">
+                            <option value="">选择省份</option>
+                        </select>
+                        <select id="population-filter">
+                            <option value="">人口规模</option>
+                            <option value="large">1000万以上</option>
+                            <option value="medium">500-1000万</option>
+                            <option value="small">500万以下</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cities-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" id="total-cities">0</span>
+                        <span class="stat-label">总城市数</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="total-libraries">0</span>
+                        <span class="stat-label">图书馆总数</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="total-population">0</span>
+                        <span class="stat-label">总人口数</span>
+                    </div>
+                </div>
+
+                <div class="cities-grid" id="cities-grid"></div>
+                <div class="cities-pagination" id="cities-pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="subpage-footer">
+        <div class="container">
+            <p>📮 欢迎补充更多城市图书馆信息：<a href="mailto:zhangyouxun2024@qq.com">zhangyouxun2024@qq.com</a></p>
+            <p>© 2024 中国图书馆信息网 · 聚焦城市阅读生态</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="cities-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
