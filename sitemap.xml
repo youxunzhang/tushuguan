@@ -52,4 +52,52 @@
         <priority>0.75</priority>
     </url>
 
+    <!-- 城市信息页面 -->
+    <url>
+        <loc>https://yourdomain.com/cities.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 知名书店列表页面 -->
+    <url>
+        <loc>https://yourdomain.com/bookstores.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- 知名书店详情页面 -->
+    <url>
+        <loc>https://yourdomain.com/bookstore-sanlian-taofen.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://yourdomain.com/bookstore-zhongshuge-shanghai.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://yourdomain.com/bookstore-fangsuo-guangzhou.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://yourdomain.com/bookstore-yanyi-chongqing.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://yourdomain.com/bookstore-tsutaya-hangzhou.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
 </urlset>

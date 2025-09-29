@@ -139,7 +139,10 @@
                     <a href="#contact" class="navbar-link" data-section="contact">联系我们</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#cities" class="navbar-link" data-section="cities">城市信息</a>
+                    <a href="cities.html" class="navbar-link">城市信息</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="bookstores.html" class="navbar-link">知名书店</a>
                 </li>
                 <li class="navbar-item">
                     <a href="#sitemap" class="navbar-link" data-section="sitemap">网站地图</a>
@@ -201,7 +204,10 @@
                     <a href="#contact" class="mobile-nav-link" data-section="contact">联系我们</a>
                 </li>
                 <li class="mobile-nav-item">
-                    <a href="#cities" class="mobile-nav-link" data-section="cities">城市信息</a>
+                    <a href="cities.html" class="mobile-nav-link">城市信息</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="bookstores.html" class="mobile-nav-link">知名书店</a>
                 </li>
                 <li class="mobile-nav-item">
                     <a href="#sitemap" class="mobile-nav-link" data-section="sitemap">网站地图</a>
@@ -321,63 +327,6 @@
         </div>
     </section>
     
-    <!-- 城市信息页面 -->
-    <section id="cities" class="cities-section">
-        <div class="container">
-            <h2>🏙️ 中国城市信息</h2>
-            <p class="section-desc">探索中国各大城市的详细信息，了解各地的图书馆资源</p>
-            
-            <!-- 城市分类导航 -->
-            <div class="city-categories-nav">
-                <button class="category-nav-btn active" data-category="all">全部城市</button>
-                <button class="category-nav-btn" data-category="直辖市">直辖市</button>
-                <button class="category-nav-btn" data-category="省会城市">省会城市</button>
-                <button class="category-nav-btn" data-category="地级市">地级市</button>
-            </div>
-            
-            <!-- 搜索和筛选 -->
-            <div class="cities-controls">
-                <div class="search-box">
-                    <input type="text" id="city-search" placeholder="搜索城市名称..." />
-                    <span class="search-icon">🔍</span>
-                </div>
-                <div class="filter-options">
-                    <select id="province-filter">
-                        <option value="">选择省份</option>
-                    </select>
-                    <select id="population-filter">
-                        <option value="">人口规模</option>
-                        <option value="large">1000万以上</option>
-                        <option value="medium">500-1000万</option>
-                        <option value="small">500万以下</option>
-                    </select>
-                </div>
-            </div>
-            
-            <!-- 城市统计信息 -->
-            <div class="cities-stats">
-                <div class="stat-card">
-                    <span class="stat-number" id="total-cities">0</span>
-                    <span class="stat-label">总城市数</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" id="total-libraries">0</span>
-                    <span class="stat-label">图书馆总数</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" id="total-population">0</span>
-                    <span class="stat-label">总人口数</span>
-                </div>
-            </div>
-            
-            <!-- 城市列表 -->
-            <div class="cities-grid" id="cities-grid">
-                <!-- 城市卡片将在这里动态生成 -->
-            </div>
-            <div class="cities-pagination" id="cities-pagination"></div>
-        </div>
-    </section>
-    
     <!-- 图书馆分类页面 -->
     <section id="libraries-by-category" class="libraries-category-section">
         <div class="container">
@@ -415,6 +364,8 @@
                         <li><a href="#about">关于我们</a> - 网站介绍和使命</li>
                         <li><a href="#contact">联系我们</a> - 联系方式和服务支持</li>
                         <li><a href="reading-clubs.html">读书会</a> - 全国读书会分类信息</li>
+                        <li><a href="cities.html">城市信息</a> - 全国重点城市的图书馆与文化概览</li>
+                        <li><a href="bookstores.html">知名书店</a> - 各地特色书店与文化空间</li>
                     </ul>
                 </div>
                 

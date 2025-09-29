@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知名书店指南 | 中国图书馆信息网</title>
+    <meta name="description" content="收录全国知名书店与文化空间，提供开放时间、地址、特色亮点与联系方式，帮助读者规划下一次书店之旅。">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="subpage-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">📚</span>
+                <span class="brand-text">中国图书馆</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#libraries" class="nav-link">图书馆</a>
+                <a href="cities.html" class="nav-link">城市信息</a>
+                <a href="reading-clubs.html" class="nav-link">读书会</a>
+                <a href="index.html#games" class="nav-link">小游戏</a>
+                <a href="index.html" class="nav-link nav-link-primary">返回首页</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="subpage-main">
+        <section class="subpage-hero bookstore-hero">
+            <div class="container">
+                <div class="hero-breadcrumb"><a href="index.html">首页</a> · 知名书店</div>
+                <h1>全国特色书店与文化空间精选</h1>
+                <p class="hero-description">从24小时书店到艺术人文复合空间，这里汇集了值得造访的城市阅读地标，提供地址、开放时间及特色亮点。</p>
+                <div class="hero-actions">
+                    <a class="action-btn primary" href="#bookstore-directory">浏览书店</a>
+                    <a class="action-btn secondary" href="mailto:zhangyouxun2024@qq.com?subject=%E6%8F%90%E4%BA%A4%E4%B9%A6%E5%BA%97%E4%BF%A1%E6%81%AF">推荐书店</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="bookstore-directory" class="bookstores-section">
+            <div class="container">
+                <div class="bookstores-intro">
+                    <div>
+                        <h2>📖 按城市发现特色书店</h2>
+                        <p class="section-desc">支持按城市筛选与关键词搜索，快速查看开放时间、联系方式以及书店提供的文化活动。</p>
+                    </div>
+                    <div class="bookstores-summary">
+                        <strong id="bookstore-total">0</strong>
+                        <span>家书店符合筛选条件</span>
+                    </div>
+                </div>
+
+                <div class="bookstores-filters">
+                    <div class="search-box">
+                        <input type="text" id="bookstore-search" placeholder="搜索书店、城市或特色关键词...">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <select id="bookstore-city-filter">
+                        <option value="">全部城市</option>
+                    </select>
+                </div>
+
+                <div id="bookstore-list" class="bookstore-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="subpage-footer">
+        <div class="container">
+            <p>📬 欢迎补充更多书店信息：<a href="mailto:zhangyouxun2024@qq.com">zhangyouxun2024@qq.com</a></p>
+            <p>© 2024 中国图书馆信息网 · 让书店成为城市客厅</p>
+        </div>
+    </footer>
+
+    <script src="bookstores-data.js"></script>
+    <script src="bookstores.js"></script>
+</body>
+</html>
