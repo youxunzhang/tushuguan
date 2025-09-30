@@ -2779,6 +2779,11 @@ main {
     transition: all 0.3s ease;
 }
 
+.subpage-nav .nav-link.nav-link-active {
+    color: #4c51bf;
+    background: rgba(102, 126, 234, 0.12);
+}
+
 .subpage-nav .nav-link:hover {
     color: #5a67d8;
     background: rgba(102, 126, 234, 0.12);
@@ -3133,6 +3138,259 @@ main {
     border-bottom: 1px dashed rgba(195, 218, 254, 0.6);
 }
 
+/* Tao Te Ching page */
+.tao-main {
+    background: #f7f7fb;
+}
+
+.tao-hero {
+    background: radial-gradient(circle at top left, rgba(118, 75, 162, 0.25), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(102, 126, 234, 0.25), transparent 45%),
+        #f8f5ff;
+    color: #1a1c2d;
+}
+
+.tao-hero .hero-description {
+    max-width: 720px;
+}
+
+.tao-intro {
+    padding: 4rem 0;
+}
+
+.tao-intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.tao-intro-grid h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #2d2f44;
+}
+
+.tao-intro-grid p {
+    line-height: 1.8;
+    color: #4a4c63;
+}
+
+.tao-meta-cards {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.tao-meta-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 1.75rem;
+    box-shadow: 0 18px 45px rgba(102, 126, 234, 0.12);
+    border: 1px solid rgba(102, 126, 234, 0.08);
+}
+
+.tao-meta-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #3a3c55;
+}
+
+.tao-meta-card p {
+    margin: 0;
+    color: #5a5c74;
+    line-height: 1.7;
+}
+
+.tao-reader {
+    padding: 4rem 0 5rem;
+    background: linear-gradient(180deg, rgba(248, 245, 255, 0.7), rgba(255, 255, 255, 0.9));
+}
+
+.tao-reader-layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 280px) 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.tao-toc {
+    position: sticky;
+    top: 96px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 22px 48px rgba(102, 126, 234, 0.15);
+    border: 1px solid rgba(118, 75, 162, 0.12);
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+
+.tao-toc-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.tao-toc-header h2 {
+    font-size: 1.3rem;
+    color: #2d2f44;
+}
+
+.tao-toc-header p {
+    color: #717496;
+    font-size: 0.95rem;
+}
+
+.tao-toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.tao-toc-item {
+    margin: 0;
+}
+
+.tao-toc-link {
+    width: 100%;
+    text-align: left;
+    background: rgba(102, 126, 234, 0.08);
+    border: none;
+    border-radius: 12px;
+    padding: 0.65rem 0.75rem;
+    color: #3a3c55;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.tao-toc-link:hover,
+.tao-toc-link:focus {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.85));
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(102, 126, 234, 0.2);
+}
+
+.tao-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tao-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tao-search {
+    flex: 1 1 320px;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    border: 1px solid rgba(102, 126, 234, 0.25);
+    box-shadow: 0 10px 25px rgba(118, 75, 162, 0.12);
+}
+
+.tao-search:focus-within {
+    border-color: rgba(118, 75, 162, 0.45);
+    box-shadow: 0 12px 28px rgba(118, 75, 162, 0.18);
+}
+
+.tao-search-icon {
+    font-size: 1.1rem;
+}
+
+.tao-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    color: #2d2f44;
+}
+
+.tao-control-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.tao-control-buttons .action-btn {
+    white-space: nowrap;
+}
+
+.tao-search-summary {
+    font-size: 0.95rem;
+    color: #5a5c74;
+    margin: 0;
+}
+
+.tao-chapter-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.tao-chapter-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: 0 22px 48px rgba(102, 126, 234, 0.14);
+    border: 1px solid rgba(102, 126, 234, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tao-chapter-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 56px rgba(118, 75, 162, 0.18);
+}
+
+.tao-chapter-title {
+    font-size: 1.35rem;
+    color: #2d2f44;
+    margin-bottom: 1rem;
+}
+
+.tao-verses {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.tao-verse {
+    margin: 0;
+    line-height: 1.9;
+    color: #3f415e;
+    font-size: 1.05rem;
+}
+
+.tao-chapter-highlight {
+    animation: taoPulse 1s ease;
+}
+
+@keyframes taoPulse {
+    0% {
+        box-shadow: 0 0 0 rgba(118, 75, 162, 0.25);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(118, 75, 162, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(118, 75, 162, 0.25);
+    }
+}
+
+.tao-chapter-card mark {
+    background: rgba(255, 214, 102, 0.5);
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.25rem;
+}
+
 .cities-page-header {
     display: flex;
     justify-content: space-between;
@@ -3399,6 +3657,35 @@ main {
         justify-content: center;
     }
 
+    .tao-intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tao-meta-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .tao-reader-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .tao-toc {
+        position: relative;
+        top: 0;
+        max-height: none;
+    }
+
+    .tao-toc-list {
+        max-height: 280px;
+        overflow-y: auto;
+    }
+
+    .tao-control-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
     .reading-clubs-section .container {
         padding: 0 1.25rem;
     }
@@ -3482,6 +3769,24 @@ main {
 
     .subpage-hero h1 {
         font-size: 2rem;
+    }
+
+    .tao-meta-card {
+        padding: 1.5rem;
+    }
+
+    .tao-search {
+        flex: 1 1 100%;
+    }
+
+    .tao-control-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .tao-control-buttons .action-btn {
+        width: 100%;
+        text-align: center;
     }
 
     .reading-clubs-summary {
