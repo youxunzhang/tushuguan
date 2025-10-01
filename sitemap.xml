@@ -3,107 +3,67 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    
-    <!-- 首页 -->
+
+    <!-- Core pages -->
     <url>
-        <loc>https://yourdomain.com/</loc>
-        <lastmod>2024-12-19</lastmod>
+        <loc>https://tushuguan.com/</loc>
+        <lastmod>2024-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    
-    <!-- 图书馆信息页面 -->
     <url>
-        <loc>https://yourdomain.com/#libraries</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- 关于我们页面 -->
-    <url>
-        <loc>https://yourdomain.com/#about</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- 联系我们页面 -->
-    <url>
-        <loc>https://yourdomain.com/#contact</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <!-- 游戏页面 -->
-    <url>
-        <loc>https://yourdomain.com/#games</loc>
-        <lastmod>2024-12-19</lastmod>
+        <loc>https://tushuguan.com/reading-clubs.html</loc>
+        <lastmod>2024-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- 读书会页面 -->
     <url>
-        <loc>https://yourdomain.com/reading-clubs.html</loc>
-        <lastmod>2024-12-19</lastmod>
+        <loc>https://tushuguan.com/cities.html</loc>
+        <lastmod>2024-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tushuguan.com/bookstores.html</loc>
+        <lastmod>2024-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://tushuguan.com/tao-te-ching.html</loc>
+        <lastmod>2024-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.75</priority>
     </url>
 
-    <!-- 城市信息页面 -->
+    <!-- Bookstore detail pages -->
     <url>
-        <loc>https://yourdomain.com/cities.html</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- 知名书店列表页面 -->
-    <url>
-        <loc>https://yourdomain.com/bookstores.html</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 道德经专题页面 -->
-    <url>
-        <loc>https://yourdomain.com/tao-te-ching.html</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.75</priority>
-    </url>
-
-    <!-- 知名书店详情页面 -->
-    <url>
-        <loc>https://yourdomain.com/bookstore-sanlian-taofen.html</loc>
-        <lastmod>2024-12-19</lastmod>
+        <loc>https://tushuguan.com/bookstore-sanlian-taofen.html</loc>
+        <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://yourdomain.com/bookstore-zhongshuge-shanghai.html</loc>
-        <lastmod>2024-12-19</lastmod>
+        <loc>https://tushuguan.com/bookstore-zhongshuge-shanghai.html</loc>
+        <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://yourdomain.com/bookstore-fangsuo-guangzhou.html</loc>
-        <lastmod>2024-12-19</lastmod>
+        <loc>https://tushuguan.com/bookstore-fangsuo-guangzhou.html</loc>
+        <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://yourdomain.com/bookstore-yanyi-chongqing.html</loc>
-        <lastmod>2024-12-19</lastmod>
+        <loc>https://tushuguan.com/bookstore-yanyi-chongqing.html</loc>
+        <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://yourdomain.com/bookstore-tsutaya-hangzhou.html</loc>
-        <lastmod>2024-12-19</lastmod>
+        <loc>https://tushuguan.com/bookstore-tsutaya-hangzhou.html</loc>
+        <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>

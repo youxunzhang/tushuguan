@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # 网站地图位置
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://tushuguan.com/sitemap.xml
 
 # 爬取延迟（可选）
 Crawl-delay: 1
@@ -20,5 +20,3 @@ Allow: /style.css
 Allow: /script.js
 Allow: /data.js
 Allow: /images/
-
-
