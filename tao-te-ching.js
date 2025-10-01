@@ -14,9 +14,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const chapters = TaoTeChing.map((chapter) => {
-    const keyword = [chapter.title, ...chapter.verses].join(' ');
+    const normalizedVerses = (chapter.verses || []).map((verse) => {
+      if (typeof verse === 'string') {
+        return { text: verse, pinyin: '' };
+      }
+      return {
+        text: verse.text,
+        pinyin: verse.pinyin ?? ''
+      };
+    });
+
+    const keywordParts = [
+      chapter.title,
+      chapter.titlePinyin ?? '',
+      ...normalizedVerses.flatMap((verse) => [verse.text, verse.pinyin])
+    ];
+    const keyword = keywordParts.join(' ');
+
     return {
       ...chapter,
+      titlePinyin: chapter.titlePinyin ?? '',
+      verses: normalizedVerses,
       keyword,
       keywordLower: keyword.toLowerCase()
     };
@@ -72,14 +90,33 @@ document.addEventListener('DOMContentLoaded', () => {
       heading.innerHTML = `第${chapter.chapter}章 · ${highlightMatches(chapter.title, query)}`;
       article.appendChild(heading);
 
+      if (chapter.titlePinyin) {
+        const headingPinyin = document.createElement('p');
+        headingPinyin.className = 'tao-chapter-pinyin';
+        headingPinyin.innerHTML = highlightMatches(chapter.titlePinyin, query);
+        article.appendChild(headingPinyin);
+      }
+
       const versesContainer = document.createElement('div');
       versesContainer.className = 'tao-verses';
 
-      chapter.verses.forEach((line) => {
-        const p = document.createElement('p');
-        p.className = 'tao-verse';
-        p.innerHTML = highlightMatches(line, query);
-        versesContainer.appendChild(p);
+      chapter.verses.forEach((verse) => {
+        const block = document.createElement('div');
+        block.className = 'tao-verse';
+
+        const textLine = document.createElement('p');
+        textLine.className = 'tao-verse-text';
+        textLine.innerHTML = highlightMatches(verse.text, query);
+        block.appendChild(textLine);
+
+        if (verse.pinyin) {
+          const pinyinLine = document.createElement('p');
+          pinyinLine.className = 'tao-verse-pinyin';
+          pinyinLine.innerHTML = highlightMatches(verse.pinyin, query);
+          block.appendChild(pinyinLine);
+        }
+
+        versesContainer.appendChild(block);
       });
 
       article.appendChild(versesContainer);
