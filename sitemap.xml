@@ -3,61 +3,61 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://tushuguan.com/</loc>
+        <loc>https://www.tushuguan.com/</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://tushuguan.com/bookstores.html</loc>
+        <loc>https://www.tushuguan.com/bookstores.html</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://tushuguan.com/cities.html</loc>
+        <loc>https://www.tushuguan.com/cities.html</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://tushuguan.com/reading-clubs.html</loc>
+        <loc>https://www.tushuguan.com/reading-clubs.html</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tushuguan.com/tao-te-ching.html</loc>
+        <loc>https://www.tushuguan.com/tao-te-ching.html</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tushuguan.com/bookstore-sanlian-taofen.html</loc>
+        <loc>https://www.tushuguan.com/bookstore-sanlian-taofen.html</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://tushuguan.com/bookstore-zhongshuge-shanghai.html</loc>
+        <loc>https://www.tushuguan.com/bookstore-zhongshuge-shanghai.html</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://tushuguan.com/bookstore-fangsuo-guangzhou.html</loc>
+        <loc>https://www.tushuguan.com/bookstore-fangsuo-guangzhou.html</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://tushuguan.com/bookstore-yanyi-chongqing.html</loc>
+        <loc>https://www.tushuguan.com/bookstore-yanyi-chongqing.html</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://tushuguan.com/bookstore-tsutaya-hangzhou.html</loc>
+        <loc>https://www.tushuguan.com/bookstore-tsutaya-hangzhou.html</loc>
         <lastmod>2024-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
