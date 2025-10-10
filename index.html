@@ -132,26 +132,32 @@
                 <li class="navbar-item">
                     <a href="tao-te-ching.html" class="navbar-link">道德经</a>
                 </li>
-                <li class="navbar-item">
+                <li class="navbar-item has-dropdown">
                     <a href="#games" class="navbar-link" data-section="games">小游戏</a>
+                    <ul class="dropdown-menu" aria-label="小游戏子菜单">
+                        <li class="dropdown-item">
+                            <a href="https://hotspotgame.online/" class="dropdown-link" target="_blank" rel="noopener noreferrer">热点游戏</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="navbar-item">
-                    <a href="https://hotspotgame.online/" class="navbar-link" target="_blank" rel="noopener noreferrer">热点游戏</a>
-                </li>
-                <li class="navbar-item">
+                <li class="navbar-item has-dropdown">
                     <a href="#about" class="navbar-link" data-section="about">关于我们</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#contact" class="navbar-link" data-section="contact">联系我们</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="cities.html" class="navbar-link">城市信息</a>
+                    <ul class="dropdown-menu" aria-label="关于我们子菜单">
+                        <li class="dropdown-item">
+                            <a href="#contact" class="dropdown-link" data-section="contact">联系我们</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="navbar-item">
                     <a href="bookstores.html" class="navbar-link">知名书店</a>
                 </li>
-                <li class="navbar-item">
+                <li class="navbar-item has-dropdown">
                     <a href="#sitemap" class="navbar-link" data-section="sitemap">网站地图</a>
+                    <ul class="dropdown-menu" aria-label="网站地图子菜单">
+                        <li class="dropdown-item">
+                            <a href="cities.html" class="dropdown-link">城市信息</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
 
@@ -200,26 +206,41 @@
                 <li class="mobile-nav-item">
                     <a href="reading-clubs.html" class="mobile-nav-link">读书会</a>
                 </li>
-                <li class="mobile-nav-item">
-                    <a href="#games" class="mobile-nav-link" data-section="games">小游戏</a>
+                <li class="mobile-nav-item has-submenu">
+                    <div class="mobile-nav-row">
+                        <a href="#games" class="mobile-nav-link" data-section="games">小游戏</a>
+                        <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-submenu-games">▾</button>
+                    </div>
+                    <ul class="mobile-submenu" id="mobile-submenu-games" aria-label="小游戏子菜单">
+                        <li>
+                            <a href="https://hotspotgame.online/" class="mobile-submenu-link" target="_blank" rel="noopener noreferrer">热点游戏</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="mobile-nav-item">
-                    <a href="https://hotspotgame.online/" class="mobile-nav-link" target="_blank" rel="noopener noreferrer">热点游戏</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#about" class="mobile-nav-link" data-section="about">关于我们</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#contact" class="mobile-nav-link" data-section="contact">联系我们</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="cities.html" class="mobile-nav-link">城市信息</a>
+                <li class="mobile-nav-item has-submenu">
+                    <div class="mobile-nav-row">
+                        <a href="#about" class="mobile-nav-link" data-section="about">关于我们</a>
+                        <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-submenu-about">▾</button>
+                    </div>
+                    <ul class="mobile-submenu" id="mobile-submenu-about" aria-label="关于我们子菜单">
+                        <li>
+                            <a href="#contact" class="mobile-submenu-link" data-section="contact">联系我们</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="mobile-nav-item">
                     <a href="bookstores.html" class="mobile-nav-link">知名书店</a>
                 </li>
-                <li class="mobile-nav-item">
-                    <a href="#sitemap" class="mobile-nav-link" data-section="sitemap">网站地图</a>
+                <li class="mobile-nav-item has-submenu">
+                    <div class="mobile-nav-row">
+                        <a href="#sitemap" class="mobile-nav-link" data-section="sitemap">网站地图</a>
+                        <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-submenu-sitemap">▾</button>
+                    </div>
+                    <ul class="mobile-submenu" id="mobile-submenu-sitemap" aria-label="网站地图子菜单">
+                        <li>
+                            <a href="cities.html" class="mobile-submenu-link">城市信息</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             

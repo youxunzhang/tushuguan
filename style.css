@@ -120,6 +120,70 @@ body::before {
     position: relative;
 }
 
+.navbar-item.has-dropdown > .navbar-link {
+    padding-right: 2.5rem;
+}
+
+.navbar-item.has-dropdown::after {
+    content: '▾';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    color: #a0aec0;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.navbar-item.has-dropdown:hover::after,
+.navbar-item.has-dropdown:focus-within::after {
+    transform: translateY(-50%) rotate(180deg);
+    color: #667eea;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 12px 32px rgba(100, 116, 139, 0.18);
+    border-radius: 12px;
+    padding: 0.75rem 0;
+    min-width: 180px;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 20;
+}
+
+.navbar-item.has-dropdown:hover > .dropdown-menu,
+.navbar-item.has-dropdown:focus-within > .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-item {
+    list-style: none;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 0.65rem 1.5rem;
+    color: #4a5568;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown-link:hover,
+.dropdown-link:focus {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
 .navbar-link {
     display: block;
     padding: 0.75rem 1.25rem;
@@ -329,32 +393,98 @@ body::before {
     margin: 0;
     padding: 1rem 0;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .mobile-nav-item {
     margin: 0;
+    border-radius: 12px;
+    padding: 0 0.5rem;
+}
+
+.mobile-nav-item.has-submenu {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.mobile-nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
 }
 
 .mobile-nav-link {
     display: block;
-    padding: 1rem 1.5rem;
+    flex: 1 1 auto;
+    padding: 0.9rem 1rem;
     color: #4a5568;
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
     transition: all 0.3s ease;
-    border-left: 3px solid transparent;
+    border-radius: 10px;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
     color: #667eea;
-    background: rgba(102, 126, 234, 0.1);
-    border-left-color: #667eea;
+    background: rgba(102, 126, 234, 0.12);
 }
 
 .mobile-nav-link.active {
     font-weight: 600;
+}
+
+.mobile-submenu-toggle {
+    background: rgba(102, 126, 234, 0.12);
+    border: none;
+    color: #667eea;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-submenu-toggle:hover,
+.mobile-submenu-toggle:focus {
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.mobile-submenu-toggle[aria-expanded="true"] {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu {
+    list-style: none;
+    padding: 0.25rem 0 0.75rem 1.25rem;
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.mobile-submenu.open {
+    display: flex;
+}
+
+.mobile-submenu-link {
+    display: block;
+    padding: 0.75rem 0.9rem;
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-submenu-link:hover,
+.mobile-submenu-link:focus {
+    background: rgba(102, 126, 234, 0.12);
+    color: #667eea;
 }
 
 /* ===== 移动端操作按钮 ===== */
@@ -3268,7 +3398,8 @@ main {
 }
 
 .tao-toc-link:hover,
-.tao-toc-link:focus {
+.tao-toc-link:focus,
+.tao-toc-link.active {
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.85));
     color: #fff;
     box-shadow: 0 10px 24px rgba(102, 126, 234, 0.2);
@@ -3333,8 +3464,7 @@ main {
 }
 
 .tao-chapter-list {
-    display: grid;
-    gap: 1.5rem;
+    display: block;
 }
 
 .tao-chapter-card {
@@ -3349,6 +3479,16 @@ main {
 .tao-chapter-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 26px 56px rgba(118, 75, 162, 0.18);
+}
+
+.tao-chapter-card--single {
+    transition: none;
+    transform: none;
+}
+
+.tao-chapter-card--single:hover {
+    transform: none;
+    box-shadow: 0 22px 48px rgba(102, 126, 234, 0.14);
 }
 
 .tao-chapter-title {
@@ -4155,3 +4295,58 @@ main {
         text-align: center;
     }
 } 
+.tao-original-section,
+.tao-translations {
+    margin-top: 1.75rem;
+}
+
+.tao-original-section:first-of-type {
+    margin-top: 1.25rem;
+}
+
+.tao-section-title {
+    font-size: 1.05rem;
+    color: #4a4d69;
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.tao-translation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.tao-translation-card {
+    background: linear-gradient(145deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.1));
+    border-radius: 16px;
+    padding: 1.25rem;
+    border: 1px solid rgba(102, 126, 234, 0.18);
+    box-shadow: 0 18px 32px rgba(102, 126, 234, 0.12);
+    backdrop-filter: blur(6px);
+}
+
+.tao-translation-title {
+    margin: 0 0 0.65rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2d2f44;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.tao-translation-text {
+    margin: 0;
+    line-height: 1.7;
+    color: #3f415e;
+    font-size: 0.95rem;
+}
+
+.tao-empty-state {
+    padding: 2rem;
+    text-align: center;
+    color: #6d6f8c;
+    background: rgba(102, 126, 234, 0.08);
+    border-radius: 16px;
+    border: 1px dashed rgba(102, 126, 234, 0.3);
+}
