@@ -47,9 +47,11 @@ function initNavigation() {
     const mobileClose = document.getElementById('mobile-close');
     
     // 获取所有导航链接（桌面和移动端）
-    const desktopNavLinks = document.querySelectorAll('.navbar-link');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    const desktopNavLinks = document.querySelectorAll('.navbar-link, .dropdown-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-submenu-link');
     const allNavLinks = [...desktopNavLinks, ...mobileNavLinks];
+
+    const mobileSubmenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
 
     // 移动端菜单切换功能
     function toggleMobileMenu() {
@@ -74,6 +76,12 @@ function initNavigation() {
         mobileMenuOverlay.classList.remove('active');
         mobileToggle.classList.remove('active');
         document.body.style.overflow = '';
+        mobileSubmenuToggles.forEach((toggle) => {
+            const controls = toggle.getAttribute('aria-controls');
+            const submenu = controls ? document.getElementById(controls) : null;
+            toggle.setAttribute('aria-expanded', 'false');
+            submenu?.classList.remove('open');
+        });
     }
 
     // 事件监听器
@@ -88,6 +96,18 @@ function initNavigation() {
     if (mobileMenuOverlay) {
         mobileMenuOverlay.addEventListener('click', closeMobileMenu);
     }
+
+    mobileSubmenuToggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+            const controls = toggle.getAttribute('aria-controls');
+            const submenu = controls ? document.getElementById(controls) : null;
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!expanded));
+            if (submenu) {
+                submenu.classList.toggle('open', !expanded);
+            }
+        });
+    });
 
     // 导航链接点击事件
     allNavLinks.forEach(link => {
