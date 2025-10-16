@@ -133,14 +133,6 @@
                     <a href="tao-te-ching.html" class="navbar-link">道德经</a>
                 </li>
                 <li class="navbar-item has-dropdown">
-                    <a href="#games" class="navbar-link" data-section="games">小游戏</a>
-                    <ul class="dropdown-menu" aria-label="小游戏子菜单">
-                        <li class="dropdown-item">
-                            <a href="https://hotspotgame.online/" class="dropdown-link" target="_blank" rel="noopener noreferrer">热点游戏</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="navbar-item has-dropdown">
                     <a href="#about" class="navbar-link" data-section="about">关于我们</a>
                     <ul class="dropdown-menu" aria-label="关于我们子菜单">
                         <li class="dropdown-item">
@@ -208,17 +200,6 @@
                 </li>
                 <li class="mobile-nav-item has-submenu">
                     <div class="mobile-nav-row">
-                        <a href="#games" class="mobile-nav-link" data-section="games">小游戏</a>
-                        <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-submenu-games">▾</button>
-                    </div>
-                    <ul class="mobile-submenu" id="mobile-submenu-games" aria-label="小游戏子菜单">
-                        <li>
-                            <a href="https://hotspotgame.online/" class="mobile-submenu-link" target="_blank" rel="noopener noreferrer">热点游戏</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="mobile-nav-item has-submenu">
-                    <div class="mobile-nav-row">
                         <a href="#about" class="mobile-nav-link" data-section="about">关于我们</a>
                         <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-submenu-about">▾</button>
                     </div>
@@ -269,79 +250,6 @@
         <div id="library-list"></div>
     </main>
     
-    <section id="games" class="games-section">
-        <div class="container">
-            <h2>📚 图书馆知识小游戏</h2>
-            <p class="section-desc">在探索图书馆的同时，来挑战一下你的知识吧！</p>
-            
-            <div class="game-container">
-                <div class="game-header">
-                    <h3>📖 图书分类挑战</h3>
-                    <p>将图书正确分类到对应的图书馆类别中</p>
-                </div>
-                
-                <div class="game-stats">
-                    <div class="stat">
-                        <span class="stat-label">得分</span>
-                        <span id="score" class="stat-value">0</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">时间</span>
-                        <span id="timer" class="stat-value">60</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">等级</span>
-                        <span id="level" class="stat-value">1</span>
-                    </div>
-                </div>
-                
-                <div class="game-area">
-                    <div class="game-instructions">
-                        <p>将右侧的图书拖拽到左侧正确的图书馆类别中</p>
-                    </div>
-                    
-                    <div class="game-layout">
-                        <div class="library-categories">
-                            <div class="category" data-category="public">
-                                <h4>🏛️ 公共图书馆</h4>
-                                <div class="drop-zone" data-category="public"></div>
-                            </div>
-                            <div class="category" data-category="university">
-                                <h4>🎓 大学图书馆</h4>
-                                <div class="drop-zone" data-category="university"></div>
-                            </div>
-                            <div class="category" data-category="special">
-                                <h4>🔬 专业图书馆</h4>
-                                <div class="drop-zone" data-category="special"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="books-container">
-                            <div class="books-title">📚 待分类图书</div>
-                            <div id="books-list" class="books-list"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="game-controls">
-                    <button id="start-game" class="game-btn primary">开始游戏</button>
-                    <button id="reset-game" class="game-btn secondary">重新开始</button>
-                    <button id="pause-game" class="game-btn secondary" style="display: none;">暂停</button>
-                </div>
-                
-                <div class="game-result" id="game-result" style="display: none;">
-                    <h3>🎉 游戏结束！</h3>
-                    <div class="result-stats">
-                        <p>最终得分: <span id="final-score">0</span></p>
-                        <p>正确分类: <span id="correct-count">0</span>/<span id="total-count">0</span></p>
-                        <p>用时: <span id="final-time">0</span>秒</p>
-                    </div>
-                    <button id="play-again" class="game-btn primary">再玩一次</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- 图书馆分类页面 -->
     <section id="libraries-by-category" class="libraries-category-section">
         <div class="container">
@@ -375,7 +283,6 @@
                     <ul>
                         <li><a href="#home">首页</a> - 中国图书馆信息网主页</li>
                         <li><a href="#libraries">图书馆信息</a> - 全国150+图书馆详细信息</li>
-                        <li><a href="#games">知识小游戏</a> - 图书分类挑战游戏</li>
                         <li><a href="#about">关于我们</a> - 网站介绍和使命</li>
                         <li><a href="#contact">联系我们</a> - 联系方式和服务支持</li>
                         <li><a href="reading-clubs.html">读书会</a> - 全国读书会分类信息</li>
@@ -427,7 +334,6 @@
                 <ul class="footer-links">
                     <li><a href="#home">首页</a></li>
                     <li><a href="#libraries">图书馆分类</a></li>
-                    <li><a href="#games">知识小游戏</a></li>
                     <li><a href="#sitemap">网站地图</a></li>
                 </ul>
             </div>
@@ -466,7 +372,7 @@
         <!-- 页面内容概要 -->
         <div class="page-summary">
             <h4>页面内容概要</h4>
-            <p>本页面是中国图书馆信息网的主页，提供全国150+图书馆的详细信息，包括借书还书、阅览室、自习室、办借书证等服务指南。网站还包含图书分类挑战小游戏，帮助用户了解不同类型的图书馆。我们致力于为读者提供最全面的图书馆信息，让知识触手可及。</p>
+            <p>本页面是中国图书馆信息网的主页，提供全国150+图书馆的详细信息，包括借书还书、阅览室、自习室、办借书证等服务指南。我们致力于为读者提供最全面的图书馆信息，让知识触手可及。</p>
         </div>
     </footer>
     
