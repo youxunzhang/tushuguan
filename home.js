@@ -294,6 +294,16 @@
       libraryPagination.innerHTML = parts.join("");
     }
 
+    const internationalCities = new Set([
+      "纽约",
+      "伦敦",
+      "巴黎",
+      "东京",
+      "新加坡",
+      "悉尼",
+      "多伦多"
+    ]);
+
     function applyLibraryFilters(options = {}) {
       const { resetPage = false } = options;
       const term = librarySearchInput ? librarySearchInput.value : "";
@@ -302,6 +312,15 @@
       libraryFilteredResults = filterByTerm(libraries, term).filter((library) => {
         return !city || library.city === city;
       });
+
+      const hasTerm = term.trim().length > 0;
+      const hasCity = Boolean(city);
+
+      if (!hasTerm && !hasCity) {
+        libraryFilteredResults = libraryFilteredResults.filter((library) => {
+          return !internationalCities.has(library.city);
+        });
+      }
 
       updateTextContent("library-results-count", libraryFilteredResults.length);
 
