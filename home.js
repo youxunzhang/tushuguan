@@ -5,6 +5,8 @@
     books: "例如：信息素养 / 亲子阅读 / 古籍保护"
   };
 
+  const LIBRARIES_PER_PAGE = 12;
+
   function toArray(value) {
     return Array.isArray(value) ? value : [];
   }
@@ -200,7 +202,14 @@
     const librarySearchInput = document.getElementById("library-search-input");
     const libraryCityFilter = document.getElementById("library-city-filter");
     const libraryResults = document.getElementById("library-results");
-    const libraryCount = document.getElementById("library-results-count");
+    const libraryPagination = document.getElementById("library-pagination");
+
+    let libraryCurrentPage = 1;
+    let libraryFilteredResults = libraries.slice();
+    let libraryTotalPages = Math.max(
+      1,
+      Math.ceil(libraryFilteredResults.length / LIBRARIES_PER_PAGE)
+    );
 
     const bookstoreSearchInput = document.getElementById("bookstore-search-input");
     const bookstoreCityFilter = document.getElementById("bookstore-city-filter");
@@ -246,20 +255,123 @@
       });
     }
 
-    function applyLibraryFilters() {
+    function updateLibraryPagination(totalItems) {
+      if (!libraryPagination) {
+        return;
+      }
+
+      const totalPages = Math.ceil(totalItems / LIBRARIES_PER_PAGE);
+      libraryTotalPages = totalPages || 1;
+
+      if (totalPages <= 1) {
+        libraryPagination.innerHTML = "";
+        libraryPagination.setAttribute("hidden", "");
+        return;
+      }
+
+      libraryPagination.removeAttribute("hidden");
+
+      const parts = [];
+      parts.push(
+        `<button type="button" class="pagination-btn prev" data-page="prev"${
+          libraryCurrentPage === 1 ? " disabled" : ""
+        }>上一页</button>`
+      );
+
+      for (let i = 1; i <= totalPages; i += 1) {
+        const isActive = i === libraryCurrentPage ? " active" : "";
+        parts.push(
+          `<button type="button" class="pagination-btn number${isActive}" data-page="${i}">${i}</button>`
+        );
+      }
+
+      parts.push(
+        `<button type="button" class="pagination-btn next" data-page="next"${
+          libraryCurrentPage === totalPages ? " disabled" : ""
+        }>下一页</button>`
+      );
+
+      libraryPagination.innerHTML = parts.join("");
+    }
+
+    function applyLibraryFilters(options = {}) {
+      const { resetPage = false } = options;
       const term = librarySearchInput ? librarySearchInput.value : "";
       const city = libraryCityFilter ? libraryCityFilter.value : "";
-      const filtered = filterByTerm(libraries, term).filter((library) => {
+
+      libraryFilteredResults = filterByTerm(libraries, term).filter((library) => {
         return !city || library.city === city;
       });
-      updateTextContent("library-results-count", filtered.length);
+
+      updateTextContent("library-results-count", libraryFilteredResults.length);
+
+      if (resetPage) {
+        libraryCurrentPage = 1;
+      }
+
+      const totalPages = Math.ceil(
+        libraryFilteredResults.length / LIBRARIES_PER_PAGE
+      );
+
+      if (!libraryFilteredResults.length) {
+        libraryCurrentPage = 1;
+      } else if (libraryCurrentPage > totalPages) {
+        libraryCurrentPage = totalPages;
+      }
+
+      const startIndex = (libraryCurrentPage - 1) * LIBRARIES_PER_PAGE;
+      const pageItems = libraryFilteredResults.slice(
+        startIndex,
+        startIndex + LIBRARIES_PER_PAGE
+      );
+
       renderList(
         libraryResults,
-        filtered.slice(0, 9),
+        pageItems,
         createLibraryCard,
         "暂未找到匹配的图书馆信息，请尝试更换关键词或城市。"
       );
-      return filtered;
+
+      updateLibraryPagination(libraryFilteredResults.length);
+
+      return libraryFilteredResults;
+    }
+
+    if (libraryPagination) {
+      libraryPagination.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-page]");
+        if (!button || button.disabled) {
+          return;
+        }
+
+        const page = button.dataset.page;
+        if (page === "prev") {
+          if (libraryCurrentPage > 1) {
+            libraryCurrentPage -= 1;
+            applyLibraryFilters();
+          }
+          return;
+        }
+
+        if (page === "next") {
+          if (libraryCurrentPage < libraryTotalPages) {
+            libraryCurrentPage += 1;
+            applyLibraryFilters();
+          }
+          return;
+        }
+
+        const targetPage = Number(page);
+        if (
+          Number.isInteger(targetPage) &&
+          targetPage >= 1 &&
+          targetPage <= libraryTotalPages &&
+          targetPage !== libraryCurrentPage
+        ) {
+          libraryCurrentPage = targetPage;
+          applyLibraryFilters();
+        }
+      });
     }
 
     function applyBookstoreFilters() {
@@ -295,10 +407,14 @@
     }
 
     if (librarySearchInput) {
-      librarySearchInput.addEventListener("input", applyLibraryFilters);
+      librarySearchInput.addEventListener("input", () =>
+        applyLibraryFilters({ resetPage: true })
+      );
     }
     if (libraryCityFilter) {
-      libraryCityFilter.addEventListener("change", applyLibraryFilters);
+      libraryCityFilter.addEventListener("change", () =>
+        applyLibraryFilters({ resetPage: true })
+      );
     }
 
     if (bookstoreSearchInput) {
@@ -315,7 +431,7 @@
       bookCategoryFilter.addEventListener("change", applyBookFilters);
     }
 
-    applyLibraryFilters();
+    applyLibraryFilters({ resetPage: true });
     applyBookstoreFilters();
     applyBookFilters();
 
@@ -407,7 +523,7 @@
         if (libraryCityFilter && element.dataset.city) {
           libraryCityFilter.value = element.dataset.city;
         }
-        applyLibraryFilters();
+        applyLibraryFilters({ resetPage: true });
         document.getElementById("libraries")?.scrollIntoView({ behavior: "smooth", block: "start" });
       } else if (type === "bookstores") {
         if (bookstoreSearchInput) {
