@@ -770,5 +770,131 @@ const libraryData = {
       description: "重庆大学图书馆，综合性大学图书馆。",
       image: "images/cqu-library.svg"
     }
+  ],
+  "纽约": [
+    {
+      name: "纽约公共图书馆总馆",
+      address: "476 5th Ave, New York, NY 10018, USA",
+      phone: "+1-917-275-6975",
+      website: "https://www.nypl.org/",
+      description: "世界知名的研究型与公共服务图书馆，收藏丰富并提供多语言资源。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "布鲁克林公共图书馆",
+      address: "10 Grand Army Plaza, Brooklyn, NY 11238, USA",
+      phone: "+1-718-230-2100",
+      website: "https://www.bklynlibrary.org/",
+      description: "提供社区项目、青少年服务与数字资源的综合性公共图书馆。",
+      image: "images/default-library-enhanced.svg"
+    }
+  ],
+  "伦敦": [
+    {
+      name: "大英图书馆",
+      address: "96 Euston Rd, London NW1 2DB, United Kingdom",
+      phone: "+44-330-333-1144",
+      website: "https://www.bl.uk/",
+      description: "英国的国家图书馆，拥有超过一亿五千万件馆藏，提供全球研究支持。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "伦敦科学馆图书馆与档案馆",
+      address: "Exhibition Rd, South Kensington, London SW7 2DD, United Kingdom",
+      phone: "+44-207-942-4000",
+      website: "https://www.sciencemuseum.org.uk/",
+      description: "聚焦科学史与工程技术的专业馆藏，支持教育与学术研究。",
+      image: "images/default-library-enhanced.svg"
+    }
+  ],
+  "巴黎": [
+    {
+      name: "法国国家图书馆里什利厄馆",
+      address: "58 Rue de Richelieu, 75002 Paris, France",
+      phone: "+33-1-53-79-59-59",
+      website: "https://www.bnf.fr/",
+      description: "法国最重要的古籍与珍本收藏地，拥有宏伟的历史建筑与展览。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "巴黎公共信息图书馆",
+      address: "Place Georges-Pompidou, 75004 Paris, France",
+      phone: "+33-1-44-78-12-33",
+      website: "https://www.bpi.fr/",
+      description: "位于蓬皮杜中心的现代化公共图书馆，提供丰富的多媒体资源。",
+      image: "images/default-library-enhanced.svg"
+    }
+  ],
+  "东京": [
+    {
+      name: "国立国会图书馆东京本馆",
+      address: "1-10-1 Nagatachō, Chiyoda City, Tokyo 100-8924, Japan",
+      phone: "+81-3-3581-2331",
+      website: "https://www.ndl.go.jp/",
+      description: "日本国家图书馆，兼具议会支持与公众服务职能，藏有大量东亚文献。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "东京都立中央图书馆",
+      address: "5-7-13 Minamiazabu, Minato City, Tokyo 106-8575, Japan",
+      phone: "+81-3-3442-8451",
+      website: "https://www.library.metro.tokyo.lg.jp/",
+      description: "服务首都圈居民的旗舰图书馆，具备多语种资料与学习空间。",
+      image: "images/default-library-enhanced.svg"
+    }
+  ],
+  "新加坡": [
+    {
+      name: "新加坡国家图书馆",
+      address: "100 Victoria St, Singapore 188064",
+      phone: "+65-6332-3255",
+      website: "https://www.nlb.gov.sg/",
+      description: "现代化的国家图书馆大楼，提供丰富的学习空间与创新服务。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "新加坡国家档案馆参考图书馆",
+      address: "1 Canning Rise, Singapore 179868",
+      phone: "+65-6332-3255",
+      website: "https://www.nas.gov.sg/",
+      description: "收藏新加坡历史文献与口述档案，支持研究者与公众使用。",
+      image: "images/default-library-enhanced.svg"
+    }
+  ],
+  "悉尼": [
+    {
+      name: "新南威尔士州立图书馆",
+      address: "1 Shakespeare Pl, Sydney NSW 2000, Australia",
+      phone: "+61-2-9273-1414",
+      website: "https://www.sl.nsw.gov.au/",
+      description: "澳大利亚历史最悠久的图书馆之一，馆藏涵盖澳大利亚与太平洋地区研究。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "悉尼市图书馆乔治街总馆",
+      address: "Cnr George St and Bathurst St, Sydney NSW 2000, Australia",
+      phone: "+61-2-9265-9333",
+      website: "https://www.cityofsydney.nsw.gov.au/libraries",
+      description: "提供外语藏书、创客空间与社区课程的现代化公共图书馆。",
+      image: "images/default-library-enhanced.svg"
+    }
+  ],
+  "多伦多": [
+    {
+      name: "多伦多公共图书馆参考图书馆",
+      address: "789 Yonge St, Toronto, ON M4W 2G8, Canada",
+      phone: "+1-416-393-7131",
+      website: "https://www.torontopubliclibrary.ca/",
+      description: "加拿大访问量最高的公共图书馆之一，提供学习支持与创业资源。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "多伦多大学罗巴茨图书馆",
+      address: "130 St. George St, Toronto, ON M5S 1A5, Canada",
+      phone: "+1-416-978-8450",
+      website: "https://onesearch.library.utoronto.ca/",
+      description: "加拿大最大的学术图书馆之一，支持多学科研究与特藏利用。",
+      image: "images/default-library-enhanced.svg"
+    }
   ]
 };
