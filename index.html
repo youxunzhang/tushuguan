@@ -3,152 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="中国图书馆信息网——全国图书馆数据库、借还书指南、自习室与读书会活动。" />
-  <title>中国图书馆信息网 | tushuguan.online</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="description" content="中国图书馆信息网提供全国图书馆、城市文化书店与精选书籍的一站式检索服务，帮助读者快速发现理想的阅读空间与藏书。" />
+  <title>中国图书馆信息网 | 图书馆·书店·书籍一站式查询</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
   <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="home.css" />
 </head>
-
-<body class="bg-gray-50 text-gray-800 font-sans">
-
-  <!-- 顶部导航 -->
-  <header class="bg-white shadow-md fixed w-full top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="/" class="text-2xl font-bold text-blue-700">中国图书馆信息网</a>
-      <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
-        <a href="#libraries" class="hover:text-blue-600">图书馆</a>
-        <a href="#guide" class="hover:text-blue-600">借还书指南</a>
-        <a href="#events" class="hover:text-blue-600">读书会</a>
-        <a href="#stores" class="hover:text-blue-600">书店推荐</a>
-        <a href="#about" class="hover:text-blue-600">关于我们</a>
+<body>
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a class="brand" href="/">
+        <span class="brand-icon" aria-hidden="true">📚</span>
+        <span class="brand-text">
+          <span class="brand-name">中国图书馆信息网</span>
+          <span class="brand-tagline">tushuguan.online</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#libraries" class="nav-link">图书馆查询</a>
+        <a href="#bookstores" class="nav-link">书店查询</a>
+        <a href="#books" class="nav-link">书籍查询</a>
+        <a href="cities.html" class="nav-link">城市资源</a>
+        <a href="bookstores.html" class="nav-link">文化空间</a>
       </nav>
-      <button class="md:hidden bg-blue-600 text-white px-3 py-1 rounded">菜单</button>
+      <button class="mobile-toggle" id="mobile-toggle" aria-controls="mobile-menu" aria-expanded="false">菜单</button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav class="mobile-nav" aria-label="移动端导航">
+        <a href="#libraries" class="mobile-nav-link">图书馆查询</a>
+        <a href="#bookstores" class="mobile-nav-link">书店查询</a>
+        <a href="#books" class="mobile-nav-link">书籍查询</a>
+        <a href="cities.html" class="mobile-nav-link">城市资源</a>
+        <a href="bookstores.html" class="mobile-nav-link">文化空间</a>
+        <a href="tao-te-ching.html" class="mobile-nav-link">道德经</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Banner -->
-  <section class="pt-24 bg-gradient-to-r from-blue-50 to-blue-100">
-    <div class="max-w-6xl mx-auto text-center py-16 px-4">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">全国 150+ 图书馆信息一站式查询</h1>
-      <p class="text-lg text-gray-600 mb-8">探索借还书、自习室、读书会与文化空间，知识触手可及。</p>
-      <a href="#libraries" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition">立即查找图书馆</a>
-    </div>
-  </section>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-layout">
+        <div class="hero-text">
+          <p class="hero-eyebrow">重新设计的全国阅读资源地图</p>
+          <h1>一站式图书馆、书店与书籍查询平台</h1>
+          <p class="hero-description">
+            集合全国重点图书馆、特色书店与精选书单，支持按城市、服务、主题的快速检索，为学习、备考与亲子阅读提供可信赖的参考信息。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#libraries">开始查找图书馆</a>
+            <a class="btn btn-secondary" href="#bookstores">探索城市书店</a>
+          </div>
+          <dl class="hero-stats">
+            <div class="stat-item">
+              <dt>收录图书馆</dt>
+              <dd><span id="total-library-count">0</span> 家</dd>
+            </div>
+            <div class="stat-item">
+              <dt>特色书店</dt>
+              <dd><span id="total-bookstore-count">0</span> 家</dd>
+            </div>
+            <div class="stat-item">
+              <dt>精选书目</dt>
+              <dd><span id="total-book-count">0</span> 本</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="hero-panel">
+          <div class="quick-search" id="quick-search">
+            <div class="quick-header">
+              <h2>快速检索</h2>
+              <p class="quick-subtitle">输入城市、名称或关键词即可查看匹配结果</p>
+            </div>
+            <div class="quick-tabs" role="tablist">
+              <button type="button" class="quick-tab active" data-target="libraries" aria-selected="true">图书馆</button>
+              <button type="button" class="quick-tab" data-target="bookstores" aria-selected="false">书店</button>
+              <button type="button" class="quick-tab" data-target="books" aria-selected="false">书籍</button>
+            </div>
+            <label class="quick-field" for="quick-search-input">
+              <span class="quick-icon" aria-hidden="true">🔍</span>
+              <input id="quick-search-input" type="search" placeholder="例如：北京 自习室 / 亲子阅读" autocomplete="off" />
+            </label>
+            <p class="quick-hint" id="quick-search-hint">支持按名称、城市、服务特色搜索</p>
+            <div class="quick-results" id="quick-search-results" aria-live="polite">
+              <p class="quick-placeholder">开始输入后将即时展示前三条匹配结果。</p>
+            </div>
+          </div>
+          <div class="quick-links">
+            <a class="quick-link" href="cities.html">按城市浏览图书馆 →</a>
+            <a class="quick-link" href="reading-clubs.html">加入线下读书会 →</a>
+            <a class="quick-link" href="tao-te-ching.html">查阅经典原文 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- 功能入口 -->
-  <section class="max-w-6xl mx-auto py-12 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="guide">
-    <div class="bg-white shadow rounded-xl p-6 hover:-translate-y-1 hover:shadow-lg transition">
-      <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="图书馆信息" class="w-12 mb-4">
-      <h3 class="text-xl font-semibold mb-2 text-blue-700">图书馆信息</h3>
-      <p class="text-gray-600 mb-3">查找全国图书馆地址、开放时间、自习室与服务。</p>
-      <a href="#libraries" class="text-blue-600 font-medium hover:underline">进入查询 →</a>
-    </div>
-    <div class="bg-white shadow rounded-xl p-6 hover:-translate-y-1 hover:shadow-lg transition">
-      <img src="https://cdn-icons-png.flaticon.com/512/3448/3448639.png" alt="借还书指南" class="w-12 mb-4">
-      <h3 class="text-xl font-semibold mb-2 text-blue-700">借还书指南</h3>
-      <p class="text-gray-600 mb-3">了解如何办理借书证、预约书籍、归还流程。</p>
-      <a href="#" class="text-blue-600 font-medium hover:underline">查看详情 →</a>
-    </div>
-    <div class="bg-white shadow rounded-xl p-6 hover:-translate-y-1 hover:shadow-lg transition">
-      <img src="https://cdn-icons-png.flaticon.com/512/4269/4269519.png" alt="读书会活动" class="w-12 mb-4">
-      <h3 class="text-xl font-semibold mb-2 text-blue-700">读书会活动</h3>
-      <p class="text-gray-600 mb-3">加入读书会，分享阅读心得，与书友共同成长。</p>
-      <a href="#events" class="text-blue-600 font-medium hover:underline">加入我们 →</a>
-    </div>
-  </section>
+    <section class="search-section" id="libraries">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">图书馆查询</p>
+            <h2>按城市与服务查找理想图书馆</h2>
+            <p class="section-description">
+              收录国家级与重点城市公共图书馆，涵盖开放时间、交通位置、电话与特色服务，帮助你快速锁定最近、最适合的阅读空间。
+            </p>
+          </div>
+          <a class="section-link" href="cities.html">查看全部城市 →</a>
+        </div>
+        <div class="search-controls">
+          <div class="search-field">
+            <span aria-hidden="true">🔍</span>
+            <input id="library-search-input" type="search" placeholder="搜索城市、图书馆名称或特色服务" />
+          </div>
+          <select id="library-city-filter" aria-label="按城市筛选图书馆">
+            <option value="">全部城市</option>
+          </select>
+        </div>
+        <div class="results-meta">已收录 <span id="library-results-count">0</span> 家符合条件的图书馆</div>
+        <div class="card-grid" id="library-results"></div>
+      </div>
+    </section>
 
-  <!-- 热门城市 -->
-  <section class="bg-blue-50 py-12" id="libraries">
-    <div class="max-w-6xl mx-auto text-center px-4">
-      <h2 class="text-3xl font-bold mb-8">热门城市图书馆</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-        <div class="bg-white shadow rounded-lg py-6">
-          <h3 class="text-xl font-semibold text-blue-700">北京</h3>
-          <p class="text-gray-500 mt-2">38 家图书馆</p>
+    <section class="search-section accent" id="bookstores">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">书店查询</p>
+            <h2>发现值得造访的文化书店</h2>
+            <p class="section-description">
+              精选全国知名书店与阅读空间，整合特色活动、开放时间与联系方式，让你的下一次城市漫游更具文化味道。
+            </p>
+          </div>
+          <a class="section-link" href="bookstores.html">浏览书店指南 →</a>
         </div>
-        <div class="bg-white shadow rounded-lg py-6">
-          <h3 class="text-xl font-semibold text-blue-700">上海</h3>
-          <p class="text-gray-500 mt-2">29 家图书馆</p>
+        <div class="search-controls">
+          <div class="search-field">
+            <span aria-hidden="true">🔍</span>
+            <input id="bookstore-search-input" type="search" placeholder="搜索书店、城市或特色活动" />
+          </div>
+          <select id="bookstore-city-filter" aria-label="按城市筛选书店">
+            <option value="">全部城市</option>
+          </select>
         </div>
-        <div class="bg-white shadow rounded-lg py-6">
-          <h3 class="text-xl font-semibold text-blue-700">广州</h3>
-          <p class="text-gray-500 mt-2">22 家图书馆</p>
-        </div>
-        <div class="bg-white shadow rounded-lg py-6">
-          <h3 class="text-xl font-semibold text-blue-700">深圳</h3>
-          <p class="text-gray-500 mt-2">18 家图书馆</p>
-        </div>
+        <div class="results-meta">筛选出 <span id="bookstore-results-count">0</span> 家书店</div>
+        <div class="card-grid" id="bookstore-results"></div>
       </div>
-      <a href="#" class="mt-8 inline-block bg-blue-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-blue-700">查看更多城市</a>
-    </div>
-  </section>
+    </section>
 
-  <!-- 读书会活动 -->
-  <section class="max-w-6xl mx-auto py-12 px-4" id="events">
-    <h2 class="text-3xl font-bold text-center mb-8">最新读书会与文化活动</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow p-6 flex flex-col">
-        <h3 class="text-xl font-semibold text-blue-700 mb-2">周末经典共读</h3>
-        <p class="text-gray-600 flex-1">与资深书友一起品读《红楼梦》，线上线下同步交流。</p>
-        <span class="mt-4 inline-block text-sm text-gray-500">每周六 · 线上 + 北京市图书馆</span>
+    <section class="search-section" id="books">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">书籍查询</p>
+            <h2>精选书单与馆藏索书号参考</h2>
+            <p class="section-description">
+              推荐适合公共图书馆与高校图书馆的重点书目，涵盖阅读推广、儿童教育、人文社科与城市研究，为选书与采购提供灵感。
+            </p>
+          </div>
+          <a class="section-link" href="reading-clubs.html">查看更多阅读活动 →</a>
+        </div>
+        <div class="search-controls">
+          <div class="search-field">
+            <span aria-hidden="true">🔍</span>
+            <input id="book-search-input" type="search" placeholder="搜索书名、作者或主题关键词" />
+          </div>
+          <select id="book-category-filter" aria-label="按主题筛选书籍">
+            <option value="">全部主题</option>
+          </select>
+        </div>
+        <div class="results-meta">共找到 <span id="book-results-count">0</span> 本推荐书籍</div>
+        <div class="card-grid" id="book-results"></div>
       </div>
-      <div class="bg-white rounded-xl shadow p-6 flex flex-col">
-        <h3 class="text-xl font-semibold text-blue-700 mb-2">少儿绘本工作坊</h3>
-        <p class="text-gray-600 flex-1">亲子共读绘本故事，培养孩子的阅读兴趣与表达能力。</p>
-        <span class="mt-4 inline-block text-sm text-gray-500">每周日 · 广州市少年宫图书馆</span>
-      </div>
-      <div class="bg-white rounded-xl shadow p-6 flex flex-col">
-        <h3 class="text-xl font-semibold text-blue-700 mb-2">夜读诗歌沙龙</h3>
-        <p class="text-gray-600 flex-1">与诗人面对面，聆听文字背后的城市故事。</p>
-        <span class="mt-4 inline-block text-sm text-gray-500">每月最后一个周五 · 上海当代艺术馆</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 书店推荐 -->
-  <section class="max-w-6xl mx-auto py-12 px-4" id="stores">
-    <h2 class="text-3xl font-bold text-center mb-8">精选文化空间与书店</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition">
-        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800" alt="钟书阁" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold mb-2 text-blue-700">钟书阁 · 上海</h3>
-          <p class="text-gray-600 text-sm">被誉为“最美书店”，融合建筑与阅读之美。</p>
+    <section class="resource-section" id="resources">
+      <div class="container resource-grid">
+        <article class="resource-card">
+          <h3>图书馆办证指南</h3>
+          <p>准备首次办证？了解办理条件、所需证件与借阅规则，减少排队和往返的时间成本。</p>
+          <a class="resource-link" href="https://www.nlc.cn/newen/service/loan/" target="_blank" rel="noopener">查看国家图书馆办证流程</a>
+        </article>
+        <article class="resource-card">
+          <h3>城市阅读数据</h3>
+          <p>结合城市人口与文化设施数量，快速判断当地图书馆供给密度，为选址与调研提供参考。</p>
+          <a class="resource-link" href="cities.html">使用城市信息面板</a>
+        </article>
+        <article class="resource-card">
+          <h3>阅读活动日历</h3>
+          <p>关注亲子阅读、青少年科技阅读与经典共读活动，让周末和假期安排更充实。</p>
+          <a class="resource-link" href="reading-clubs.html">浏览最新读书会</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <div>
+        <h2 class="footer-brand">中国图书馆信息网</h2>
+        <p>致力于连接城市阅读空间与读者，为学校、家庭与公共文化机构提供可信赖的参考信息。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h3>主要栏目</h3>
+          <ul>
+            <li><a href="#libraries">图书馆查询</a></li>
+            <li><a href="#bookstores">书店查询</a></li>
+            <li><a href="#books">书籍查询</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>延伸阅读</h3>
+          <ul>
+            <li><a href="bookstores.html">特色书店指南</a></li>
+            <li><a href="tao-te-ching.html">道德经多语阅读</a></li>
+            <li><a href="reading-clubs.html">线下读书会</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>联系我们</h3>
+          <ul>
+            <li><a href="mailto:info@tushuguan.online">info@tushuguan.online</a></li>
+            <li><a href="/sitemap.xml">网站地图</a></li>
+          </ul>
         </div>
       </div>
-      <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition">
-        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800" alt="诚品书店" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold mb-2 text-blue-700">诚品书店 · 深圳</h3>
-          <p class="text-gray-600 text-sm">文化、艺术、书籍与咖啡的完美结合。</p>
-        </div>
-      </div>
-      <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition">
-        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800" alt="单向空间" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold mb-2 text-blue-700">单向空间 · 北京</h3>
-          <p class="text-gray-600 text-sm">阅读、讲座、展览的文化聚点。</p>
-        </div>
-      </div>
     </div>
-  </section>
-
-  <!-- 关于我们 -->
-  <section class="bg-gray-100 py-16 text-center" id="about">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4">关于我们</h2>
-      <p class="text-gray-700 leading-relaxed">
-        中国图书馆信息网致力于为读者提供全国图书馆资源、借还书指南与读书活动资讯。  
-        我们希望让阅读更便捷，让知识更可达，让文化在城市间流动。
-      </p>
-    </div>
-  </section>
-
-  <!-- 页脚 -->
-  <footer class="bg-white py-8 border-t text-center text-sm text-gray-600">
-    <p>© 2025 中国图书馆信息网 tushuguan.online 保留所有权利</p>
-    <p class="mt-2">联系我们：<a href="mailto:info@tushuguan.online" class="text-blue-600 hover:underline">info@tushuguan.online</a></p>
+    <p class="footer-copy">© 2025 中国图书馆信息网 tushuguan.online 版权所有</p>
   </footer>
 
+  <script src="data.js" defer></script>
+  <script src="bookstores-data.js" defer></script>
+  <script src="books-data.js" defer></script>
+  <script src="home.js" defer></script>
 </body>
 </html>
