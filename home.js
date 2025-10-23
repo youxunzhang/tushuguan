@@ -6,6 +6,31 @@
   };
 
   const LIBRARIES_PER_PAGE = 12;
+  const FEATURED_LIBRARY_LIMIT = 100;
+
+  const cityToRegionMap = {
+    北京: "华北",
+    上海: "华东",
+    广州: "华南",
+    深圳: "华南",
+    杭州: "华东",
+    南京: "华东",
+    成都: "西南",
+    武汉: "华中",
+    西安: "西北",
+    重庆: "西南"
+  };
+
+  const regionOrder = ["华北", "华东", "华南", "华中", "西南", "西北"];
+
+  const regionDisplayNames = {
+    华北: "华北地区",
+    华东: "华东地区",
+    华南: "华南地区",
+    华中: "华中地区",
+    西南: "西南地区",
+    西北: "西北地区"
+  };
 
   function toArray(value) {
     return Array.isArray(value) ? value : [];
@@ -190,10 +215,145 @@
     `;
   }
 
+  function renderFeaturedLibrarySection(libraries) {
+    const container = document.getElementById("featured-library-groups");
+    const counter = document.getElementById("featured-library-count");
+
+    if (!container) {
+      return;
+    }
+
+    const classified = libraries
+      .map((library) => {
+        const region = cityToRegionMap[library.city];
+        if (!region) {
+          return null;
+        }
+        return { ...library, region };
+      })
+      .filter(Boolean)
+      .sort((a, b) => {
+        const regionIndexA = regionOrder.indexOf(a.region);
+        const regionIndexB = regionOrder.indexOf(b.region);
+        if (regionIndexA !== regionIndexB) {
+          const orderA = regionIndexA === -1 ? Number.MAX_SAFE_INTEGER : regionIndexA;
+          const orderB = regionIndexB === -1 ? Number.MAX_SAFE_INTEGER : regionIndexB;
+          return orderA - orderB;
+        }
+
+        const cityCompare = a.city.localeCompare(b.city, "zh-Hans-CN");
+        if (cityCompare !== 0) {
+          return cityCompare;
+        }
+
+        return a.name.localeCompare(b.name, "zh-Hans-CN");
+      });
+
+    const regionBuckets = new Map();
+    classified.forEach((library) => {
+      if (!regionBuckets.has(library.region)) {
+        regionBuckets.set(library.region, []);
+      }
+      regionBuckets.get(library.region).push(library);
+    });
+
+    const orderedBuckets = regionOrder
+      .map((region) => {
+        const items = regionBuckets.get(region);
+        return {
+          region,
+          items: Array.isArray(items) ? items.slice() : []
+        };
+      })
+      .filter((bucket) => bucket.items.length);
+
+    let totalCount = orderedBuckets.reduce(
+      (sum, bucket) => sum + bucket.items.length,
+      0
+    );
+
+    while (totalCount > FEATURED_LIBRARY_LIMIT) {
+      const targetBucket = orderedBuckets.reduce((largest, bucket) => {
+        if (bucket.items.length <= 1) {
+          return largest;
+        }
+        if (!largest || bucket.items.length > largest.items.length) {
+          return bucket;
+        }
+        return largest;
+      }, null);
+
+      if (!targetBucket) {
+        break;
+      }
+
+      targetBucket.items.pop();
+      totalCount -= 1;
+    }
+
+    if (counter) {
+      counter.textContent = String(totalCount);
+    }
+
+    if (!totalCount) {
+      container.innerHTML = '<div class="empty-state">暂未找到可展示的图书馆信息。</div>';
+      return;
+    }
+
+    const html = orderedBuckets
+      .map((bucket) => {
+        const { region } = bucket;
+        const librariesInRegion = bucket.items;
+        const items = librariesInRegion
+          .map((library) => {
+            const phoneLine = library.phone
+              ? `<p class="featured-library__meta">☎️ ${escapeHtml(library.phone)}</p>`
+              : "";
+            const websiteLine = library.website
+              ? `<p class="featured-library__meta">🔗 <a href="${escapeHtml(
+                  library.website
+                )}" target="_blank" rel="noopener">访问官网</a></p>`
+              : "";
+
+            return `
+              <li class="featured-library">
+                <div class="featured-library__title">
+                  <h4>${escapeHtml(library.name)}</h4>
+                  <span>${escapeHtml(library.city)}</span>
+                </div>
+                <p class="featured-library__meta">📍 ${escapeHtml(library.address)}</p>
+                ${phoneLine}
+                ${websiteLine}
+              </li>
+            `;
+          })
+          .join("");
+
+        const regionTitle = regionDisplayNames[region] || `${region}地区`;
+
+        return `
+          <article class="region-card">
+            <div class="region-card__header">
+              <h3>${escapeHtml(regionTitle)}</h3>
+              <span class="region-card__badge">${librariesInRegion.length} 家</span>
+            </div>
+            <ul class="featured-library-list">
+              ${items}
+            </ul>
+          </article>
+        `;
+      })
+      .join("");
+
+    container.innerHTML = html;
+  }
+
   function ready() {
     const libraries = buildLibraryRecords();
     const bookstores = buildBookstoreRecords();
     const books = buildBookRecords();
+
+    renderFeaturedLibrarySection(libraries);
 
     updateTextContent("total-library-count", libraries.length);
     updateTextContent("total-bookstore-count", bookstores.length);

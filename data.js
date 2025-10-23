@@ -697,6 +697,22 @@ const libraryData = {
       website: "https://lib.nju.edu.cn/",
       description: "南京大学图书馆，综合性大学图书馆。",
       image: "images/nju-library.svg"
+    },
+    {
+      name: "东南大学图书馆",
+      address: "南京市玄武区四牌楼2号",
+      phone: "025-83792704",
+      website: "https://lib.seu.edu.cn/",
+      description: "东南大学图书馆，工科与建筑类特色资源丰富。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "河海大学图书馆",
+      address: "南京市西康路1号",
+      phone: "025-83786074",
+      website: "https://lib.hhu.edu.cn/",
+      description: "河海大学图书馆，水利与环境领域的专业文献中心。",
+      image: "images/default-library-enhanced.svg"
     }
   ],
   "成都": [
@@ -715,6 +731,22 @@ const libraryData = {
       website: "https://lib.scu.edu.cn/",
       description: "四川大学图书馆，综合性大学图书馆。",
       image: "images/scu-library.svg"
+    },
+    {
+      name: "四川省图书馆",
+      address: "成都市人民西路4号",
+      phone: "028-86128080",
+      website: "https://www.sclib.org/",
+      description: "四川省公共图书馆体系的核心馆，古籍与巴蜀文化典藏丰富。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "电子科技大学图书馆",
+      address: "成都市高新区（西区）西源大道2006号",
+      phone: "028-61830900",
+      website: "https://www.lib.uestc.edu.cn/",
+      description: "电子科技大学图书馆，服务电子信息学科与创新创业需求。",
+      image: "images/default-library-enhanced.svg"
     }
   ],
   "武汉": [
@@ -733,6 +765,22 @@ const libraryData = {
       website: "https://www.lib.whu.edu.cn/",
       description: "武汉大学图书馆，综合性大学图书馆。",
       image: "images/whu-library.svg"
+    },
+    {
+      name: "湖北省图书馆",
+      address: "武汉市武昌区公正路25号",
+      phone: "027-87814655",
+      website: "https://www.hbplib.org/",
+      description: "湖北省图书馆，国家一级图书馆，拥有丰富地方文献与公共服务。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "华中科技大学图书馆",
+      address: "武汉市洪山区珞喻路1037号",
+      phone: "027-87540007",
+      website: "https://www.lib.hust.edu.cn/",
+      description: "华中科技大学图书馆，理工与医学交叉学科资源齐备。",
+      image: "images/default-library-enhanced.svg"
     }
   ],
   "西安": [
@@ -751,6 +799,22 @@ const libraryData = {
       website: "https://lib.xjtu.edu.cn/",
       description: "西安交通大学图书馆，综合性大学图书馆。",
       image: "images/xjtu-library.svg"
+    },
+    {
+      name: "西北大学图书馆",
+      address: "西安市长安区学府大道1号",
+      phone: "029-88302114",
+      website: "https://lib.nwu.edu.cn/",
+      description: "西北大学图书馆，深耕西北史地与考古人文资料的研究服务。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "西北工业大学图书馆",
+      address: "西安市碑林区友谊西路127号",
+      phone: "029-88493255",
+      website: "https://lib.nwpu.edu.cn/",
+      description: "西北工业大学图书馆，航空航天与材料科学特色馆藏。",
+      image: "images/default-library-enhanced.svg"
     }
   ],
   "重庆": [
@@ -769,6 +833,22 @@ const libraryData = {
       website: "https://lib.cqu.edu.cn/",
       description: "重庆大学图书馆，综合性大学图书馆。",
       image: "images/cqu-library.svg"
+    },
+    {
+      name: "重庆市少年儿童图书馆",
+      address: "重庆市渝中区长江一路61号",
+      phone: "023-63858034",
+      website: "https://www.cqslib.cn/",
+      description: "重庆市少年儿童图书馆，专注青少年阅读推广与文化活动。",
+      image: "images/default-library-enhanced.svg"
+    },
+    {
+      name: "西南大学图书馆",
+      address: "重庆市北碚区天生路2号",
+      phone: "023-68252330",
+      website: "https://lib.swu.edu.cn/",
+      description: "西南大学图书馆，服务农科与教育学科的综合性学术图书馆。",
+      image: "images/default-library-enhanced.svg"
     }
   ],
   "纽约": [
