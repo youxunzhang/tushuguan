@@ -2689,6 +2689,284 @@ main {
     border-bottom: 1px dashed rgba(195, 218, 254, 0.6);
 }
 
+/* ===== 开放资源规划页面样式 ===== */
+.resource-hero {
+    background: radial-gradient(circle at top left, rgba(102, 126, 234, 0.88), rgba(118, 75, 162, 0.92));
+    overflow: hidden;
+}
+
+.resource-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.18), transparent 55%);
+    pointer-events: none;
+}
+
+.resource-hero .container {
+    position: relative;
+}
+
+.resource-hero-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.resource-hero .hero-meta-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.resource-hero .hero-meta-icon {
+    font-size: 1.6rem;
+}
+
+.resource-hero .hero-meta-title {
+    margin: 0;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.resource-hero .hero-meta-desc {
+    margin: 0.2rem 0 0 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.resource-section {
+    padding: 4.5rem 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 255, 0.85));
+}
+
+.resource-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.resource-section-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2.75rem;
+}
+
+.resource-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5a67d8;
+    margin-bottom: 0.75rem;
+}
+
+.resource-section h2 {
+    margin: 0 0 1rem 0;
+    font-size: 2.4rem;
+    color: #2d3748;
+}
+
+.resource-section-desc {
+    margin: 0;
+    color: #4a5568;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.resource-callout {
+    background: rgba(102, 126, 234, 0.08);
+    border: 1px solid rgba(102, 126, 234, 0.25);
+    color: #4c51bf;
+    padding: 1.25rem 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(102, 126, 234, 0.15);
+    max-width: 320px;
+}
+
+.resource-callout p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.resource-structure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.resource-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 22px 45px rgba(160, 174, 192, 0.25);
+    border: 1px solid rgba(160, 174, 192, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.resource-card-header {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.resource-card-icon {
+    font-size: 2rem;
+}
+
+.resource-card h3 {
+    margin: 0;
+    font-size: 1.45rem;
+    color: #2d3748;
+}
+
+.resource-card-subtitle {
+    margin: 0.4rem 0 0 0;
+    color: #718096;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.resource-card-body h4 {
+    margin: 0 0 0.75rem 0;
+    color: #4c51bf;
+    font-size: 1.05rem;
+}
+
+.resource-list,
+.resource-ideas {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #4a5568;
+    display: grid;
+    gap: 0.55rem;
+    line-height: 1.7;
+}
+
+.resource-ideas li {
+    list-style-type: '✦ ';
+    padding-left: 0.4rem;
+}
+
+.resource-update-section {
+    position: relative;
+}
+
+.resource-update-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(72, 187, 120, 0.2), transparent 60%);
+    pointer-events: none;
+}
+
+.resource-update-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.resource-update-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 18px 38px rgba(72, 187, 120, 0.25);
+    border: 1px solid rgba(72, 187, 120, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.resource-update-card h3 {
+    margin: 0;
+    color: #2f855a;
+    font-size: 1.4rem;
+}
+
+.resource-update-card p {
+    margin: 0;
+    color: #276749;
+    font-weight: 600;
+}
+
+.resource-update-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #2f855a;
+    line-height: 1.7;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.resource-keyword-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+}
+
+.resource-keyword-card {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 18px;
+    padding: 1.75rem;
+    box-shadow: 0 18px 40px rgba(102, 126, 234, 0.18);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.resource-keyword-card h3 {
+    margin: 0 0 0.85rem 0;
+    color: #4c51bf;
+}
+
+.resource-keyword-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #4a5568;
+    line-height: 1.7;
+    display: grid;
+    gap: 0.4rem;
+}
+
+.resource-audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.resource-audience-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 16px 36px rgba(118, 75, 162, 0.2);
+    border: 1px solid rgba(118, 75, 162, 0.18);
+}
+
+.resource-audience-card h3 {
+    margin: 0 0 0.75rem 0;
+    color: #553c9a;
+}
+
+.resource-audience-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #4a5568;
+    display: grid;
+    gap: 0.45rem;
+    line-height: 1.7;
+}
+
 /* Tao Te Ching page */
 .tao-main {
     background: #f7f7fb;
@@ -3770,4 +4048,56 @@ main {
     background: rgba(102, 126, 234, 0.08);
     border-radius: 16px;
     border: 1px dashed rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 960px) {
+    .resource-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .resource-callout {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .resource-hero-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-card {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .resource-section h2 {
+        font-size: 2rem;
+    }
+
+    .resource-callout {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 540px) {
+    .resource-section {
+        padding: 3.5rem 0;
+    }
+
+    .resource-section .container {
+        padding: 0 1.25rem;
+    }
+
+    .resource-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .resource-card-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .resource-update-card h3 {
+        font-size: 1.25rem;
+    }
 }
