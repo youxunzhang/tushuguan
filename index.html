@@ -22,10 +22,7 @@
         </span>
       </a>
       <nav class="nav-links" aria-label="主导航">
-        <a href="#featured-libraries" class="nav-link">全国百馆</a>
-        <a href="#libraries" class="nav-link">图书馆查询</a>
-        <a href="#bookstores" class="nav-link">书店查询</a>
-        <a href="#books" class="nav-link">书籍查询</a>
+        <a href="#tiered-libraries" class="nav-link">城市能级</a>
         <a href="cities.html" class="nav-link">城市资源</a>
         <a href="bookstores.html" class="nav-link">文化空间</a>
         <a href="open-resources.html" class="nav-link">开放资源</a>
@@ -35,10 +32,7 @@
     </div>
     <div class="mobile-menu" id="mobile-menu" hidden>
       <nav class="mobile-nav" aria-label="移动端导航">
-        <a href="#featured-libraries" class="mobile-nav-link">全国百馆</a>
-        <a href="#libraries" class="mobile-nav-link">图书馆查询</a>
-        <a href="#bookstores" class="mobile-nav-link">书店查询</a>
-        <a href="#books" class="mobile-nav-link">书籍查询</a>
+        <a href="#tiered-libraries" class="mobile-nav-link">城市能级</a>
         <a href="cities.html" class="mobile-nav-link">城市资源</a>
         <a href="bookstores.html" class="mobile-nav-link">文化空间</a>
         <a href="open-resources.html" class="mobile-nav-link">开放资源</a>
@@ -58,8 +52,8 @@
             集合全国重点图书馆、特色书店与精选书单，支持按城市、服务、主题的快速检索，为学习、备考与亲子阅读提供可信赖的参考信息。
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#libraries">开始查找图书馆</a>
-            <a class="btn btn-secondary" href="#bookstores">探索城市书店</a>
+            <a class="btn btn-primary" href="#tiered-libraries">开始查找图书馆</a>
+            <a class="btn btn-secondary" href="bookstores.html">探索城市书店</a>
           </div>
           <dl class="hero-stats">
             <div class="stat-item">
@@ -136,105 +130,6 @@
       </div>
     </section>
 
-    <section class="featured-libraries" id="featured-libraries">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <p class="section-eyebrow">全国百馆精选</p>
-            <h2>按地区浏览100家知名公共与高校图书馆</h2>
-            <p class="section-description">
-              汇集北上广深及重点省会的公共馆、大学馆与特色馆，按大区分类呈现地址、电话与官网信息，帮助你快速规划线下探访路线。
-            </p>
-          </div>
-          <div class="section-meta-box">
-            已收录 <span id="featured-library-count">0</span> 家图书馆
-          </div>
-        </div>
-        <div class="region-grid" id="featured-library-groups">
-          <div class="empty-state">正在载入全国图书馆信息...</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="search-section" id="libraries">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <p class="section-eyebrow">图书馆查询</p>
-            <h2>按城市与服务查找理想图书馆</h2>
-            <p class="section-description">
-              收录国家级与重点城市公共图书馆，涵盖开放时间、交通位置、电话与特色服务，帮助你快速锁定最近、最适合的阅读空间。
-            </p>
-          </div>
-          <a class="section-link" href="cities.html">查看全部城市 →</a>
-        </div>
-        <div class="search-controls">
-          <div class="search-field">
-            <span aria-hidden="true">🔍</span>
-            <input id="library-search-input" type="search" placeholder="搜索城市、图书馆名称或特色服务" />
-          </div>
-          <select id="library-city-filter" aria-label="按城市筛选图书馆">
-            <option value="">全部城市</option>
-          </select>
-        </div>
-        <div class="results-meta">已收录 <span id="library-results-count">0</span> 家符合条件的图书馆</div>
-        <div class="card-grid" id="library-results"></div>
-        <div class="library-pagination" id="library-pagination" hidden></div>
-      </div>
-    </section>
-
-    <section class="search-section accent" id="bookstores">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <p class="section-eyebrow">书店查询</p>
-            <h2>发现值得造访的文化书店</h2>
-            <p class="section-description">
-              精选全国知名书店与阅读空间，整合特色活动、开放时间与联系方式，让你的下一次城市漫游更具文化味道。
-            </p>
-          </div>
-          <a class="section-link" href="bookstores.html">浏览书店指南 →</a>
-        </div>
-        <div class="search-controls">
-          <div class="search-field">
-            <span aria-hidden="true">🔍</span>
-            <input id="bookstore-search-input" type="search" placeholder="搜索书店、城市或特色活动" />
-          </div>
-          <select id="bookstore-city-filter" aria-label="按城市筛选书店">
-            <option value="">全部城市</option>
-          </select>
-        </div>
-        <div class="results-meta">筛选出 <span id="bookstore-results-count">0</span> 家书店</div>
-        <div class="card-grid" id="bookstore-results"></div>
-      </div>
-    </section>
-
-    <section class="search-section" id="books">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <p class="section-eyebrow">书籍查询</p>
-            <h2>精选书单与馆藏索书号参考</h2>
-            <p class="section-description">
-              推荐适合公共图书馆与高校图书馆的重点书目，涵盖阅读推广、儿童教育、人文社科与城市研究，为选书与采购提供灵感。
-            </p>
-          </div>
-          <a class="section-link" href="reading-clubs.html">查看更多阅读活动 →</a>
-        </div>
-        <div class="search-controls">
-          <div class="search-field">
-            <span aria-hidden="true">🔍</span>
-            <input id="book-search-input" type="search" placeholder="搜索书名、作者或主题关键词" />
-          </div>
-          <select id="book-category-filter" aria-label="按主题筛选书籍">
-            <option value="">全部主题</option>
-          </select>
-        </div>
-        <div class="results-meta">共找到 <span id="book-results-count">0</span> 本推荐书籍</div>
-        <div class="card-grid" id="book-results"></div>
-      </div>
-    </section>
-
     <section class="resource-section" id="resources">
       <div class="container resource-grid">
         <article class="resource-card">
@@ -266,9 +161,9 @@
         <div>
           <h3>主要栏目</h3>
           <ul>
-            <li><a href="#libraries">图书馆查询</a></li>
-            <li><a href="#bookstores">书店查询</a></li>
-            <li><a href="#books">书籍查询</a></li>
+            <li><a href="#tiered-libraries">城市能级导览</a></li>
+            <li><a href="cities.html">城市信息面板</a></li>
+            <li><a href="bookstores.html">文化空间指南</a></li>
           </ul>
         </div>
         <div>
