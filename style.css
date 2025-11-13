@@ -4101,3 +4101,355 @@ main {
         font-size: 1.25rem;
     }
 }
+
+/* ===== 全球作家索引样式 ===== */
+.author-hero {
+    background: radial-gradient(circle at top left, rgba(102, 126, 234, 0.88), rgba(118, 75, 162, 0.95));
+    overflow: hidden;
+}
+
+.author-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18), transparent 55%),
+                radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.15), transparent 60%);
+    z-index: 0;
+}
+
+.author-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.author-hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+.author-stat-card {
+    min-width: 160px;
+    padding: 1.5rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.author-stat-number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.author-stat-label {
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.author-overview {
+    background: linear-gradient(180deg, #f8faff 0%, #ffffff 60%);
+    padding: 4rem 0;
+}
+
+.author-overview-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 3rem;
+    align-items: start;
+}
+
+.author-filter-panel {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 30px 70px rgba(102, 126, 234, 0.12);
+    border: 1px solid rgba(226, 232, 240, 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.author-filter-panel h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #2d3748;
+}
+
+.author-filter-intro {
+    margin: 0;
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.author-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.author-filter-field input,
+.author-filter-field select {
+    padding: 0.85rem 1.1rem;
+    border-radius: 14px;
+    border: 2px solid #e2e8f0;
+    font-size: 1rem;
+    color: #2d3748;
+    background: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author-filter-field input:focus,
+.author-filter-field select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.author-filter-field small {
+    font-weight: 400;
+    color: #718096;
+}
+
+.author-filter-summary {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.75rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.14));
+    color: #4a5568;
+}
+
+.author-summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.author-summary-item strong {
+    font-size: 1.8rem;
+    color: #5a67d8;
+}
+
+.author-index-panel {
+    background: linear-gradient(135deg, #ffffff 0%, #f3f4ff 100%);
+    border-radius: 24px;
+    padding: 2.5rem;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 30px 70px rgba(79, 114, 205, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.author-index-panel h2 {
+    margin: 0;
+    font-size: 1.9rem;
+    color: #2d3748;
+}
+
+.author-index-panel p {
+    margin: 0;
+    color: #4a5568;
+}
+
+.author-index {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+}
+
+.author-index-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 12px;
+    background: rgba(102, 126, 234, 0.12);
+    color: #4a5568;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author-index-link:hover,
+.author-index-link:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(102, 126, 234, 0.2);
+}
+
+.author-listing {
+    padding: 4rem 0 5rem;
+    background: #ffffff;
+}
+
+.author-listing .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.author-listing-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+}
+
+.author-eyebrow {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #5a67d8;
+    font-weight: 700;
+}
+
+.author-listing-desc {
+    margin: 0;
+    color: #4a5568;
+    max-width: 760px;
+    line-height: 1.7;
+}
+
+.author-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.75rem;
+}
+
+.author-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f6f8ff 100%);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 18px 45px rgba(102, 126, 234, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 55px rgba(102, 126, 234, 0.25);
+}
+
+.author-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.author-card-flag {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: rgba(102, 126, 234, 0.12);
+}
+
+.author-card-meta h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.75rem;
+    color: #2d3748;
+}
+
+.author-card-meta p {
+    margin: 0;
+    color: #4a5568;
+}
+
+.author-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem 1.25rem;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.author-list li {
+    position: relative;
+    padding-left: 0.25rem;
+}
+
+@media (max-width: 1024px) {
+    .author-overview-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .author-index-panel {
+        order: -1;
+    }
+
+    .author-filter-panel,
+    .author-index-panel {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .author-hero-stats {
+        justify-content: flex-start;
+    }
+
+    .author-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .author-filter-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .author-index {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .author-filter-panel,
+    .author-index-panel {
+        padding: 1.75rem;
+    }
+
+    .author-card {
+        padding: 1.5rem;
+    }
+
+    .author-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .author-card-flag {
+        width: 56px;
+        height: 56px;
+        font-size: 1.75rem;
+    }
+
+    .author-list {
+        grid-template-columns: 1fr;
+    }
+}

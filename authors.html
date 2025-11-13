@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球作家索引 | 中国图书馆信息网</title>
+    <meta name="description" content="收录来自25个国家的250位著名作家，按国家与地区分类整理，支持快速检索与筛选，助力阅读计划与文学研究。">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="subpage-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">📚</span>
+                <span class="brand-text">中国图书馆</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#tiered-libraries" class="nav-link">城市能级</a>
+                <a href="cities.html" class="nav-link">城市信息</a>
+                <a href="bookstores.html" class="nav-link">文化空间</a>
+                <a href="reading-clubs.html" class="nav-link">读书会</a>
+                <a href="open-resources.html" class="nav-link">开放资源</a>
+                <a href="authors.html" class="nav-link nav-link-active">全球作家</a>
+                <a href="tao-te-ching.html" class="nav-link">道德经</a>
+                <a href="index.html" class="nav-link nav-link-primary">返回首页</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="subpage-main">
+        <section class="subpage-hero author-hero">
+            <div class="container">
+                <div class="hero-breadcrumb"><a href="index.html">首页</a> · 全球作家索引</div>
+                <h1>全球作家索引</h1>
+                <p class="hero-description">甄选亚洲、欧洲、美洲、非洲与大洋洲 25 个国家、250 位代表性作家，串联跨文化叙事传统，为写作灵感、阅读计划与学术研究提供灵感地图。</p>
+                <div class="author-hero-stats">
+                    <div class="author-stat-card">
+                        <span class="author-stat-number" id="country-total">0</span>
+                        <span class="author-stat-label">国家/地区</span>
+                    </div>
+                    <div class="author-stat-card">
+                        <span class="author-stat-number" id="author-total">0</span>
+                        <span class="author-stat-label">作家数量</span>
+                    </div>
+                    <div class="author-stat-card">
+                        <span class="author-stat-number">5</span>
+                        <span class="author-stat-label">大洲覆盖</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="author-overview" aria-labelledby="author-overview-title">
+            <div class="container author-overview-layout">
+                <div class="author-filter-panel">
+                    <h2 id="author-overview-title">快速筛选与统计</h2>
+                    <p class="author-filter-intro">按地区或关键词检索作家姓名、国家与代表作品，实时更新可见国家与作家数量，便于制定阅读清单。</p>
+                    <label class="author-filter-field" for="author-search">
+                        <span>关键词搜索</span>
+                        <input type="search" id="author-search" placeholder="输入国家或作家姓名..." aria-describedby="author-search-hint">
+                        <small id="author-search-hint">支持中英文姓名与国家搜索，例如“英国”“莫里森”。</small>
+                    </label>
+                    <label class="author-filter-field" for="region-filter">
+                        <span>按地区筛选</span>
+                        <select id="region-filter" aria-label="按地区筛选国家"></select>
+                    </label>
+                    <div class="author-filter-summary" role="status" aria-live="polite">
+                        <div class="author-summary-item">
+                            <strong id="author-visible-count">0</strong>
+                            <span>个国家符合条件</span>
+                        </div>
+                        <div class="author-summary-item">
+                            <strong id="author-visible-authors">0</strong>
+                            <span>位作家呈现</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="author-index-panel">
+                    <h2>国家快速索引</h2>
+                    <p>点击国家名称即可跳转至对应作家列表，方便建立跨国家的主题阅读路径。</p>
+                    <div id="author-country-toc" class="author-index"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="author-listing" aria-labelledby="author-listing-title">
+            <div class="container">
+                <div class="author-listing-header">
+                    <div>
+                        <p class="author-eyebrow">Global Authors</p>
+                        <h2 id="author-listing-title">按国家浏览 250 位全球著名作家</h2>
+                        <p class="author-listing-desc">每个国家列出 10 位标志性作家，涵盖经典文学、诗歌与当代创作，并提供简短背景提示，帮助你快速了解文学地理。</p>
+                    </div>
+                </div>
+                <div id="author-empty-state" class="empty-state hidden">未找到符合筛选条件的国家，请尝试其他关键词或清空筛选。</div>
+                <div id="author-country-grid" class="author-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="subpage-footer">
+        <div class="container">
+            <p>📬 欢迎推荐更多作家与书单：<a href="mailto:zhangyouxun2024@qq.com">zhangyouxun2024@qq.com</a></p>
+            <p>© 2024 中国图书馆信息网 · tushuguan.online</p>
+        </div>
+    </footer>
+
+    <script type="module" src="authors.js"></script>
+</body>
+</html>
