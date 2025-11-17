@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NQ833CGWR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8NQ833CGWR');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>精选好书清单 | 中国图书馆信息网</title>
+  <meta name="description" content="覆盖图书馆空间更新、数字化转型、阅读推广与信息素养等 29 本精选专业书单，支持关键词与主题筛选，辅助图书馆与阅读组织者快速选书。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="subpage-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">📚</span>
+        <span class="brand-text">中国图书馆</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#tiered-libraries" class="nav-link">城市能级</a>
+        <a href="cities.html" class="nav-link">城市信息</a>
+        <a href="bookstores.html" class="nav-link">文化空间</a>
+        <a href="books.html" class="nav-link nav-link-active">精选好书</a>
+        <a href="authors.html" class="nav-link">全球作家</a>
+        <a href="reading-clubs.html" class="nav-link">读书会</a>
+        <a href="open-resources.html" class="nav-link">开放资源</a>
+        <a href="tao-te-ching.html" class="nav-link">道德经</a>
+        <a href="index.html" class="nav-link nav-link-primary">返回首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="subpage-main">
+    <section class="subpage-hero books-hero">
+      <div class="container">
+        <div class="hero-breadcrumb"><a href="index.html">首页</a> · 精选好书清单</div>
+        <h1>图书馆与阅读推广从业者必读的 29 本好书</h1>
+        <p class="hero-description">结合空间更新、智慧服务、阅读推广与数字化转型等高频需求，快速搭建专业学习书架，支持馆员培训、项目策划与选题调研。</p>
+        <div class="books-hero-stats">
+          <div class="books-stat-card">
+            <span class="books-stat-number" id="books-total-count">0</span>
+            <span class="books-stat-label">精选书籍</span>
+          </div>
+          <div class="books-stat-card">
+            <span class="books-stat-number" id="books-theme-count">0</span>
+            <span class="books-stat-label">主题分类</span>
+          </div>
+          <div class="books-stat-card">
+            <span class="books-stat-number" id="books-latest-year">0</span>
+            <span class="books-stat-label">最新出版年份</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="books-overview" aria-labelledby="books-overview-title">
+      <div class="container books-overview-layout">
+        <div class="books-filter-panel">
+          <h2 id="books-overview-title">快速检索与筛选</h2>
+          <p class="books-filter-desc">按关键词、主题与年份组合筛选，实时查看符合条件的书籍数量，支持导出选题书单。</p>
+          <label class="books-field" for="books-search">
+            <span>关键词搜索</span>
+            <input type="search" id="books-search" placeholder="输入书名、作者或馆藏地" aria-describedby="books-search-hint">
+            <small id="books-search-hint">支持书名、作者、主题标签与馆藏地检索，例如“数字化”“亲子阅读”。</small>
+          </label>
+          <label class="books-field" for="books-category">
+            <span>主题分类</span>
+            <select id="books-category"></select>
+          </label>
+          <label class="books-field" for="books-year">
+            <span>出版年份</span>
+            <select id="books-year"></select>
+          </label>
+          <div class="books-filter-summary" role="status" aria-live="polite">
+            <div class="books-summary-item">
+              <strong id="books-visible-count">0</strong>
+              <span>本书籍符合条件</span>
+            </div>
+          </div>
+        </div>
+        <div class="books-overview-panel">
+          <h2>主题速览</h2>
+          <p>从空间改造、资源建设到阅读推广、治理创新，集合图书馆热门议题，点击主题快速定位。<br>建议结合本地项目需求，一键生成采购或培训阅读清单。</p>
+          <div id="books-category-tags" class="books-category-tags"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="books-listing" aria-labelledby="books-listing-title">
+      <div class="container">
+        <div class="books-listing-header">
+          <div>
+            <p class="books-eyebrow">Library Picks</p>
+            <h2 id="books-listing-title">全量好书档案</h2>
+            <p class="books-listing-desc">每本图书均包含主题标签、索书号与馆藏地说明，方便快速定位馆配资源。</p>
+          </div>
+        </div>
+        <div id="books-empty-state" class="empty-state hidden">未找到符合条件的书籍，请尝试其他关键词或清空筛选。</div>
+        <div id="books-grid" class="books-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="subpage-footer">
+    <div class="container">
+      <p>📮 推荐更多专业图书：<a href="mailto:zhangyouxun2024@qq.com">zhangyouxun2024@qq.com</a></p>
+      <p>© 2024 中国图书馆信息网 · tushuguan.online</p>
+    </div>
+  </footer>
+
+  <script src="books-data.js" defer></script>
+  <script src="books.js" defer></script>
+</body>
+</html>

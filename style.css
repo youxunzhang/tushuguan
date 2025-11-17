@@ -4102,6 +4102,295 @@ main {
     }
 }
 
+/* ===== 精选好书样式 ===== */
+.books-hero {
+    position: relative;
+    background: radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.55), rgba(129, 140, 248, 0.75));
+    overflow: hidden;
+}
+
+.books-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.18), transparent 55%),
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1), transparent 60%);
+    z-index: 0;
+}
+
+.books-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.books-hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.75rem;
+}
+
+.books-stat-card {
+    min-width: 150px;
+    padding: 1.4rem 1.6rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.books-stat-number {
+    font-size: 2.35rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.books-stat-label {
+    font-size: 0.95rem;
+    color: rgba(226, 232, 240, 0.95);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.books-overview {
+    background: linear-gradient(180deg, #f8faff 0%, #ffffff 65%);
+    padding: 4rem 0;
+}
+
+.books-overview-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 3rem;
+    align-items: start;
+}
+
+.books-filter-panel {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 30px 70px rgba(96, 165, 250, 0.15);
+    border: 1px solid rgba(226, 232, 240, 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.books-filter-panel h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #1f2937;
+}
+
+.books-filter-desc {
+    margin: 0;
+    color: #475569;
+    line-height: 1.7;
+}
+
+.books-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    color: #475569;
+    font-weight: 500;
+}
+
+.books-field span {
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+}
+
+.books-field input,
+.books-field select {
+    padding: 0.85rem 1rem;
+    border-radius: 16px;
+    border: 1px solid rgba(203, 213, 225, 0.8);
+    font-size: 0.95rem;
+    background: rgba(248, 250, 252, 0.85);
+    outline: none;
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.books-field input:focus,
+.books-field select:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    background: #ffffff;
+}
+
+.books-filter-summary {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    border-radius: 18px;
+    padding: 1rem 1.25rem;
+}
+
+.books-summary-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    color: #1e3a8a;
+}
+
+.books-summary-item strong {
+    font-size: 1.8rem;
+}
+
+.books-overview-panel {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
+    padding: 2.5rem;
+    border: 1px solid rgba(226, 232, 240, 0.7);
+    box-shadow: 0 24px 60px rgba(148, 163, 184, 0.2);
+    display: grid;
+    gap: 1.5rem;
+}
+
+.books-overview-panel h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #1f2937;
+}
+
+.books-category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.books-tag {
+    border: none;
+    background: rgba(96, 165, 250, 0.16);
+    color: #1d4ed8;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.books-tag:hover,
+.books-tag:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(96, 165, 250, 0.25);
+}
+
+.books-listing {
+    padding: 4rem 0 4.5rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.books-listing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.books-eyebrow {
+    margin: 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1d4ed8;
+    font-weight: 600;
+}
+
+.books-listing-desc {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+}
+
+.book-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 1.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 24px 48px rgba(96, 165, 250, 0.16);
+    display: grid;
+    gap: 1rem;
+}
+
+.book-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.book-card-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.book-card-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(79, 70, 229, 0.12);
+    color: #4338ca;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.book-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.book-card-tags span {
+    display: inline-flex;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(96, 165, 250, 0.16);
+    color: #1d4ed8;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.book-card-summary {
+    margin: 0;
+    color: #475569;
+    line-height: 1.65;
+}
+
+.book-card-meta {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
+    color: #475569;
+    font-size: 0.92rem;
+}
+
+.book-card-meta li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    line-height: 1.5;
+}
+
 /* ===== 全球作家索引样式 ===== */
 .author-hero {
     background: radial-gradient(circle at top left, rgba(102, 126, 234, 0.88), rgba(118, 75, 162, 0.95));
@@ -4391,6 +4680,35 @@ main {
 .author-list li {
     position: relative;
     padding-left: 0.25rem;
+}
+
+@media (max-width: 1024px) {
+    .books-overview-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .books-filter-panel,
+    .books-overview-panel {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .books-filter-panel,
+    .books-overview-panel {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .books-hero-stats {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 @media (max-width: 1024px) {
