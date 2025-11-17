@@ -34,6 +34,7 @@
         <a href="#tiered-libraries" class="nav-link">城市能级</a>
         <a href="cities.html" class="nav-link">城市资源</a>
         <a href="bookstores.html" class="nav-link">文化空间</a>
+        <a href="books.html" class="nav-link">精选好书</a>
         <a href="authors.html" class="nav-link">全球作家</a>
         <a href="open-resources.html" class="nav-link">开放资源</a>
         <a href="https://seodog.cn/" class="nav-link" target="_blank" rel="noopener">AI 工具</a>
@@ -45,6 +46,7 @@
         <a href="#tiered-libraries" class="mobile-nav-link">城市能级</a>
         <a href="cities.html" class="mobile-nav-link">城市资源</a>
         <a href="bookstores.html" class="mobile-nav-link">文化空间</a>
+        <a href="books.html" class="mobile-nav-link">精选好书</a>
         <a href="authors.html" class="mobile-nav-link">全球作家</a>
         <a href="open-resources.html" class="mobile-nav-link">开放资源</a>
         <a href="https://seodog.cn/" class="mobile-nav-link" target="_blank" rel="noopener">AI 工具</a>
@@ -85,6 +87,63 @@
       </div>
     </section>
 
+    <section class="books-section" id="books">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">好书新知</p>
+            <h2>29 本馆配精选书单，覆盖图情与阅读推广热点</h2>
+            <p class="section-description">
+              汇聚空间改造、数字化转型、信息素养与阅读推广等主题的专业读物，帮助馆员、教师与阅读组织者快速获取实践灵感。
+            </p>
+          </div>
+          <div class="section-meta-box books-meta">
+            <p><strong id="total-book-count">0</strong> 本收录书籍</p>
+            <a class="section-link" href="books.html">查看全部书籍</a>
+          </div>
+        </div>
+
+        <div class="books-controls">
+          <label class="input-field" for="book-search-input">
+            <span>关键词检索</span>
+            <input type="search" id="book-search-input" placeholder="输入主题、作者或馆藏地" />
+          </label>
+          <label class="input-field" for="book-category-filter">
+            <span>按主题筛选</span>
+            <select id="book-category-filter">
+              <option value="">全部主题</option>
+            </select>
+          </label>
+        </div>
+
+        <p class="result-caption" role="status" aria-live="polite">
+          当前呈现 <strong id="book-results-count">0</strong> 本精选好书
+        </p>
+
+        <div class="info-grid" id="book-results"></div>
+      </div>
+    </section>
+
+    <section class="authors-highlight" id="authors">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">全球作者</p>
+            <h2>追踪影响世界阅读版图的顶尖作家</h2>
+            <p class="section-description">
+              从诺贝尔文学奖到类型小说先驱，甄选跨语种的代表性作者，提供创作风格与代表作提示，助你拓展阅读边界。
+            </p>
+          </div>
+          <div class="section-meta-box authors-meta">
+            <p><strong id="featured-author-count">0</strong> 位作家上榜</p>
+            <a class="section-link" href="authors.html">浏览全部作家</a>
+          </div>
+        </div>
+
+        <div class="authors-grid" id="featured-authors-grid"></div>
+      </div>
+    </section>
+
     <section class="resource-section" id="resources">
       <div class="container resource-grid">
         <article class="resource-card">
@@ -119,6 +178,7 @@
             <li><a href="#tiered-libraries">城市能级导览</a></li>
             <li><a href="cities.html">城市信息面板</a></li>
             <li><a href="bookstores.html">文化空间指南</a></li>
+            <li><a href="books.html">精选好书</a></li>
           </ul>
         </div>
         <div>
