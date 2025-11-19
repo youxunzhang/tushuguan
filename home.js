@@ -5,116 +5,10 @@
     books: "例如：信息素养 / 亲子阅读 / 古籍保护"
   };
 
-  const featuredAuthors = [
-    {
-      name: "加西亚·马尔克斯",
-      country: "哥伦比亚",
-      flag: "🇨🇴",
-      tags: ["魔幻现实主义", "诺贝尔文学奖"],
-      accolade: "1982 年诺奖得主",
-      summary: "以布恩迪亚家族史书写拉丁美洲命运，拓展现实与幻想交错的叙事可能。",
-      works: "《百年孤独》《霍乱时期的爱情》"
-    },
-    {
-      name: "托妮·莫里森",
-      country: "美国",
-      flag: "🇺🇸",
-      tags: ["非裔叙事", "女性书写"],
-      accolade: "1993 年诺奖得主",
-      summary: "通过家族创伤与记忆重建探讨美国黑人身份，被誉为当代最具力量的小说家之一。",
-      works: "《宠儿》《最蓝的眼睛》"
-    },
-    {
-      name: "村上春树",
-      country: "日本",
-      flag: "🇯🇵",
-      tags: ["城市孤独", "爵士文化"],
-      accolade: "全球畅销作家",
-      summary: "以日常与超现实的缝隙讲述都市孤独与成长，影响东亚乃至全球读者。",
-      works: "《挪威的森林》《1Q84》"
-    },
-    {
-      name: "奇玛曼达·恩戈兹·阿迪契",
-      country: "尼日利亚",
-      flag: "🇳🇬",
-      tags: ["后殖民写作", "女性主义"],
-      accolade: "《半轮黄日》作者",
-      summary: "以鲜明的非洲视角讨论身份、性别与权力，在 TED 演讲中倡导多样叙事。",
-      works: "《美国佬》《我们都该是女权主义者》"
-    },
-    {
-      name: "玛格丽特·阿特伍德",
-      country: "加拿大",
-      flag: "🇨🇦",
-      tags: ["反乌托邦", "生态文学"],
-      accolade: "布克奖双冠王",
-      summary: "以尖锐的政治寓言揭示性别与生态议题，《使女的故事》成为全球文化符号。",
-      works: "《使女的故事》《证言》"
-    },
-    {
-      name: "奥尔罕·帕慕克",
-      country: "土耳其",
-      flag: "🇹🇷",
-      tags: ["伊斯坦布尔书写", "文明交汇"],
-      accolade: "2006 年诺奖得主",
-      summary: "用细腻的自传与历史交织出东西方文化交融的城市肖像。",
-      works: "《我的名字叫红》《伊斯坦布尔》"
-    },
-    {
-      name: "米兰·昆德拉",
-      country: "捷克 / 法国",
-      flag: "🇨🇿",
-      tags: ["存在主义", "中欧记忆"],
-      accolade: "《不能承受的生命之轻》作者",
-      summary: "以哲思与戏谑并置的方式探讨自由与历史，作品长期位列全球经典书单。",
-      works: "《生命中不能承受之轻》《玩笑》"
-    },
-    {
-      name: "埃莱娜·费兰特",
-      country: "意大利",
-      flag: "🇮🇹",
-      tags: ["女性成长", "那不勒斯四部曲"],
-      accolade: "神秘笔名作者",
-      summary: "以亲密的女性友谊与阶层跃迁书写意大利社会变迁，被誉为当代叙事奇迹。",
-      works: "《我的天才女友》《新名字的故事》"
-    },
-    {
-      name: "萨尔曼·拉什迪",
-      country: "印度 / 英国",
-      flag: "🇮🇳",
-      tags: ["魔幻现实主义", "政治寓言"],
-      accolade: "布克奖得主",
-      summary: "以语言的狂想与政治寓言揭示身份冲突，《午夜之子》获布克奖 50 年最佳小说。",
-      works: "《午夜之子》《撒旦诗篇》"
-    },
-    {
-      name: "伊莎贝尔·阿连德",
-      country: "智利",
-      flag: "🇨🇱",
-      tags: ["家族传奇", "女性叙事"],
-      accolade: "西语世界畅销作家",
-      summary: "将家族史与政治风云交织，关注女性在时代洪流中的命运与抗争。",
-      works: "《灵魂之屋》《保拉》"
-    },
-    {
-      name: "石黑一雄",
-      country: "英国",
-      flag: "🇬🇧",
-      tags: ["记忆与遗忘", "类型融合"],
-      accolade: "2017 年诺奖得主",
-      summary: "在科幻、悬疑与心理小说之间自由切换，探讨记忆与自我认知的边界。",
-      works: "《长日留痕》《别让我走》"
-    },
-    {
-      name: "厄休拉·K·勒古恩",
-      country: "美国",
-      flag: "🇺🇸",
-      tags: ["科幻", "人类学视角"],
-      accolade: "星云奖 / 雨果奖常胜军",
-      summary: "以社会学与人类学视角重新想象未来世界，是现代科幻与奇幻的里程碑作家。",
-      works: "《黑暗的左手》《地海传奇》"
-    }
-  ];
+  const featuredAuthors = Array.isArray(window.featuredAuthorProfiles)
+    ? window.featuredAuthorProfiles
+    : [];
+
 
   const LIBRARIES_PER_PAGE = 12;
   const FEATURED_LIBRARY_LIMIT = 100;
@@ -615,6 +509,9 @@
       ? `<p class="author-highlight-body"><strong>代表作：</strong>${escapeHtml(author.works)}</p>`
       : "";
     const accolade = author.accolade ? ` · ${escapeHtml(author.accolade)}` : "";
+    const detailLink = author.slug
+      ? `author-profile.html?slug=${encodeURIComponent(author.slug)}`
+      : "authors.html";
     return `
       <article class="author-highlight-card">
         <div class="author-highlight-header">
@@ -627,6 +524,7 @@
         ${tagSection}
         <p class="author-highlight-body">${escapeHtml(author.summary)}</p>
         ${worksLine}
+        <a class="author-highlight-link" href="${escapeHtml(detailLink)}">阅读作家档案</a>
       </article>
     `;
   }

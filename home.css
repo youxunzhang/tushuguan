@@ -830,6 +830,25 @@ a:hover {
   font-weight: 600;
 }
 
+.author-highlight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.author-highlight-link::after {
+  content: "↗";
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.author-highlight-link:hover::after {
+  transform: translateX(2px);
+}
+
 .section-meta-box {
   flex-direction: column;
   align-items: flex-start;
