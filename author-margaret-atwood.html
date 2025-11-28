@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球作家详情 | 中国图书馆信息网</title>
+  <meta name="description" content="浏览全球作家档案，了解写作背景、主题与代表作品，扩展你的阅读地图。">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="author-detail.css">
+</head>
+<body data-author-slug="margaret-atwood">
+  <header class="subpage-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">📚</span>
+        <span class="brand-text">中国图书馆</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#tiered-libraries" class="nav-link">城市能级</a>
+        <a href="cities.html" class="nav-link">城市信息</a>
+        <a href="bookstores.html" class="nav-link">文化空间</a>
+        <a href="books.html" class="nav-link">精选好书</a>
+        <a href="reading-clubs.html" class="nav-link">读书会</a>
+        <a href="authors.html" class="nav-link nav-link-active">全球作家</a>
+        <a href="tao-te-ching.html" class="nav-link">道德经</a>
+        <a href="index.html" class="nav-link nav-link-primary">返回首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="author-profile-main" id="author-profile-main">
+    <section class="author-profile-hero">
+      <div class="container">
+        <div class="author-breadcrumb" id="author-breadcrumb"></div>
+        <div class="author-hero-grid">
+          <div>
+            <p class="author-hero-eyebrow" id="author-region"></p>
+            <h1 id="author-name">全球作家档案</h1>
+            <p class="author-hero-subtitle" id="author-subtitle"></p>
+            <p class="author-hero-summary" id="author-summary"></p>
+            <div class="author-hero-meta" id="author-meta"></div>
+          </div>
+          <div class="author-hero-card">
+            <h2>写作速记</h2>
+            <ul id="author-highlights"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="author-profile-content">
+      <div class="container author-profile-grid" id="author-sections"></div>
+    </section>
+
+    <section class="author-profile-works">
+      <div class="container">
+        <h2>代表作品与主题索引</h2>
+        <div class="author-works-grid" id="author-works"></div>
+      </div>
+    </section>
+
+    <section class="author-profile-links">
+      <div class="container">
+        <div class="link-card">
+          <p>返回作家索引或首页精选模块，继续探索全球阅读地图。</p>
+          <div>
+            <a href="authors.html">← 返回全球作家索引</a>
+            <a href="index.html#authors">回到首页精选作家</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="subpage-footer">
+    <div class="container">
+      <p>📬 联系我们：<a href="mailto:zhangyouxun2024@qq.com">zhangyouxun2024@qq.com</a></p>
+      <p>© 2024 中国图书馆信息网 · tushuguan.online</p>
+    </div>
+  </footer>
+
+  <script src="featured-authors-data.js" defer></script>
+  <script src="author-detail.js" defer></script>
+</body>
+</html>
