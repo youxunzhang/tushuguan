@@ -19,8 +19,24 @@
   const urlParams = new URLSearchParams(window.location.search);
   const slugFromQuery = urlParams.get("slug");
   const slugFromDataset = document.body?.dataset?.authorSlug;
+  const slugFromPath = (() => {
+    const pathname = window.location.pathname || "";
+    const fileName = pathname.split("/").pop() || "";
+    const nameWithoutExt = fileName.replace(/\.html?$/i, "");
+    if (!nameWithoutExt) return "";
+
+    if (nameWithoutExt.startsWith("author-")) {
+      return nameWithoutExt.slice("author-".length);
+    }
+
+    if (nameWithoutExt !== "author-profile") {
+      return nameWithoutExt;
+    }
+
+    return "";
+  })();
   const fallbackSlug = data.length ? data[0].slug : "";
-  const targetSlug = slugFromQuery || slugFromDataset || fallbackSlug;
+  const targetSlug = slugFromQuery || slugFromDataset || slugFromPath || fallbackSlug;
 
   const author = data.find((item) => item.slug === targetSlug);
 

@@ -510,7 +510,7 @@
       : "";
     const accolade = author.accolade ? ` · ${escapeHtml(author.accolade)}` : "";
     const detailLink = author.slug
-      ? `author-profile.html?slug=${encodeURIComponent(author.slug)}`
+      ? `author-${author.slug}.html`
       : "authors.html";
     return `
       <article class="author-highlight-card">
