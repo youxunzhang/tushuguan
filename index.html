@@ -56,6 +56,94 @@
   </header>
 
   <main>
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="hero-text">
+          <p class="hero-eyebrow">全国阅读枢纽</p>
+          <h1>连接图书馆、文化书店与好书的立体导航台</h1>
+          <p class="hero-description">
+            用更直观的方式探索中国城市阅读版图：一键切换能级馆舍、精选文化空间和跨语种作家资源，帮助你快速规划下一次阅读之旅。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#tiered-libraries">浏览城市能级</a>
+            <a class="btn btn-secondary" href="open-resources.html">开放资源</a>
+          </div>
+          <dl class="hero-stats">
+            <div class="stat-item">
+              <dt>馆藏地标</dt>
+              <dd id="total-library-count">120+</dd>
+            </div>
+            <div class="stat-item">
+              <dt>文化书店</dt>
+              <dd id="total-bookstore-count">60+</dd>
+            </div>
+            <div class="stat-item">
+              <dt>精选书籍</dt>
+              <dd id="total-book-count">80+</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="hero-panel">
+          <div class="quick-search" aria-label="快速检索">
+            <div class="quick-header">
+              <p class="section-eyebrow">即时搜索</p>
+              <h2>跨版块快速查找</h2>
+              <p class="quick-subtitle">输入关键词，获取图书馆、书店或好书的推荐结果。</p>
+            </div>
+            <div class="quick-tabs" role="tablist">
+              <button class="quick-tab active" type="button" data-target="libraries" aria-selected="true">图书馆</button>
+              <button class="quick-tab" type="button" data-target="bookstores" aria-selected="false">文化书店</button>
+              <button class="quick-tab" type="button" data-target="books" aria-selected="false">精选书籍</button>
+            </div>
+            <label class="quick-field" for="quick-search-input">
+              <span class="quick-icon" aria-hidden="true">🔍</span>
+              <input id="quick-search-input" type="search" placeholder="输入城市、名称或主题" aria-describedby="quick-search-hint" />
+            </label>
+            <p class="quick-hint" id="quick-search-hint">例如：北京 自习室 / 24小时开放</p>
+            <div class="quick-results" id="quick-search-results">
+              <p class="quick-placeholder">开始输入后将即时展示前三条匹配结果。</p>
+            </div>
+            <div class="quick-links" aria-label="快捷入口">
+              <a class="quick-link" href="bookstores.html">📍 城市文化空间</a>
+              <a class="quick-link" href="authors.html">🌏 全球作家榜</a>
+              <a class="quick-link" href="reading-clubs.html">🗓️ 线下读书会</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-grid" aria-label="导航卡片">
+      <div class="container">
+        <div class="feature-row">
+          <article class="feature-card">
+            <div class="feature-icon">🏙️</div>
+            <div class="feature-text">
+              <h3>按城市能级找馆</h3>
+              <p>北上广深到区域中心城市，快速锁定代表性图书馆与学术馆。</p>
+            </div>
+            <a class="feature-link" href="#tiered-libraries">立即查看</a>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📖</div>
+            <div class="feature-text">
+              <h3>阅读主题策展</h3>
+              <p>用标签导航亲子阅读、信息素养、古籍保护等精选书单。</p>
+            </div>
+            <a class="feature-link" href="books.html">打开书单</a>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🧭</div>
+            <div class="feature-text">
+              <h3>文化空间路线</h3>
+              <p>结合地铁交通、公共活动与夜间开放特色规划城市文化走读。</p>
+            </div>
+            <a class="feature-link" href="bookstores.html">规划路线</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="tiered-libraries" id="tiered-libraries">
       <div class="container">
         <div class="section-header">
