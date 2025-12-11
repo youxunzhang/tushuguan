@@ -3,274 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>北京图书馆大全（2025 最新）| 开放时间、交通方式与特色馆藏</title>
-  <meta name="description" content="北京图书馆大全：涵盖国家图书馆、首都图书馆与朝阳区图书馆的地址、开放时间、特色馆藏、交通方式与自习体验，为自习族、亲子与研究者提供可落地的参观指南。">
+  <title>北京图书馆大全（2025 最新）| 办证、自习与开放时间指南</title>
+  <meta name="description" content="北京图书馆大全：国家图书馆、首都图书馆、清华/北大等高校馆开放时间、自习预约与借书证办理攻略。">
   <link rel="stylesheet" href="style.css">
+
   <style>
     body {
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
       background: #f8fafc;
-      color: #1f2937;
+      color: #0f172a;
+      margin: 0;
     }
-
-    .city-wrapper {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 5rem 1.25rem 3rem;
-    }
-
-    .city-crumbs {
-      color: #6b7280;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
-
-    .city-hero {
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
-      color: #fff;
-      border-radius: 18px;
-      padding: 2rem 1.75rem;
-      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.2);
-    }
-
-    .city-hero h1 {
-      margin: 0 0 0.5rem;
-      font-size: clamp(1.9rem, 3vw, 2.6rem);
-    }
-
-    .city-hero p {
-      margin: 0 0 0.85rem;
-      line-height: 1.7;
-    }
-
-    .city-meta {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.75rem;
-      margin-top: 1.25rem;
-    }
-
-    .city-meta span {
-      background: rgba(255, 255, 255, 0.12);
-      padding: 0.65rem 0.85rem;
-      border-radius: 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-weight: 600;
-    }
-
-    .section-title {
-      margin: 2.25rem 0 0.75rem;
-      font-size: 1.5rem;
-    }
-
-    .section-lede {
-      color: #4b5563;
-      margin: 0 0 1.5rem;
-      line-height: 1.8;
-    }
-
-    .library-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.25rem 1.35rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-      border: 1px solid rgba(37, 99, 235, 0.08);
-    }
-
-    .library-card h2 {
-      margin: 0 0 0.35rem;
-    }
-
-    .library-card ul {
-      margin: 0.35rem 0 0;
-      padding-left: 1.1rem;
-      color: #4b5563;
-      line-height: 1.7;
-    }
-
-    .faq {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.25rem 1.35rem;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-    }
-
-    .faq h3 {
-      margin-top: 0;
-    }
-
-    .faq p {
-      margin: 0 0 0.75rem;
-      color: #4b5563;
-      line-height: 1.75;
-    }
-
-    .faq p:last-child {
-      margin-bottom: 0;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 1.25rem 0 0;
-    }
-
-    .cta-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.65rem 1rem;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      color: #2563eb;
-      background: rgba(37, 99, 235, 0.08);
-      border: 1px solid rgba(37, 99, 235, 0.15);
-    }
-
-    .cta-link.secondary {
-      background: #fff;
-      color: #1f2937;
-    }
-
-    @media (max-width: 720px) {
-      .city-wrapper {
-        padding-top: 4rem;
-      }
-
-      .city-hero {
-        padding: 1.5rem 1.25rem;
-      }
-    }
+    a { color: #2563eb; }
+    .city-wrapper { max-width: 1040px; margin: 0 auto; padding: 4rem 1.25rem 3rem; }
+    .city-crumbs { color: #6b7280; font-size: 0.95rem; margin-bottom: 1rem; }
+    .city-hero { background: linear-gradient(135deg, #2563eb, #4f46e5); color: #fff; border-radius: 18px; padding: 2rem 1.6rem; box-shadow: 0 16px 40px rgba(37, 99, 235, 0.18); }
+    .city-hero h1 { margin: 0 0 0.35rem; font-size: clamp(1.9rem, 3vw, 2.6rem); }
+    .city-hero p { margin: 0 0 1rem; line-height: 1.7; }
+    .city-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 0; }
+    .city-meta span { background: rgba(255,255,255,0.14); padding: 0.55rem 0.8rem; border-radius: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem; }
+    .section-title { margin: 2.25rem 0 0.75rem; font-size: 1.5rem; }
+    .section-lede { color: #475569; margin: 0 0 1.25rem; line-height: 1.8; }
+    .library-card { background: #fff; border-radius: 16px; padding: 1.2rem 1.3rem; margin-bottom: 1rem; box-shadow: 0 12px 32px rgba(15,23,42,0.08); border: 1px solid rgba(37,99,235,0.08); }
+    .library-card h2 { margin: 0 0 0.35rem; }
+    .library-card p { margin: 0.25rem 0; color: #475569; line-height: 1.6; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+    .pill { background: #eff6ff; color: #1d4ed8; padding: 0.35rem 0.65rem; border-radius: 999px; font-size: 0.92rem; }
+    .faq { background: #fff; border-radius: 16px; padding: 1.2rem 1.3rem; box-shadow: 0 10px 28px rgba(15,23,42,0.06); border: 1px solid rgba(148,163,184,0.25); }
+    .faq h3 { margin-top: 0; }
+    .faq p { margin: 0 0 0.9rem; color: #475569; line-height: 1.7; }
+    .faq p:last-child { margin-bottom: 0; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.2rem 0 0; }
+    .cta-link { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.6rem 1rem; border-radius: 12px; text-decoration: none; font-weight: 700; color: #2563eb; background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.15); }
+    .cta-link.secondary { background: #fff; color: #111827; }
+    @media (max-width: 720px) { .city-wrapper { padding-top: 3.25rem; } .city-hero { padding: 1.5rem 1.25rem; } }
   </style>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.tushuguan.online/"},
-            {"@type": "ListItem", "position": 2, "name": "北京图书馆大全", "item": "https://www.tushuguan.online/city-beijing-libraries.html"}
-          ]
-        },
-        {
-          "@type": "ItemList",
-          "name": "北京图书馆清单",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "url": "https://www.tushuguan.online/city-beijing-libraries.html#national-library"},
-            {"@type": "ListItem", "position": 2, "url": "https://www.tushuguan.online/city-beijing-libraries.html#capital-library"},
-            {"@type": "ListItem", "position": 3, "url": "https://www.tushuguan.online/city-beijing-libraries.html#chaoyang-library"}
-          ]
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://www.tushuguan.online/city-beijing-libraries.html#national-library",
-          "name": "国家图书馆(总馆)",
-          "address": {"@type": "PostalAddress", "addressLocality": "北京", "streetAddress": "西直门外南小街33号"},
-          "openingHours": "Tu-Su 09:00-17:00",
-          "image": "https://www.tushuguan.online/world.png",
-          "url": "https://www.nlc.cn/",
-          "geo": {"@type": "GeoCoordinates", "latitude": 39.943, "longitude": 116.331},
-          "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "自习座位", "value": true}]
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://www.tushuguan.online/city-beijing-libraries.html#capital-library",
-          "name": "首都图书馆",
-          "address": {"@type": "PostalAddress", "addressLocality": "北京", "streetAddress": "朝阳区东三环南路88号"},
-          "openingHours": "Tu-Su 09:00-17:00",
-          "image": "https://www.tushuguan.online/world.png",
-          "url": "https://www.clcn.net.cn/",
-          "geo": {"@type": "GeoCoordinates", "latitude": 39.887, "longitude": 116.472},
-          "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "少儿阅读区", "value": true}]
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://www.tushuguan.online/city-beijing-libraries.html#chaoyang-library",
-          "name": "朝阳区图书馆",
-          "address": {"@type": "PostalAddress", "addressLocality": "北京", "streetAddress": "朝阳区日坛北路17号"},
-          "openingHours": "Tu-Su 09:00-17:30",
-          "image": "https://www.tushuguan.online/world.png",
-          "geo": {"@type": "GeoCoordinates", "latitude": 39.921, "longitude": 116.444},
-          "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "预约服务", "value": true}]
-        }
-      ]
-    }
-  </script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.tushuguan.online/"},{"@type":"ListItem","position":2,"name":"北京图书馆大全","item":"https://www.tushuguan.online/city-beijing-libraries.html"}]},{"@type":"ItemList","name":"北京图书馆清单","itemListElement":[{"@type":"ListItem","position":1,"url":"https://www.tushuguan.online/city-beijing-libraries.html#national-library"},{"@type":"ListItem","position":2,"url":"https://www.tushuguan.online/city-beijing-libraries.html#capital-library"},{"@type":"ListItem","position":3,"url":"https://www.tushuguan.online/city-beijing-libraries.html#pku-library"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"图书馆能自习吗？","acceptedAnswer":{"@type":"Answer","text":"国家图书馆与首都图书馆均有自习座位，周末建议在线预约；高校馆通常仅对校内或已预约访客开放。"}},{"@type":"Question","name":"开放时间是什么？","acceptedAnswer":{"@type":"Answer","text":"国家图书馆与首图常规为周二至周日 9:00-17:00，节假日与古籍馆时间会提前公布，夜读空间以官方通知为准。"}},{"@type":"Question","name":"如何办理借书证？","acceptedAnswer":{"@type":"Answer","text":"持二代身份证或社保卡可在自助机或服务台申办读者卡，部分区域支持“北京通”电子证；高校馆需校内身份。"}}]}]}</script>
 </head>
 <body>
   <div class="city-wrapper">
-    <div class="city-crumbs"><a href="index.html">首页</a> · 北京图书馆</div>
-    <section class="city-hero">
-      <h1>北京图书馆大全（2025 最新）</h1>
-      <p>北京拥有国家级与市区级公共图书馆资源，覆盖学术研究、自习备考与亲子阅读等场景。本页面精选三座代表性馆舍，补充开放时间、预约提示、交通方式与自习体验，帮助你在周末或工作日快速安排参观路线。</p>
+    <div class="city-crumbs">首页 / 北京图书馆大全</div>
+    <header class="city-hero">
+      <h1>北京图书馆大全（2025 最新）| 办证、自习与开放时间指南</h1>
+      <p>北京图书馆大全：国家图书馆、首都图书馆、清华/北大等高校馆开放时间、自习预约与借书证办理攻略。</p>
       <div class="city-meta">
-        <span>📍 覆盖范围：海淀、国贸、朝阳</span>
-        <span>🕒 建议到馆：工作日上午或周末早场</span>
-        <span>⭐ 推荐人群：学生、自习族、亲子</span>
+        <span>📌 国家图书馆总馆与古籍馆</span><span>📌 20+高校特色馆藏</span><span>📌 覆盖东西城/海淀/朝阳</span>
       </div>
-      <div class="cta-row">
-        <a class="cta-link" href="cities.html">返回城市索引</a>
-        <a class="cta-link secondary" href="reading-clubs.html">查看北京读书会</a>
-      </div>
-    </section>
+    </header>
 
     <section>
-      <h2 class="section-title">1. 国家图书馆（总馆）</h2>
-      <p class="section-lede">中国最大公共图书馆之一，古籍善本与学术数据库极为丰富，节假日需留意预约与限流安排。</p>
+      <h2 class="section-title">北京重点图书馆</h2>
+      <p class="section-lede">精选公共馆与高校馆的开放时间、交通、自习体验与特色馆藏，方便自习党、亲子家庭和研究者快速决策。</p>
+      
       <article class="library-card" id="national-library">
         <h2>国家图书馆</h2>
-        <ul>
-          <li>📍 地址：北京市海淀区中关村南大街33号（地铁4号线国家图书馆站）</li>
-          <li>🕒 开放时间：周二至周日 09:00–17:00，周一闭馆维护；特藏区与古籍库需提前预约。</li>
-          <li>⭐ 特色馆藏：中文古籍善本、外文原版文献、报刊合订本与国家数字图书馆。</li>
-          <li>🚇 交通方式：地铁4号线、9号线交汇；临近公交特4、105、111 路；西北侧设有社会停车场。</li>
-          <li>📚 推荐理由：自习座位多，学术氛围浓厚；持证可使用数据库与数字资源，馆内咖啡区适合短暂休息。</li>
-        </ul>
+        <p><strong>地址：</strong>海淀区中关村南大街33号</p>
+        <p><strong>开放时间：</strong>周二-周日 9:00-17:00（周一闭馆消毒）</p>
+        <p><strong>自习与预约：</strong>提供自习座位，可线上预约；入馆需身份证安检。</p>
+        <p><strong>交通：</strong>地铁4号线国家图书馆站 D 口步行5分钟</p>
+        <div class="pill-row"><span class="pill">古籍善本与特藏</span><span class="pill">智慧检索终端</span><span class="pill">公共自习区</span></div>
       </article>
-    </section>
 
-    <section>
-      <h2 class="section-title">2. 首都图书馆</h2>
-      <p class="section-lede">以市民阅读服务与展览空间见长，少儿与青少年阅读活动丰富，临近地铁与核心商圈。</p>
       <article class="library-card" id="capital-library">
         <h2>首都图书馆</h2>
-        <ul>
-          <li>📍 地址：北京市朝阳区东三环南路88号（近地铁1号线大望路站、14号线金台路站）</li>
-          <li>🕒 开放时间：周二至周日 09:00–17:00，法定节假日开放时段依公告调整。</li>
-          <li>⭐ 特色馆藏：北京市地方文献、艺术设计与期刊资料、少儿阅读区与盲文阅览区。</li>
-          <li>🚇 交通方式：地铁 1/14 号线换乘，大望路站步行 10–12 分钟；周边有城铁公交换乘点。</li>
-          <li>📚 推荐理由：活动与展览频次高，适合亲子与创意类读者；阅览区自习座位较多，提供无线网络。</li>
-        </ul>
+        <p><strong>地址：</strong>朝阳区东三环南路88号</p>
+        <p><strong>开放时间：</strong>周二-周日 9:00-17:00</p>
+        <p><strong>自习与预约：</strong>开设24小时阅览室，周末需提前预约自习位。</p>
+        <p><strong>交通：</strong>地铁14号线/7号线九龙山站 A 口步行8分钟</p>
+        <div class="pill-row"><span class="pill">亲子借阅区</span><span class="pill">艺术设计特藏</span><span class="pill">活动预约小程序</span></div>
+      </article>
+
+      <article class="library-card" id="pku-library">
+        <h2>北京大学图书馆</h2>
+        <p><strong>地址：</strong>海淀区颐和园路5号（校内）</p>
+        <p><strong>开放时间：</strong>学期周一-周日 7:00-23:00（校外访客需预约）</p>
+        <p><strong>自习与预约：</strong>学术自习氛围好，考试季需验证校园通行。</p>
+        <p><strong>交通：</strong>地铁4号线北京大学东门站 A 口步行10分钟</p>
+        <div class="pill-row"><span class="pill">人文社科特藏</span><span class="pill">开放学术讲座</span><span class="pill">湖景阅读位</span></div>
       </article>
     </section>
 
     <section>
-      <h2 class="section-title">3. 朝阳区图书馆</h2>
-      <p class="section-lede">社区型图书馆，交通便捷，适合就近自习与办理借阅卡，部分时段需线上预约。</p>
-      <article class="library-card" id="chaoyang-library">
-        <h2>朝阳区图书馆</h2>
-        <ul>
-          <li>📍 地址：北京市朝阳区日坛北路17号（近地铁1号线永安里站）</li>
-          <li>🕒 开放时间：周二至周日 09:00–17:30，节假日开放情况以官方公告为准。</li>
-          <li>⭐ 特色馆藏：社区服务资源、外语与少儿分馆、报刊阅览与数字报纸。</li>
-          <li>🚇 交通方式：地铁1号线永安里站步行 8–10 分钟；多条公交线路可达；有少量地面停车位。</li>
-          <li>📚 推荐理由：安静友好的社区氛围，适合短时自习与办理借阅证；常设社区文化讲座与展览。</li>
-        </ul>
-      </article>
+      <h2 class="section-title">北京图书馆常见问题</h2>
+      <p class="section-lede">覆盖“图书馆能自习吗”“开放时间”“如何办借书证”等高频搜索问题，长尾需求一次解决。</p>
+      <div class="faq">
+      <h3>图书馆能自习吗？</h3>
+      <p>国家图书馆与首都图书馆均有自习座位，周末建议在线预约；高校馆通常仅对校内或已预约访客开放。</p>
+
+      <h3>开放时间是什么？</h3>
+      <p>国家图书馆与首图常规为周二至周日 9:00-17:00，节假日与古籍馆时间会提前公布，夜读空间以官方通知为准。</p>
+
+      <h3>如何办理借书证？</h3>
+      <p>持二代身份证或社保卡可在自助机或服务台申办读者卡，部分区域支持“北京通”电子证；高校馆需校内身份。</p></div>
     </section>
 
-    <section class="faq">
-      <h3>常见问题 FAQ</h3>
-      <p><strong>北京哪个图书馆自习位置更充足？</strong> 国家图书馆与首都图书馆提供的自习座位数量相对更多，建议工作日或上午到馆，节假日可提前预约。</p>
-      <p><strong>需要预约吗？</strong> 国家图书馆与部分区馆在高峰期会启用预约，通常在官方小程序或网站提交身份证信息即可。</p>
-      <p><strong>能否使用电子资源？</strong> 国家图书馆支持异地读者申请电子阅览权限，首都图书馆也提供电子书与数据库访问，具体权限以办证类型为准。</p>
-    </section>
+    <div class="cta-row">
+      <a class="cta-link" href="cities.html">🔍 浏览全国城市图书馆</a>
+      <a class="cta-link secondary" href="index.html">🏠 返回首页</a>
+    </div>
   </div>
 </body>
 </html>
