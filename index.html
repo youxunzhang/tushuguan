@@ -13,13 +13,62 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="图书馆信息网提供全国图书馆、城市文化书店与精选书籍的一站式检索服务，帮助读者快速发现理想的阅读空间与藏书。" />
-  <title>图书馆信息网 | 图书馆·书店·书籍一站式查询</title>
+  <meta name="description" content="全国图书馆快速浏览平台，覆盖一线/二线/三四线城市。查看各城市重点图书馆的开放时间、特色资源、交通信息、书籍推荐与数字服务。" />
+  <title>全国图书馆查询｜按城市快速找图书馆｜特色馆藏与开放时间 – tushuguan.online</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="home.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "图书馆信息网",
+          "url": "https://www.tushuguan.online/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.tushuguan.online/world.png"
+          },
+          "sameAs": [
+            "https://www.tushuguan.online/cities.html",
+            "https://www.tushuguan.online/books.html"
+          ],
+          "description": "全国图书馆、文化空间与精选书籍的一站式索引。"
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://www.tushuguan.online/",
+          "name": "图书馆信息网",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.tushuguan.online/cities.html?query={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.tushuguan.online/",
+          "url": "https://www.tushuguan.online/",
+          "name": "全国图书馆查询首页",
+          "description": "按城市能级与主题快速浏览全国图书馆与文化空间的入口页。"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "首页",
+              "item": "https://www.tushuguan.online/"
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <header class="site-header" id="navbar">
@@ -59,6 +108,46 @@
   </header>
 
   <main>
+    <section class="seo-hero" aria-labelledby="hero-title">
+      <div class="container seo-hero-grid">
+        <div>
+          <p class="section-eyebrow">全国图书馆导航</p>
+          <h1 id="hero-title">按城市快速找到图书馆、特色馆藏与开放时间</h1>
+          <p class="hero-lede">
+            tushuguan.online 汇集一线、二线与三四线城市的公共图书馆、特色书店与精选书籍。我们为读者提供可索引的文字介绍、交通信息与数字资源链接，帮助你在几分钟内锁定最适合的阅读空间。
+          </p>
+          <ul class="hero-list">
+            <li>覆盖北京、上海、广州、深圳等 40+ 城市核心馆舍</li>
+            <li>提供开放时间、特色馆藏、预约须知与交通方式</li>
+            <li>同步精选书籍、作者与文化空间，形成完整的阅读地图</li>
+          </ul>
+          <div class="hero-cta-group">
+            <a class="primary-cta" href="#tiered-libraries">浏览热门城市</a>
+            <a class="secondary-cta" href="city-beijing-libraries.html">查看北京图书馆大全</a>
+          </div>
+        </div>
+        <div class="seo-hero-card" aria-label="网站摘要">
+          <h2>站点亮点</h2>
+          <p>适合学生、自习族、亲子与研究者的多元化图书馆指南，支持快速检索与专题浏览。</p>
+          <dl class="hero-metrics">
+            <div>
+              <dt>核心城市</dt>
+              <dd>40+ 覆盖北上广深与新一线</dd>
+            </div>
+            <div>
+              <dt>图书馆条目</dt>
+              <dd>120+ 特色信息卡片</dd>
+            </div>
+            <div>
+              <dt>专题内容</dt>
+              <dd>馆藏亮点、数字资源、读书会</dd>
+            </div>
+          </dl>
+          <p class="hero-note">内容持续更新，支持数据提交与合作推荐。</p>
+        </div>
+      </div>
+    </section>
+
     <section class="tiered-libraries" id="tiered-libraries">
       <div class="container">
         <div class="section-header">
@@ -86,6 +175,33 @@
         </div>
         <div class="tiered-grid" id="tiered-library-grid" role="tabpanel" aria-live="polite" aria-labelledby="tier-tab-1">
           <div class="empty-state">正在整理不同城市能级的代表性图书馆...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="city-pillar" aria-labelledby="city-pillar-title">
+      <div class="container city-pillar-grid">
+        <div>
+          <p class="section-eyebrow">城市专题</p>
+          <h2 id="city-pillar-title">北京图书馆大全（2025 最新版）</h2>
+          <p class="section-description">
+            高需求关键词「北京图书馆」与「国家图书馆开放时间」的专页已上线，涵盖国家图书馆、首都图书馆与朝阳区图书馆的地址、开放时间、特色馆藏与交通方式，为读者提供可直接落地的参观指南。
+          </p>
+          <ul class="pillar-list">
+            <li>长文本介绍，方便搜索引擎索引。</li>
+            <li>包含 FAQ 与本地化关键词，提升长尾流量。</li>
+            <li>内链至城市资源、阅读活动与精选书籍，增强页面深度。</li>
+          </ul>
+          <a class="primary-cta" href="city-beijing-libraries.html">阅读北京图书馆专页</a>
+        </div>
+        <div class="pillar-card" aria-label="城市专题摘要">
+          <h3>页面涵盖信息</h3>
+          <ul>
+            <li>📍 地址与交通：地铁、公交、停车说明</li>
+            <li>🕒 开放时间：工作日与周末开放/预约提示</li>
+            <li>⭐ 特色馆藏：古籍、少儿、外文、艺术资源</li>
+            <li>📚 推荐理由：自习环境、亲子友好、展览活动</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -127,6 +243,35 @@
           <p>关注亲子阅读、青少年科技阅读与经典共读活动，让周末和假期安排更充实。</p>
           <a class="resource-link" href="reading-clubs.html">浏览最新读书会</a>
         </article>
+        <article class="resource-card">
+          <h3>北京图书馆大全</h3>
+          <p>按地点、开放时间与交通方式汇总北京代表性公共图书馆，含常见问题解答与参观建议。</p>
+          <a class="resource-link" href="city-beijing-libraries.html">查看城市专页</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div>
+          <p class="section-eyebrow">常见问题</p>
+          <h2 id="faq-title">高频搜索问题快速解答</h2>
+          <p class="section-description">围绕预约、自习与数字资源的常见疑问，提供可索引的长文本答案，便于搜索引擎理解页面主题。</p>
+        </div>
+        <div class="faq-items">
+          <article class="faq-item">
+            <h3>哪些城市的公共图书馆需要预约？</h3>
+            <p>北京、上海等热门城市的核心馆舍在节假日会启用预约机制，通常可通过官方小程序或网站预约。页面会标注是否需预约及入口链接。</p>
+          </article>
+          <article class="faq-item">
+            <h3>图书馆是否提供自习与笔记本充电位？</h3>
+            <p>多数综合馆提供自习区域，部分会限制插座使用时间。我们在馆舍描述中标记自习友好度，并补充咖啡、餐饮或周边学习空间。</p>
+          </article>
+          <article class="faq-item">
+            <h3>异地读者能否办证或使用数字资源？</h3>
+            <p>国家图书馆与部分省市馆支持异地读者线上申请电子阅览权限。专题页会列出是否支持异地办证、电子书库与数据库入口。</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
