@@ -39,6 +39,20 @@
   </header>
 
   <main class="subpage-main">
+    <section class="top-books" aria-labelledby="top-books-title">
+      <div class="container">
+        <div class="top-books-header">
+          <div>
+            <p class="books-eyebrow">Top 100</p>
+            <h2 id="top-books-title">市面上最火的 100 本书</h2>
+            <p class="top-books-desc">以九宫格样式呈现热度最高的畅销书，按排名快速扫一眼年度爆款，适合做门店陈列、榜单策划或个人阅读补票。</p>
+          </div>
+          <div class="top-books-cta">🔥 每行 3 本，滑动即可浏览完整 100 本热销书</div>
+        </div>
+        <div id="top-books-grid" class="top-books-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
     <section class="subpage-hero books-hero">
       <div class="container">
         <div class="hero-breadcrumb"><a href="index.html">首页</a> · 精选好书清单</div>
@@ -117,6 +131,7 @@
   </footer>
 
   <script src="books-data.js" defer></script>
+  <script src="top-books-data.js" defer></script>
   <script src="books.js" defer></script>
 </body>
 </html>

@@ -21,6 +21,16 @@
       .replace(/'/g, '&#39;');
   }
 
+  function buildTopBooks() {
+    const source = Array.isArray(globalThis.topBooksData) ? globalThis.topBooksData : [];
+    return source.map((book, index) => ({
+      title: book.title || `热销图书 ${index + 1}`,
+      author: book.author || '畅销作者',
+      highlight: book.highlight || '',
+      rank: index + 1
+    }));
+  }
+
   function buildBooks() {
     const source = Array.isArray(globalThis.booksData) ? globalThis.booksData : [];
     return source.map((book) => {
@@ -65,6 +75,22 @@
     `;
   }
 
+  function createTopBookCard(book) {
+    const highlight = book.highlight
+      ? `<p class="top-book-subtitle">${escapeHtml(book.highlight)}</p>`
+      : '';
+    return `
+      <article class="top-book-card">
+        <div class="top-book-rank">#${book.rank}</div>
+        <div class="top-book-info">
+          <h3>${escapeHtml(book.title)}</h3>
+          <p class="top-book-author">${escapeHtml(book.author)}</p>
+          ${highlight}
+        </div>
+      </article>
+    `;
+  }
+
   function renderBooks(container, books) {
     if (!container) {
       return;
@@ -74,6 +100,13 @@
       return;
     }
     container.innerHTML = books.map(createBookCard).join('');
+  }
+
+  function renderTopBooks(container, books) {
+    if (!container) {
+      return;
+    }
+    container.innerHTML = books.map(createTopBookCard).join('');
   }
 
   function populateSelect(select, options) {
@@ -119,10 +152,14 @@
     const grid = document.getElementById('books-grid');
     const emptyState = document.getElementById('books-empty-state');
     const categoryTags = document.getElementById('books-category-tags');
+    const topBooksGrid = document.getElementById('top-books-grid');
+    const topBooks = buildTopBooks();
 
     if (!grid) {
       return;
     }
+
+    renderTopBooks(topBooksGrid, topBooks);
 
     const categories = Array.from(new Set(books.map((book) => book.category).filter(Boolean))).sort((a, b) =>
       a.localeCompare(b, 'zh-Hans-CN')
