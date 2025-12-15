@@ -1,3 +1,0 @@
-# Authorized digital sellers for tushuguan
-# Added per provided configuration
-google.com, pub-8794607118520437, DIRECT, f08c47fec0942fa0
