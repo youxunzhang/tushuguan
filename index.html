@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437"      crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437" crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NQ833CGWR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
+
     gtag('config', 'G-8NQ833CGWR');
   </script>
-  
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="全国图书馆快速浏览平台，覆盖一线/二线/三四线城市。查看各城市重点图书馆的开放时间、特色资源、交通信息、书籍推荐与数字服务。" />
-  <title>全国图书馆查询｜按城市快速找图书馆｜特色馆藏与开放时间 – tushuguan.online</title>
+  <meta name="description" content="图书网站，一站式浏览精选书籍、全球作家、城市图书馆与特色书店。支持快速搜索、城市筛选与阅读活动发现。" />
+  <title>图书网站｜书籍、作者、图书馆与书店地图 – tushuguan.online</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
@@ -36,7 +36,7 @@
             "https://www.tushuguan.online/cities.html",
             "https://www.tushuguan.online/books.html"
           ],
-          "description": "全国图书馆、文化空间与精选书籍的一站式索引。"
+          "description": "覆盖书籍、作者、图书馆与文化空间的阅读导航平台。"
         },
         {
           "@type": "WebSite",
@@ -52,8 +52,8 @@
           "@type": "WebPage",
           "@id": "https://www.tushuguan.online/",
           "url": "https://www.tushuguan.online/",
-          "name": "全国图书馆查询首页",
-          "description": "按城市能级与主题快速浏览全国图书馆与文化空间的入口页。"
+          "name": "图书网站首页",
+          "description": "围绕书籍、作者、图书馆与书店的综合阅读入口页。"
         },
         {
           "@type": "BreadcrumbList",
@@ -81,25 +81,228 @@
         </span>
       </a>
       <nav class="nav-links" aria-label="主导航">
-        <a href="#tiered-libraries" class="nav-link">城市能级</a>
-        <a href="books.html" class="nav-link">精选好书</a>
-        <a href="authors.html" class="nav-link">全球作家</a>
-        <a href="https://seodog.cn/" class="nav-link" target="_blank" rel="noopener">AI 工具</a>
+        <a href="#libraries" class="nav-link">图书馆地图</a>
+        <a href="#bookstores" class="nav-link">书店空间</a>
+        <a href="#books" class="nav-link">精选书单</a>
+        <a href="#authors" class="nav-link">全球作家</a>
       </nav>
       <button class="mobile-toggle" id="mobile-toggle" aria-controls="mobile-menu" aria-expanded="false">菜单</button>
     </div>
     <div class="mobile-menu" id="mobile-menu" hidden>
       <nav class="mobile-nav" aria-label="移动端导航">
-        <a href="#tiered-libraries" class="mobile-nav-link">城市能级</a>
-        <a href="books.html" class="mobile-nav-link">精选好书</a>
-        <a href="authors.html" class="mobile-nav-link">全球作家</a>
-        <a href="https://seodog.cn/" class="mobile-nav-link" target="_blank" rel="noopener">AI 工具</a>
+        <a href="#libraries" class="mobile-nav-link">图书馆地图</a>
+        <a href="#bookstores" class="mobile-nav-link">书店空间</a>
+        <a href="#books" class="mobile-nav-link">精选书单</a>
+        <a href="#authors" class="mobile-nav-link">全球作家</a>
+        <a href="reading-clubs.html" class="mobile-nav-link">读书会</a>
         <a href="tao-te-ching.html" class="mobile-nav-link">道德经</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <section class="hero" id="top">
+      <div class="container hero-layout">
+        <div class="hero-text">
+          <p class="hero-eyebrow">重新构建的图书网站</p>
+          <h1>发现好书、作者与城市阅读空间的一站式入口</h1>
+          <p class="hero-description">
+            以书单、作者、图书馆与书店四大板块串联阅读场景。无论是备考、亲子还是深度阅读，都能在这里找到合适的书与空间。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="books.html">立即选书</a>
+            <a class="btn btn-secondary" href="bookstores.html">探索书店</a>
+          </div>
+          <dl class="hero-stats">
+            <div class="stat-item">
+              <dt>收录图书</dt>
+              <dd id="total-book-count">0</dd>
+            </div>
+            <div class="stat-item">
+              <dt>城市图书馆</dt>
+              <dd id="total-library-count">0</dd>
+            </div>
+            <div class="stat-item">
+              <dt>特色书店</dt>
+              <dd id="total-bookstore-count">0</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="hero-panel">
+          <div class="quick-search" id="quick-search">
+            <div class="quick-header">
+              <h2>快速搜索</h2>
+              <p class="quick-subtitle">支持图书馆、书店与书籍关键词联动检索。</p>
+            </div>
+            <div class="quick-tabs" role="tablist">
+              <button class="quick-tab active" type="button" data-target="libraries" role="tab" aria-selected="true">图书馆</button>
+              <button class="quick-tab" type="button" data-target="bookstores" role="tab" aria-selected="false">书店</button>
+              <button class="quick-tab" type="button" data-target="books" role="tab" aria-selected="false">书籍</button>
+            </div>
+            <label class="quick-field" aria-label="快速搜索">
+              <span class="quick-icon" aria-hidden="true">🔍</span>
+              <input id="quick-search-input" type="text" placeholder="输入城市、主题或作者" />
+            </label>
+            <p class="quick-hint" id="quick-search-hint">例如：北京 自习室 / 24小时开放</p>
+            <div class="quick-results" id="quick-search-results">
+              <p class="quick-placeholder">开始输入后将即时展示前三条匹配结果。</p>
+            </div>
+          </div>
+          <div class="quick-links">
+            <a class="quick-link" href="cities.html">城市图书馆导航</a>
+            <a class="quick-link" href="reading-clubs.html">读书会与阅读活动</a>
+            <a class="quick-link" href="tao-te-ching.html">经典阅读专题</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-grid" id="highlights">
+      <div class="container">
+        <div class="feature-row">
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">📘</span>
+            <div class="feature-text">
+              <h3>策展书单</h3>
+              <p>从社会科学到亲子教育，整合适合当前需求的主题书单与推荐理由。</p>
+            </div>
+            <a class="feature-link" href="books.html">探索书单</a>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🧭</span>
+            <div class="feature-text">
+              <h3>作者档案</h3>
+              <p>聚焦世界文学与类型作家，快速了解创作风格与代表作。</p>
+            </div>
+            <a class="feature-link" href="authors.html">查看作者</a>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🏛️</span>
+            <div class="feature-text">
+              <h3>城市图书馆</h3>
+              <p>汇总全国重点馆舍的开放信息、馆藏特色与交通方式。</p>
+            </div>
+            <a class="feature-link" href="#libraries">进入地图</a>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">☕</span>
+            <div class="feature-text">
+              <h3>文化空间</h3>
+              <p>甄选具备阅读氛围的书店与文化空间，补充城市阅读版图。</p>
+            </div>
+            <a class="feature-link" href="#bookstores">寻找书店</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section accent" id="libraries">
+      <div class="container search-panel">
+        <div class="section-header search-panel-header">
+          <div>
+            <p class="section-eyebrow">图书馆地图</p>
+            <h2>按城市快速检索公共图书馆</h2>
+            <p class="section-description">
+              搜索城市、馆名或服务关键词，快速定位附近图书馆、开放时间与数字资源入口。
+            </p>
+          </div>
+          <div class="section-meta-box">
+            <span id="total-library-count-secondary">0</span>
+            <p>家馆舍已收录</p>
+          </div>
+        </div>
+        <div class="search-controls">
+          <label class="search-field">
+            <span aria-hidden="true">🔎</span>
+            <input id="library-search-input" type="text" placeholder="输入城市、馆名或服务关键词" />
+          </label>
+          <select id="library-city-filter" aria-label="筛选城市">
+            <option value="">全部城市</option>
+          </select>
+        </div>
+        <p class="results-meta">已匹配 <strong id="library-results-count">0</strong> 家图书馆</p>
+        <div class="card-grid" id="library-results"></div>
+        <div class="library-pagination" id="library-pagination" hidden></div>
+      </div>
+    </section>
+
+    <section class="search-section" id="bookstores">
+      <div class="container search-panel">
+        <div class="section-header search-panel-header">
+          <div>
+            <p class="section-eyebrow">书店空间</p>
+            <h2>发现城市里的阅读与文化聚点</h2>
+            <p class="section-description">
+              甄选特色书店、复合空间与文化客厅，提供地址、亮点与活动提示。
+            </p>
+          </div>
+          <div class="section-meta-box">
+            <span id="total-bookstore-count-secondary">0</span>
+            <p>家书店可探索</p>
+          </div>
+        </div>
+        <div class="search-controls">
+          <label class="search-field">
+            <span aria-hidden="true">🔎</span>
+            <input id="bookstore-search-input" type="text" placeholder="输入城市、书店名或特色" />
+          </label>
+          <select id="bookstore-city-filter" aria-label="筛选城市">
+            <option value="">全部城市</option>
+          </select>
+        </div>
+        <p class="results-meta">已匹配 <strong id="bookstore-results-count">0</strong> 家书店</p>
+        <div class="card-grid" id="bookstore-results"></div>
+      </div>
+    </section>
+
+    <section class="search-section accent" id="books">
+      <div class="container search-panel">
+        <div class="section-header search-panel-header">
+          <div>
+            <p class="section-eyebrow">精选书单</p>
+            <h2>从书籍数据里找到你的下一本好书</h2>
+            <p class="section-description">
+              覆盖教育、社科、文艺与生活类书单，支持关键词与类别筛选。
+            </p>
+          </div>
+          <div class="section-meta-box">
+            <span id="total-book-count-secondary">0</span>
+            <p>本书籍收录</p>
+          </div>
+        </div>
+        <div class="search-controls">
+          <label class="search-field">
+            <span aria-hidden="true">🔎</span>
+            <input id="book-search-input" type="text" placeholder="输入书名、作者或主题" />
+          </label>
+          <select id="book-category-filter" aria-label="筛选类别">
+            <option value="">全部类别</option>
+          </select>
+        </div>
+        <p class="results-meta">已匹配 <strong id="book-results-count">0</strong> 本书籍</p>
+        <div class="card-grid" id="book-results"></div>
+      </div>
+    </section>
+
+    <section class="featured-libraries" aria-labelledby="featured-library-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">区域精选</p>
+            <h2 id="featured-library-title">覆盖全国重点城市的馆舍导航</h2>
+            <p class="section-description">
+              依据华北、华东、华南等区域归类，突出城市阅读核心资源与服务特色。
+            </p>
+          </div>
+          <div class="section-meta-box">
+            <span id="featured-library-count">0</span>
+            <p>家馆舍上榜</p>
+          </div>
+        </div>
+        <div class="region-grid" id="featured-library-groups"></div>
+      </div>
+    </section>
+
     <section class="tiered-libraries" id="tiered-libraries">
       <div class="container">
         <div class="section-header">
@@ -137,12 +340,12 @@
           <p class="section-eyebrow">城市专题</p>
           <h2 id="city-pillar-title">北京图书馆大全（2025 最新版）</h2>
           <p class="section-description">
-            高需求关键词「北京图书馆」与「国家图书馆开放时间」的专页已上线，涵盖国家图书馆、首都图书馆与朝阳区图书馆的地址、开放时间、特色馆藏与交通方式，为读者提供可直接落地的参观指南。
+            结合高频关键词与读者反馈，我们为北京构建了深度专页，覆盖国家图书馆、首都图书馆与核心城区馆舍的地址、开放时间、特色馆藏与交通方式。
           </p>
           <ul class="pillar-list">
-            <li>长文本介绍，方便搜索引擎索引。</li>
-            <li>包含 FAQ 与本地化关键词，提升长尾流量。</li>
-            <li>内链至城市资源、阅读活动与精选书籍，增强页面深度。</li>
+            <li>覆盖热门搜索词与常见问题，便于快速了解。</li>
+            <li>城市馆舍与周边空间联动，便于规划阅读路线。</li>
+            <li>推荐展览、活动与馆藏亮点，拓展阅读灵感。</li>
           </ul>
           <a class="primary-cta" href="city-beijing-libraries.html">阅读北京图书馆专页</a>
         </div>
@@ -165,7 +368,7 @@
             <p class="section-eyebrow">全球作者</p>
             <h2>追踪影响世界阅读版图的顶尖作家</h2>
             <p class="section-description">
-              从诺贝尔文学奖到类型小说先驱，甄选跨语种的代表性作者，提供创作风格与代表作提示，助你拓展阅读边界。
+              从诺贝尔文学奖到类型小说先锋，甄选跨语种代表作者，提供创作风格与代表作提示。
             </p>
           </div>
           <div class="section-meta-box authors-meta">
@@ -207,21 +410,21 @@
       <div class="container faq-grid">
         <div>
           <p class="section-eyebrow">常见问题</p>
-          <h2 id="faq-title">高频搜索问题快速解答</h2>
-          <p class="section-description">围绕预约、自习与数字资源的常见疑问，提供可索引的长文本答案，便于搜索引擎理解页面主题。</p>
+          <h2 id="faq-title">关于找书与找馆的高频问题</h2>
+          <p class="section-description">围绕选书、借阅与城市阅读空间的常见疑问，提供可索引的长文本答案。</p>
         </div>
         <div class="faq-items">
           <article class="faq-item">
-            <h3>哪些城市的公共图书馆需要预约？</h3>
-            <p>北京、上海等热门城市的核心馆舍在节假日会启用预约机制，通常可通过官方小程序或网站预约。页面会标注是否需预约及入口链接。</p>
+            <h3>如何快速找到适合自己的书单？</h3>
+            <p>可以先选择主题分类，再用关键词筛选作者或出版社。每本书都标注简介与适读人群，便于快速判断。</p>
           </article>
           <article class="faq-item">
             <h3>图书馆是否提供自习与笔记本充电位？</h3>
-            <p>多数综合馆提供自习区域，部分会限制插座使用时间。我们在馆舍描述中标记自习友好度，并补充咖啡、餐饮或周边学习空间。</p>
+            <p>多数综合馆提供自习区域，部分会限制插座使用时间。我们在馆舍描述中标记自习友好度，并补充周边学习空间。</p>
           </article>
           <article class="faq-item">
             <h3>异地读者能否办证或使用数字资源？</h3>
-            <p>国家图书馆与部分省市馆支持异地读者线上申请电子阅览权限。专题页会列出是否支持异地办证、电子书库与数据库入口。</p>
+            <p>国家图书馆与部分省市馆支持异地读者线上申请电子阅览权限。专题页会列出是否支持异地办证与数据库入口。</p>
           </article>
         </div>
       </div>
@@ -238,10 +441,10 @@
         <div>
           <h3>主要栏目</h3>
           <ul>
-            <li><a href="#tiered-libraries">城市能级导览</a></li>
-            <li><a href="cities.html">城市信息面板</a></li>
-            <li><a href="bookstores.html">文化空间指南</a></li>
-            <li><a href="books.html">精选好书</a></li>
+            <li><a href="#libraries">图书馆地图</a></li>
+            <li><a href="#bookstores">书店空间</a></li>
+            <li><a href="#books">精选书单</a></li>
+            <li><a href="authors.html">全球作家</a></li>
           </ul>
         </div>
         <div>
