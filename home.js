@@ -790,6 +790,9 @@
     updateTextContent("total-library-count", libraries.length);
     updateTextContent("total-bookstore-count", bookstores.length);
     updateTextContent("total-book-count", books.length);
+    updateTextContent("total-library-count-secondary", libraries.length);
+    updateTextContent("total-bookstore-count-secondary", bookstores.length);
+    updateTextContent("total-book-count-secondary", books.length);
 
     const librarySearchInput = document.getElementById("library-search-input");
     const libraryCityFilter = document.getElementById("library-city-filter");

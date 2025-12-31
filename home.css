@@ -485,6 +485,24 @@ a:hover {
   background: var(--accent);
 }
 
+.search-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 28px;
+  padding: 2.5rem;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.search-panel + .search-panel {
+  margin-top: 2.5rem;
+}
+
+.search-panel-header {
+  margin-bottom: 0.5rem;
+}
+
 .tiered-libraries {
   padding: 4.75rem 0;
 }
