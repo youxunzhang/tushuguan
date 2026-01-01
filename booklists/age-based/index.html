@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>按年龄选书指南 - tushuguan.online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/booklists/age-based/style.css" />
+</head>
+<body>
+  <header class="tool-header">
+    <a class="brand" href="/">图书馆信息网</a>
+    <nav class="tool-nav">
+      <a href="/tools/what-to-read/">读什么推荐器</a>
+      <a href="/booklists/age-based/">按年龄选书指南</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h1>按年龄选书指南</h1>
+      <p>为不同年龄段整理 3–5 本阅读清单，帮助快速找到合适的书。</p>
+      <form id="age-filter" class="age-filter">
+        <label>
+          选择年龄段
+          <select id="age-select" name="age">
+            <option value="all">查看全部</option>
+            <option value="3-6">3–6 岁</option>
+            <option value="7-9">7–9 岁</option>
+            <option value="10-12">10–12 岁</option>
+            <option value="teen">青少年</option>
+            <option value="adult">成人</option>
+          </select>
+        </label>
+        <button type="submit" class="primary">查看推荐</button>
+      </form>
+    </section>
+
+    <section id="age-sections" class="age-sections"></section>
+  </main>
+
+  <script src="/booklists/age-based/script.js"></script>
+</body>
+</html>

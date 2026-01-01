@@ -1,0 +1,128 @@
+[
+  {
+    "id": "kid-forest-friends",
+    "title": "小熊的森林朋友",
+    "age_range": "3-6",
+    "tags": ["亲子", "启蒙", "starter"],
+    "why": "适合亲子共读的睡前故事，帮助建立阅读兴趣。"
+  },
+  {
+    "id": "kid-color-adventure",
+    "title": "颜色大冒险",
+    "age_range": "3-6",
+    "tags": ["认知", "启蒙", "starter"],
+    "why": "通过颜色和形状游戏提升观察力与专注力。"
+  },
+  {
+    "id": "kid-kindness-town",
+    "title": "善意小镇",
+    "age_range": "3-6",
+    "tags": ["品格", "亲子"],
+    "why": "帮助孩子理解分享与合作的意义。"
+  },
+  {
+    "id": "kid-mystery-museum",
+    "title": "博物馆夜间奇遇",
+    "age_range": "7-9",
+    "tags": ["冒险", "想象"],
+    "why": "用趣味故事引导孩子探索知识与历史。"
+  },
+  {
+    "id": "kid-space-crew",
+    "title": "太空小队的任务",
+    "age_range": "7-9",
+    "tags": ["科普", "探索", "starter"],
+    "why": "启蒙科学思维，适合喜欢探索的孩子。"
+  },
+  {
+    "id": "kid-secret-garden",
+    "title": "秘密花园日记",
+    "age_range": "7-9",
+    "tags": ["自然", "成长"],
+    "why": "培养观察自然的兴趣与温柔的情绪表达。"
+  },
+  {
+    "id": "kid-history-heroes",
+    "title": "小小历史英雄",
+    "age_range": "10-12",
+    "tags": ["历史", "成长"],
+    "why": "用故事化视角讲述历史人物，适合课外拓展。"
+  },
+  {
+    "id": "kid-code-camp",
+    "title": "编程小营地",
+    "age_range": "10-12",
+    "tags": ["科学", "逻辑"],
+    "why": "适合对逻辑推理与动手实践感兴趣的孩子。"
+  },
+  {
+    "id": "kid-detective-club",
+    "title": "校园侦探社",
+    "age_range": "10-12",
+    "tags": ["推理", "冒险"],
+    "why": "强化推理能力，提升阅读持续性。"
+  },
+  {
+    "id": "teen-emotion-atlas",
+    "title": "青春情绪地图",
+    "age_range": "teen",
+    "tags": ["情绪", "成长", "starter"],
+    "why": "帮助青少年认识情绪与自我管理。"
+  },
+  {
+    "id": "teen-world-novel",
+    "title": "世界文学启航",
+    "age_range": "teen",
+    "tags": ["文学", "经典"],
+    "why": "建立文学阅读方法，适合提升语文素养。"
+  },
+  {
+    "id": "teen-innovation-lab",
+    "title": "创新实验室",
+    "age_range": "teen",
+    "tags": ["科学", "探索"],
+    "why": "以真实案例讲解科学探索的过程。"
+  },
+  {
+    "id": "adult-reading-habits",
+    "title": "阅读力提升指南",
+    "age_range": "adult",
+    "tags": ["成长", "starter"],
+    "why": "适合重新建立阅读习惯的入门书单。"
+  },
+  {
+    "id": "adult-focus-reset",
+    "title": "专注力重启",
+    "age_range": "adult",
+    "tags": ["专注", "效率"],
+    "why": "帮助忙碌读者恢复深度阅读状态。"
+  },
+  {
+    "id": "adult-city-walk",
+    "title": "城市漫步笔记",
+    "age_range": "adult",
+    "tags": ["生活", "人文"],
+    "why": "适合想要放松心情与体验城市文化的读者。"
+  },
+  {
+    "id": "adult-career-navigation",
+    "title": "职业成长地图",
+    "age_range": "adult",
+    "tags": ["职场", "成长"],
+    "why": "提供职业规划与长期学习路径的建议。"
+  },
+  {
+    "id": "adult-classic-journey",
+    "title": "经典沉浸之旅",
+    "age_range": "adult",
+    "tags": ["经典", "文学"],
+    "why": "面向想要系统阅读经典的读者。"
+  },
+  {
+    "id": "adult-healing-notes",
+    "title": "情绪疗愈手记",
+    "age_range": "adult",
+    "tags": ["情绪", "疗愈"],
+    "why": "适合需要情绪缓冲与自我照顾的人。"
+  }
+]

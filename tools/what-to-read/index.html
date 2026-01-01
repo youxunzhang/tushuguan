@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>读什么推荐器 - tushuguan.online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/tools/what-to-read/style.css" />
+</head>
+<body>
+  <header class="tool-header">
+    <a class="brand" href="/">图书馆信息网</a>
+    <nav class="tool-nav">
+      <a href="/tools/what-to-read/">读什么推荐器</a>
+      <a href="/booklists/age-based/">按年龄选书指南</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h1>读什么推荐器</h1>
+      <p>告诉我们你的年龄、最近读过的书或阅读目标，我们会给出不少于 3 本书的推荐。</p>
+    </section>
+
+    <section class="card">
+      <form id="recommend-form" class="form-grid">
+        <label class="field">
+          <span>年龄段</span>
+          <select id="age" name="age">
+            <option value="">不限</option>
+            <option value="3-6">3–6 岁</option>
+            <option value="7-9">7–9 岁</option>
+            <option value="10-12">10–12 岁</option>
+            <option value="teen">青少年</option>
+            <option value="adult">成人</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>最近读过的书 / 关键词</span>
+          <input id="recent_book" name="recent_book" type="text" placeholder="例如：科幻 / 推理 / 亲子故事" />
+        </label>
+        <label class="field">
+          <span>阅读目标</span>
+          <select id="reading_goal" name="reading_goal">
+            <option value="">请选择</option>
+            <option value="亲子共读">亲子共读</option>
+            <option value="提升专注">提升专注</option>
+            <option value="文学入门">文学入门</option>
+            <option value="情绪疗愈">情绪疗愈</option>
+            <option value="职场提升">职场提升</option>
+            <option value="科普探索">科普探索</option>
+            <option value="自我成长">自我成长</option>
+          </select>
+        </label>
+        <button class="primary" type="submit">生成推荐</button>
+      </form>
+    </section>
+
+    <section class="results">
+      <div class="results-header">
+        <h2>推荐结果</h2>
+        <p id="results-subtitle">填写信息后点击按钮获取推荐。</p>
+      </div>
+      <div id="result-list" class="result-grid"></div>
+    </section>
+  </main>
+
+  <script src="/tools/what-to-read/script.js"></script>
+</body>
+</html>
