@@ -109,6 +109,21 @@
           <p class="hero-description">
             以书单、作者、图书馆与书店四大板块串联阅读场景。无论是备考、亲子还是深度阅读，都能在这里找到合适的书与空间。
           </p>
+          <div class="hero-tool">
+            <h2>不知道读什么？先告诉我们你的兴趣</h2>
+            <p class="hero-tool-subtitle">输入最近想看的主题或书名，我们会跳转到读什么推荐器。</p>
+            <form class="hero-tool-form" action="/tools/what-to-read/" method="get">
+              <label class="hero-tool-field">
+                <span class="hero-tool-icon" aria-hidden="true">📖</span>
+                <input type="text" name="recent_book" placeholder="例如：想读科幻 / 最近看完的书" />
+              </label>
+              <button class="btn btn-primary" type="submit">立即推荐</button>
+            </form>
+            <div class="hero-tool-links">
+              <a href="/tools/what-to-read/">读什么推荐器</a>
+              <a href="/booklists/age-based/">按年龄选书指南</a>
+            </div>
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="books.html">立即选书</a>
             <a class="btn btn-secondary" href="bookstores.html">探索书店</a>
